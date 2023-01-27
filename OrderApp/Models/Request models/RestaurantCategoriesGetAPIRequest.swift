@@ -26,6 +26,14 @@ struct RestaurantCategoriesGetAPIRequest: RestaurantAPIRequest {
         return categories
     }
     
+    func verify(response: URLResponse) throws -> Bool {
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw ResponseError.categoriesNotFound
+        }
+        return true
+    }
+    
     enum ResponseError: Error, LocalizedError {
         case categoriesNotFound
     }

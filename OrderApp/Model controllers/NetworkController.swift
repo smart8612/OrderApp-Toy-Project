@@ -15,12 +15,7 @@ class NetworkController {
         }
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-            throw APIRequestError.itemNotFound
-        }
-        
+        try request.verify(response: response)
         let decodedResponse = try request.decodeResponse(data: data)
         
         return decodedResponse
@@ -28,7 +23,6 @@ class NetworkController {
     
     enum APIRequestError: Error {
         case invalidApiURL
-        case itemNotFound
     }
     
 }
