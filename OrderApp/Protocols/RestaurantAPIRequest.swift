@@ -7,9 +7,7 @@
 
 import Foundation
 
-protocol RestaurantAPIRequest: APIRequest {
-    var baseURL: URL? { get }
-}
+protocol RestaurantAPIRequest: APIRequest {}
 
 extension RestaurantAPIRequest {
     var baseURL: URL? {

@@ -29,6 +29,7 @@
 		C13258E92983C29E0058EB12 /* RestaurantAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */; };
 		C13258EC2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258EB2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift */; };
 		C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */; };
+		C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAPIRequest.swift; sourceTree = "<group>"; };
 		C13258EB2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCategoriesGetAPIRequest.swift; sourceTree = "<group>"; };
 		C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuItemsGetAPIRequest.swift; sourceTree = "<group>"; };
+		C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOrderPostAPIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			children = (
 				C13258EB2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift */,
 				C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */,
+				C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */,
 			);
 			path = "Request models";
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				C13258E92983C29E0058EB12 /* RestaurantAPIRequest.swift in Sources */,
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
 				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
+				C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */,
 				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,
 				C13258E32983B60E0058EB12 /* APIRequest.swift in Sources */,
 				C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */,
