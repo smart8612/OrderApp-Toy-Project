@@ -29,5 +29,6 @@ extension APIRequest {
             "application/json",
             forHTTPHeaderField: "Content-Type"
         )
+        return request
     }
 }
