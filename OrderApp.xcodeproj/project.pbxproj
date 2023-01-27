@@ -68,7 +68,7 @@
 		C13258DD2983AC620058EB12 /* OrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponse.swift; sourceTree = "<group>"; };
 		C13258E02983ADA80058EB12 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		C13258E22983B60E0058EB12 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		C13258E52983BBC40058EB12 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = OrderApp/NetworkController.swift; sourceTree = "<group>"; };
+		C13258E52983BBC40058EB12 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,6 @@
 		C1325891298395ED0058EB12 = {
 			isa = PBXGroup;
 			children = (
-				C13258E52983BBC40058EB12 /* NetworkController.swift */,
 				C132589C298395ED0058EB12 /* OrderApp */,
 				C13258B3298395EE0058EB12 /* OrderAppTests */,
 				C13258BD298395EE0058EB12 /* OrderAppUITests */,
@@ -124,6 +123,7 @@
 				C132589F298395ED0058EB12 /* SceneDelegate.swift */,
 				C13258D52983A56A0058EB12 /* View controllers */,
 				C13258D82983A7B10058EB12 /* Models */,
+				C13258E72983C0E10058EB12 /* Model controllers */,
 				C13258E42983B67D0058EB12 /* Protocols */,
 				C13258A3298395ED0058EB12 /* Main.storyboard */,
 				C13258A8298395EE0058EB12 /* LaunchScreen.storyboard */,
@@ -187,6 +187,14 @@
 				C13258E22983B60E0058EB12 /* APIRequest.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C13258E72983C0E10058EB12 /* Model controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C13258E52983BBC40058EB12 /* NetworkController.swift */,
+			);
+			path = "Model controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
