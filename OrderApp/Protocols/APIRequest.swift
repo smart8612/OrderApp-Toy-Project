@@ -12,4 +12,7 @@ protocol APIRequest {
     
     var urlRequest: URLRequest? { get }
     func decodeResponse(data: Data) throws -> Response
+    
+    @discardableResult
+    func verify(response: URLResponse) throws -> Bool
 }
