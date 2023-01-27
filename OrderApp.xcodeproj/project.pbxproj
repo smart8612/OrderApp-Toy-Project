@@ -20,6 +20,9 @@
 		C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258D12983A19E0058EB12 /* OrderTableViewController.swift */; };
 		C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */; };
 		C13258D72983A7A40058EB12 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258D62983A7A40058EB12 /* MenuItem.swift */; };
+		C13258DA2983AB5A0058EB12 /* MenuResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258D92983AB5A0058EB12 /* MenuResponse.swift */; };
+		C13258DC2983ABE70058EB12 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258DB2983ABE70058EB12 /* CategoriesResponse.swift */; };
+		C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258DD2983AC620058EB12 /* OrderResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		C13258D12983A19E0058EB12 /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailViewController.swift; sourceTree = "<group>"; };
 		C13258D62983A7A40058EB12 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		C13258D92983AB5A0058EB12 /* MenuResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuResponse.swift; sourceTree = "<group>"; };
+		C13258DB2983ABE70058EB12 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
+		C13258DD2983AC620058EB12 /* OrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +157,19 @@
 			isa = PBXGroup;
 			children = (
 				C13258D62983A7A40058EB12 /* MenuItem.swift */,
+				C13258DF2983AD1B0058EB12 /* Response models */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C13258DF2983AD1B0058EB12 /* Response models */ = {
+			isa = PBXGroup;
+			children = (
+				C13258D92983AB5A0058EB12 /* MenuResponse.swift */,
+				C13258DB2983ABE70058EB12 /* CategoriesResponse.swift */,
+				C13258DD2983AC620058EB12 /* OrderResponse.swift */,
+			);
+			path = "Response models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,8 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13258D72983A7A40058EB12 /* MenuItem.swift in Sources */,
+				C13258DA2983AB5A0058EB12 /* MenuResponse.swift in Sources */,
 				C13258D02983A1910058EB12 /* MenuTableViewController.swift in Sources */,
+				C13258DC2983ABE70058EB12 /* CategoriesResponse.swift in Sources */,
 				C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */,
+				C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */,
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
 				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
 				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,
