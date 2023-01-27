@@ -28,6 +28,7 @@
 		C13258E62983BBC40058EB12 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258E52983BBC40058EB12 /* NetworkController.swift */; };
 		C13258E92983C29E0058EB12 /* RestaurantAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */; };
 		C13258EC2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258EB2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift */; };
+		C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C13258E52983BBC40058EB12 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAPIRequest.swift; sourceTree = "<group>"; };
 		C13258EB2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCategoriesGetAPIRequest.swift; sourceTree = "<group>"; };
+		C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuItemsGetAPIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				C13258EB2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift */,
+				C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */,
 			);
 			path = "Request models";
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				C13258DA2983AB5A0058EB12 /* MenuResponse.swift in Sources */,
 				C13258D02983A1910058EB12 /* MenuTableViewController.swift in Sources */,
 				C13258DC2983ABE70058EB12 /* CategoriesResponse.swift in Sources */,
+				C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */,
 				C13258E12983ADA80058EB12 /* Order.swift in Sources */,
 				C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */,
 				C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */,

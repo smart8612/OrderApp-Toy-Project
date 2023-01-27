@@ -21,7 +21,7 @@ struct RestaurantCategoriesGetAPIRequest: RestaurantAPIRequest {
         return URLRequest(url: baseCategoryURL)
     }
     
-    func decodeResponse(data: Data) throws -> CategoriesResponse {
+    func decodeResponse(data: Data) throws -> Response {
         let categories = try JSONDecoder().decode(Response.self, from: data)
         return categories
     }
