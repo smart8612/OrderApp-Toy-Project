@@ -10,7 +10,7 @@ import Foundation
 struct RestaurantOrderPostAPIRequest: RestaurantAPIRequest {
     typealias Response = OrderResponse
     
-    private let menuIDs: [Int]
+    let menuIDs: [Int]
     
     private var baseOrderURL: URL? {
         baseURL?.appending(path: "order")

@@ -10,7 +10,7 @@ import Foundation
 struct RestaurantMenuItemsGetAPIRequest: RestaurantAPIRequest {
     typealias Response = MenuResponse
     
-    private let categoryName: String
+    let categoryName: String
     
     private var baseMenuURL: URL? {
         baseURL?.appending(path: "menu")
