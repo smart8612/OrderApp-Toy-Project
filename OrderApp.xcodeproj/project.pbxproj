@@ -31,6 +31,7 @@
 		C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */; };
 		C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */; };
 		C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F329842FFB0058EB12 /* RestaurantController.swift */; };
+		C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuItemsGetAPIRequest.swift; sourceTree = "<group>"; };
 		C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOrderPostAPIRequest.swift; sourceTree = "<group>"; };
 		C13258F329842FFB0058EB12 /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
+		C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+URLRequest.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				C13258D82983A7B10058EB12 /* Models */,
 				C13258E72983C0E10058EB12 /* Model controllers */,
 				C13258E42983B67D0058EB12 /* Protocols */,
+				C17F37FA2984EBBB005F6B4D /* Extensions */,
 				C13258A3298395ED0058EB12 /* Main.storyboard */,
 				C13258A8298395EE0058EB12 /* LaunchScreen.storyboard */,
 				C13258A6298395EE0058EB12 /* Assets.xcassets */,
@@ -218,6 +221,14 @@
 				C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */,
 			);
 			path = "Request models";
+			sourceTree = "<group>";
+		};
+		C17F37FA2984EBBB005F6B4D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +371,7 @@
 				C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */,
 				C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */,
 				C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */,
+				C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */,
 				C13258EC2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift in Sources */,
 				C13258E92983C29E0058EB12 /* RestaurantAPIRequest.swift in Sources */,
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,

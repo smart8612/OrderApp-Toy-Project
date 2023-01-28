@@ -21,7 +21,7 @@ struct RestaurantOrderPostAPIRequest: RestaurantAPIRequest {
     }
     
     var urlRequest: URLRequest? {
-        var request = postJsonURLRequest
+        var request = URLRequest.initWithJSONPost(url: baseOrderURL)
         request?.url = baseOrderURL
         request?.httpBody = encodedMenuIDs
         return request
