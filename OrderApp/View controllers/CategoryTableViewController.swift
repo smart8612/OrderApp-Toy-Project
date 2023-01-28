@@ -16,7 +16,6 @@ class CategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        print("Finish View Did Load")
     }
     
     private func configureUI() {
