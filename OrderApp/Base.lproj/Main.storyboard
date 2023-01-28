@@ -34,7 +34,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="AoW-s7-Bqf" kind="show" id="dEJ-gz-SGf"/>
+                                    <segue destination="AoW-s7-Bqf" kind="show" destinationCreationSelector="showMenu:sender:" id="dEJ-gz-SGf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
