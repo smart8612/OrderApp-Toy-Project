@@ -72,7 +72,6 @@ class MenuTableViewController: UITableViewController {
         return MenuItemDetailViewController(coder: coder, menuItem: menuItem)
     }
     
-
 }
 
 // MARK: TableView & DataSource Handling Code

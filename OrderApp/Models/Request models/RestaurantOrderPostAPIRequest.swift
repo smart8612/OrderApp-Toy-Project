@@ -8,6 +8,7 @@
 import Foundation
 
 struct RestaurantOrderPostAPIRequest: RestaurantAPIRequest {
+    
     typealias Response = OrderResponse
     
     let menuIDs: [Int]
@@ -43,4 +44,5 @@ struct RestaurantOrderPostAPIRequest: RestaurantAPIRequest {
     enum ResponseError: Error, LocalizedError {
         case orderRequestFailed
     }
+    
 }

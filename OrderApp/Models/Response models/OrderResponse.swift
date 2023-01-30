@@ -8,7 +8,9 @@
 import Foundation
 
 struct OrderResponse {
+    
     let preperationTime: Int
+    
 }
 
 extension OrderResponse: Codable {

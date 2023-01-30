@@ -8,15 +8,18 @@
 import Foundation
 
 struct MenuItem {
+    
     var id: Int
     var name: String
     var detailText: String
     var price: Double
     var category: String
     var imageURL: URL
+    
 }
 
 extension MenuItem: Codable {
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -25,4 +28,5 @@ extension MenuItem: Codable {
         case category
         case imageURL = "image_url"
     }
+    
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 extension URLRequest {
+    
     static func initWithJSONPost(url: URL?) -> URLRequest? {
         guard let url = url else {
             return nil
@@ -22,4 +23,5 @@ extension URLRequest {
         
         return request
     }
+    
 }

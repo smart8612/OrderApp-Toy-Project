@@ -8,6 +8,7 @@
 import Foundation
 
 protocol APIRequest {
+    
     associatedtype Response
     
     var urlRequest: URLRequest? { get }
@@ -15,4 +16,5 @@ protocol APIRequest {
     
     @discardableResult
     func verify(response: URLResponse) throws -> Bool
+    
 }

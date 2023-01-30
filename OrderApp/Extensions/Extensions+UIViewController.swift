@@ -8,7 +8,9 @@
 import UIKit
 
 extension UIViewController {
+    
     var isOnScreen: Bool {
         viewIfLoaded?.window != nil
     }
+    
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 struct RestaurantCategoriesGetAPIRequest: RestaurantAPIRequest {
+    
     typealias Response = CategoriesResponse
     
     private var baseCategoryURL: URL? {
@@ -37,4 +38,5 @@ struct RestaurantCategoriesGetAPIRequest: RestaurantAPIRequest {
     enum ResponseError: Error, LocalizedError {
         case categoriesNotFound
     }
+    
 }

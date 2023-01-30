@@ -8,11 +8,15 @@
 import Foundation
 
 protocol RestaurantAPIRequest: APIRequest {
+    
     var baseURL: URL? { get }
+    
 }
 
 extension RestaurantAPIRequest {
+    
     var baseURL: URL? {
         URL(string: "http://localhost:8080/")
     }
+    
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 struct RestaurantMenuItemsGetAPIRequest: RestaurantAPIRequest {
+    
     typealias Response = MenuResponse
     
     let categoryName: String
@@ -53,4 +54,5 @@ struct RestaurantMenuItemsGetAPIRequest: RestaurantAPIRequest {
     enum ResponseError: Error, LocalizedError {
         case menuItemNotFound
     }
+    
 }
