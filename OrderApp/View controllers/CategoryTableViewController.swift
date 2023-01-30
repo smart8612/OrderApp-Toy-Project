@@ -34,21 +34,6 @@ class CategoryTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    private func displayError(_ error: Error, title: String) {
-        guard self.isOnScreen else { return }
-        
-        let alert = UIAlertController(
-            title: title,
-            message: error.localizedDescription,
-            preferredStyle: .alert
-        )
-        alert.addAction(
-            UIAlertAction(title: "Dismiss", style: .default)
-        )
-        self.present(alert, animated: true)
-    }
-    
-    
     @IBSegueAction func showMenu(_ coder: NSCoder, sender: Any?) -> MenuTableViewController? {
         guard let cell = sender as? UITableViewCell,
               let indexPath = self.tableView.indexPath(for: cell) else {

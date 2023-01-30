@@ -13,4 +13,15 @@ extension UIViewController {
         viewIfLoaded?.window != nil
     }
     
+    func displayError(_ error: Error, title: String) {
+        guard self.isOnScreen else { return }
+        let alert = UIAlertController(
+            title: title,
+            message: error.localizedDescription,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        present(alert, animated: true)
+    }
+    
 }

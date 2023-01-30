@@ -49,20 +49,6 @@ class MenuTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    private func displayError(_ error: Error, title: String) {
-        guard self.isOnScreen else { return }
-        
-        let alert = UIAlertController(
-            title: title,
-            message: error.localizedDescription,
-            preferredStyle: .alert
-        )
-        alert.addAction(
-            UIAlertAction(title: "Dismiss", style: .default)
-        )
-        self.present(alert, animated: true)
-    }
-    
     @IBSegueAction func showMenuDetail(_ coder: NSCoder, sender: Any?) -> MenuItemDetailViewController? {
         guard let cell = sender as? UITableViewCell,
               let indexPath = tableView.indexPath(for: cell) else {
