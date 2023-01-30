@@ -82,7 +82,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="cfg-Ae-Jje" kind="show" id="daF-w2-klo"/>
+                                    <segue destination="cfg-Ae-Jje" kind="show" destinationCreationSelector="showMenuDetail:sender:" id="daF-w2-klo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -104,14 +104,71 @@
                     <view key="view" contentMode="scaleToFill" id="i3V-Yc-lVt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5in-VY-5dI">
+                                <rect key="frame" x="15" y="118" width="363" height="267.33333333333331"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Hu-ki-gUu">
+                                        <rect key="frame" x="0.0" y="0.6666666666666714" width="363" height="211.66666666666669"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="91" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-FN-kPy">
+                                        <rect key="frame" x="0.0" y="221" width="363" height="20.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YI-zK-n20">
+                                                <rect key="frame" x="0.0" y="0.0" width="216.33333333333334" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kT-7F-NgG">
+                                                <rect key="frame" x="307.33333333333331" y="0.0" width="55.666666666666686" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T88-Vu-a6b">
+                                        <rect key="frame" x="0.0" y="249.33333333333331" width="363" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SC-pV-0pI">
+                                <rect key="frame" x="15" y="703.66666666666663" width="363" height="50.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add To Order" buttonSize="large"/>
+                                <connections>
+                                    <action selector="orderButtonTapped:" destination="cfg-Ae-Jje" eventType="touchUpInside" id="S0Y-hC-QWM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Fr8-nS-3M6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5in-VY-5dI" firstAttribute="leading" secondItem="Fr8-nS-3M6" secondAttribute="leading" constant="15" id="5V1-Kn-4xN"/>
+                            <constraint firstItem="Fr8-nS-3M6" firstAttribute="trailing" secondItem="9SC-pV-0pI" secondAttribute="trailing" constant="15" id="81j-7z-uUT"/>
+                            <constraint firstItem="3Hu-ki-gUu" firstAttribute="height" secondItem="i3V-Yc-lVt" secondAttribute="height" multiplier="0.25" id="BVS-Pw-F8l"/>
+                            <constraint firstItem="Fr8-nS-3M6" firstAttribute="bottom" secondItem="9SC-pV-0pI" secondAttribute="bottom" constant="15" id="Vnh-gn-led"/>
+                            <constraint firstItem="9SC-pV-0pI" firstAttribute="leading" secondItem="Fr8-nS-3M6" secondAttribute="leading" constant="15" id="sKI-4y-pKf"/>
+                            <constraint firstItem="5in-VY-5dI" firstAttribute="top" secondItem="Fr8-nS-3M6" secondAttribute="top" constant="15" id="sM2-9L-brr"/>
+                            <constraint firstItem="Fr8-nS-3M6" firstAttribute="trailing" secondItem="5in-VY-5dI" secondAttribute="trailing" constant="15" id="vRR-Gw-y8j"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="95p-nI-p5l"/>
+                    <connections>
+                        <outlet property="addToOrderButton" destination="9SC-pV-0pI" id="y5S-AQ-Ddz"/>
+                        <outlet property="detailTextLabel" destination="T88-Vu-a6b" id="Gw1-yK-jgj"/>
+                        <outlet property="imageView" destination="3Hu-ki-gUu" id="Tte-f7-fQ9"/>
+                        <outlet property="nameLabel" destination="7YI-zK-n20" id="gAi-eC-CI3"/>
+                        <outlet property="priceLabel" destination="4kT-7F-NgG" id="qnO-wS-ecu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjR-eB-Pec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="-137"/>
+            <point key="canvasLocation" x="3900" y="-137.32394366197184"/>
         </scene>
         <!--Order Table View Controller-->
         <scene sceneID="m2G-QL-piy">
@@ -203,6 +260,10 @@
     <resources>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
