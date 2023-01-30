@@ -69,8 +69,8 @@ extension SceneDelegate {
     
     @objc
     private func updateOrderBadge() {
-        let badgeValue = String(RestaurantController.shared.order.menuItems.count)
-        orderTabBarItem?.badgeValue = String(badgeValue)
+        let badgeValue = RestaurantController.shared.order.menuItems.count
+        orderTabBarItem?.badgeValue = (badgeValue == 0) ? nil : String(badgeValue)
     }
     
 }
