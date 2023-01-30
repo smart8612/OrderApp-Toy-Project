@@ -29,6 +29,10 @@ class RestaurantController {
         order.menuItems.append(menuItem)
     }
     
+    func deleteOrder(with index: Int) {
+        order.menuItems.remove(at: index)
+    }
+    
     func submitOrder(forMenuIDs menuIDs: [Int]) async throws -> MinutesToPrepare {
         let apiRequest = RestaurantOrderPostAPIRequest(menuIDs: menuIDs)
         let result = try await networkController.send(request: apiRequest)

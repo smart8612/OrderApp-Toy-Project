@@ -22,6 +22,8 @@ class OrderTableViewController: UITableViewController {
             selector: #selector(updateUI),
             name: RestaurantController.orderUpdateNotification, object: nil
         )
+        
+        self.navigationItem.leftBarButtonItem = editButtonItem
     }
     
     @objc
@@ -51,6 +53,16 @@ extension OrderTableViewController {
         contentConfiguration.text = menuItem.name
         contentConfiguration.secondaryText = menuItem.price.formatted(.currency(code: "usd"))
         cell.contentConfiguration = contentConfiguration
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            restaurantController.deleteOrder(with: indexPath.row)
+        }
     }
     
 }
