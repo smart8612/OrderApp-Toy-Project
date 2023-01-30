@@ -10,6 +10,7 @@ import UIKit
 class MenuItemDetailViewController: UIViewController {
     
     private let menuItem: MenuItem
+    private let restaurantController = RestaurantController.shared
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
@@ -42,6 +43,8 @@ class MenuItemDetailViewController: UIViewController {
             self.addToOrderButton.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
             self.addToOrderButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
+        
+        restaurantController.addOrder(with: menuItem)
     }
     
 }

@@ -13,6 +13,20 @@ class OrderTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+    
+    func configureUI() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(updateUI),
+            name: RestaurantController.orderUpdateNotification, object: nil
+        )
+    }
+    
+    @objc
+    private func updateUI() {
+        self.tableView.reloadData()
     }
 
 }
