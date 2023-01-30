@@ -10,6 +10,7 @@ import UIKit
 class OrderTableViewController: UITableViewController {
     
     private let restaurantController = RestaurantController.shared
+    private var minutesToPrepareOrder = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,59 @@ class OrderTableViewController: UITableViewController {
     private func updateUI() {
         self.tableView.reloadData()
     }
-
+    
+    @IBAction func submitTapped(_ sender: UIBarButtonItem) {
+        let orderTotal = restaurantController.order.menuItems.reduce(0.0) { partialResult, menuItem in
+            return partialResult + menuItem.price
+        }
+        
+        let formattedTotal = orderTotal.formatted(.currency(code: "usd"))
+        
+        let alert = UIAlertController(
+            title: "Confirm Order",
+            message: "You are about to submit your order with a total of \(formattedTotal)",
+            preferredStyle: .actionSheet
+        )
+        alert.addAction(
+            UIAlertAction(title: "Submit", style: .default) { _ in
+                self.uploadOrder()
+            }
+        )
+        alert.addAction(
+            UIAlertAction(title: "Cancel", style: .cancel)
+        )
+        
+        present(alert, animated: true)
+    }
+    
+    @IBSegueAction func confirmOrder(_ coder: NSCoder) -> OrderConfirmationViewController? {
+        return OrderConfirmationViewController(coder: coder, minutesToPrepare: minutesToPrepareOrder)
+    }
+    
+    private func uploadOrder() {
+        let menuIds = restaurantController.order.menuItems.map { $0.id }
+        Task {
+            do {
+                let minutesToPrepare = try await restaurantController.submitOrder(forMenuIDs: menuIds)
+                minutesToPrepareOrder = minutesToPrepare
+                performSegue(withIdentifier: "confirmOrder", sender: nil)
+            } catch {
+                displayError(error, title: "Order Submission Failed")
+            }
+        }
+    }
+    
+    private func displayError(_ error: Error, title: String) {
+        guard self.isOnScreen else { return }
+        let alert = UIAlertController(
+            title: title,
+            message: error.localizedDescription,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        present(alert, animated: true)
+    }
+    
 }
 
 // MARK: TableView & DataSource Handling Code
