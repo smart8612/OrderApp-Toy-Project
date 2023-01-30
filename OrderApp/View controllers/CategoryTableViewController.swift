@@ -10,7 +10,7 @@ import UIKit
 @MainActor
 class CategoryTableViewController: UITableViewController {
     
-    private let restautantController = RestaurantController()
+    private let restautantController = RestaurantController.shared
     private var categories: [String] = []
 
     override func viewDidLoad() {

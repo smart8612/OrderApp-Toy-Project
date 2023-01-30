@@ -8,9 +8,15 @@
 import Foundation
 
 class RestaurantController {
+    
     typealias MinutesToPrepare = Int
     
+    static let shared = RestaurantController()
+    
+    private(set) var order = Order()
     private let networkController = NetworkController()
+    
+    private init() {}
     
     func submitOrder(forMenuIDs menuIDs: [Int]) async throws -> MinutesToPrepare {
         let apiRequest = RestaurantOrderPostAPIRequest(menuIDs: menuIDs)
@@ -29,4 +35,5 @@ class RestaurantController {
         let result = try await networkController.send(request: apiRequest)
         return result.items
     }
+    
 }

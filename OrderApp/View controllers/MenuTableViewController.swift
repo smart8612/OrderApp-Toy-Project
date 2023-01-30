@@ -10,7 +10,7 @@ import UIKit
 @MainActor
 class MenuTableViewController: UITableViewController {
     
-    private let restaurantController = RestaurantController()
+    private let restaurantController = RestaurantController.shared
     private var menuItems: [MenuItem] = []
     private let category: String
     
