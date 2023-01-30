@@ -60,6 +60,12 @@ class OrderTableViewController: UITableViewController {
         return OrderConfirmationViewController(coder: coder, minutesToPrepare: minutesToPrepareOrder)
     }
     
+    @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
+        if segue.identifier == "dismissConfirmation" {
+            restaurantController.deleteAllOrder()
+        }
+    }
+    
     private func uploadOrder() {
         let menuIds = restaurantController.order.menuItems.map { $0.id }
         Task {

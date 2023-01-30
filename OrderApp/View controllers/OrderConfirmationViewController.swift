@@ -10,6 +10,7 @@ import UIKit
 class OrderConfirmationViewController: UIViewController {
     
     private let minutesToPrepare: Int
+    private let restaurantController = RestaurantController.shared
     
     @IBOutlet var confirmationLabel: UILabel!
     
@@ -24,10 +25,11 @@ class OrderConfirmationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
     }
-
-    @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
-        
+    
+    private func updateUI() {
+        confirmationLabel.text = "Thank you for your order! Your wait time is approximately \(minutesToPrepare) minutes."
     }
     
 }
