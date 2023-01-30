@@ -10,13 +10,14 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    private var orderTabBarItem: UITabBarItem?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        configureUI()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +48,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
 
+// MARK: RootViewController Handling Code
+extension SceneDelegate {
+    
+    private func configureUI() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(updateOrderBadge),
+            name: RestaurantController.orderUpdateNotification, object: nil
+        )
+        
+        guard let rootTabBarController = window?.rootViewController as? UITabBarController,
+              let orderTabBarItem = rootTabBarController.viewControllers?[1].tabBarItem else {
+            return
+        }
+        self.orderTabBarItem = orderTabBarItem
+    }
+    
+    @objc
+    private func updateOrderBadge() {
+        let badgeValue = String(RestaurantController.shared.order.menuItems.count)
+        orderTabBarItem?.badgeValue = String(badgeValue)
+    }
+    
+}

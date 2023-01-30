@@ -170,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="3900" y="-137.32394366197184"/>
         </scene>
-        <!--Order Table View Controller-->
+        <!--My Order-->
         <scene sceneID="m2G-QL-piy">
             <objects>
                 <tableViewController id="QSO-hQ-gAB" customClass="OrderTableViewController" customModule="OrderApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -209,7 +209,7 @@
                             <outlet property="delegate" destination="QSO-hQ-gAB" id="1R5-ee-WwC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="IHE-8Y-vUf"/>
+                    <navigationItem key="navigationItem" title="My Order" id="IHE-8Y-vUf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgp-XP-6BN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,8 +240,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g4R-Iw-IM0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Order" image="bag" catalog="system" id="mII-Bs-d8j"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3ZV-WM-ut1">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="3ZV-WM-ut1">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
