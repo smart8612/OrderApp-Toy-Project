@@ -60,6 +60,7 @@ class CategoryTableViewController: UITableViewController {
     
 }
 
+// MARK: TableView & DataSource Handling Code
 extension CategoryTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
