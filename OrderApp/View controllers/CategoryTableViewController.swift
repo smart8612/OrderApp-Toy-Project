@@ -8,7 +8,7 @@
 import UIKit
 
 @MainActor
-class CategoryTableViewController: UITableViewController {
+final class CategoryTableViewController: UITableViewController {
     
     private let restautantController = RestaurantController.shared
     private var categories: [String] = []
@@ -31,10 +31,10 @@ class CategoryTableViewController: UITableViewController {
     
     private func updateUI(with categories: [String]) {
         self.categories = categories
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
-    @IBSegueAction func showMenu(_ coder: NSCoder, sender: Any?) -> MenuTableViewController? {
+    @IBSegueAction private func showMenu(_ coder: NSCoder, sender: Any?) -> MenuTableViewController? {
         guard let cell = sender as? UITableViewCell,
               let indexPath = self.tableView.indexPath(for: cell) else {
                   return nil
@@ -62,7 +62,7 @@ extension CategoryTableViewController {
         return cell
     }
     
-    func configureCell(_ cell: UITableViewCell, forCategoryAt indexPath: IndexPath) {
+    private func configureCell(_ cell: UITableViewCell, forCategoryAt indexPath: IndexPath) {
         let category = categories[indexPath.row]
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = category.capitalized

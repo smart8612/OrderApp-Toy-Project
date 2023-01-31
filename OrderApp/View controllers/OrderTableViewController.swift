@@ -8,7 +8,7 @@
 import UIKit
 
 @MainActor
-class OrderTableViewController: UITableViewController {
+final class OrderTableViewController: UITableViewController {
     
     private let restaurantController = RestaurantController.shared
     private var minutesToPrepareOrder = 0
@@ -25,26 +25,23 @@ class OrderTableViewController: UITableViewController {
         configureUI()
     }
     
-    func configureUI() {
+    private func configureUI() {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(updateUI),
             name: RestaurantController.orderUpdateNotification, object: nil
         )
         
-        self.navigationItem.leftBarButtonItem = editButtonItem
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     @objc
     private func updateUI() {
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
-    @IBAction func submitTapped(_ sender: UIBarButtonItem) {
-        let orderTotal = restaurantController.order.menuItems.reduce(0.0) { partialResult, menuItem in
-            return partialResult + menuItem.price
-        }
-        
+    @IBAction private func submitTapped(_ sender: UIBarButtonItem) {
+        let orderTotal = restaurantController.totalAmount
         let formattedTotal = orderTotal.formatted(.currency(code: "usd"))
         
         let alert = UIAlertController(
@@ -64,11 +61,11 @@ class OrderTableViewController: UITableViewController {
         present(alert, animated: true)
     }
     
-    @IBSegueAction func confirmOrder(_ coder: NSCoder) -> OrderConfirmationViewController? {
+    @IBSegueAction private func confirmOrder(_ coder: NSCoder) -> OrderConfirmationViewController? {
         return OrderConfirmationViewController(coder: coder, minutesToPrepare: minutesToPrepareOrder)
     }
     
-    @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToOrderList(segue: UIStoryboardSegue) {
         if segue.identifier == "dismissConfirmation" {
             restaurantController.deleteAllOrder()
         }
@@ -106,7 +103,7 @@ extension OrderTableViewController {
         imageLoadTasks[indexPath]?.cancel()
     }
     
-    func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
+    private func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? MenuItemTableViewCell else {
             return
         }
