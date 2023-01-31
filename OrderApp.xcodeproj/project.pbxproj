@@ -34,6 +34,7 @@
 		C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */; };
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
 		C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */; };
+		C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+URLRequest.swift"; sourceTree = "<group>"; };
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
+		C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGetAPIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				C13258EB2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift */,
 				C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */,
 				C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */,
+				C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */,
 			);
 			path = "Request models";
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
 				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
 				C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */,
+				C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */,
 				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,
 				C13258E32983B60E0058EB12 /* APIRequest.swift in Sources */,
 				C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */,
