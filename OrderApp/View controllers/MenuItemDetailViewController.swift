@@ -36,6 +36,14 @@ class MenuItemDetailViewController: UIViewController {
         nameLabel.text = menuItem.name
         priceLabel.text = menuItem.price.formatted(.currency(code: "usd"))
         detailTextLabel.text = menuItem.detailText
+        
+        Task {
+            guard let data = try? await restaurantController.fetchImage(from: menuItem.imageURL),
+                  let image = UIImage(data: data) else {
+                return
+            }
+            self.imageView.image = image
+        }
     }
     
     @IBAction func orderButtonTapped(_ sender: UIButton) {
