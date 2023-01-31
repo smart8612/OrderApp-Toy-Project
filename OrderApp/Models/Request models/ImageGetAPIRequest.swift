@@ -5,11 +5,11 @@
 //  Created by JeongTaek Han on 2023-01-31.
 //
 
-import UIKit
+import Foundation
 
 struct ImageGetAPIRequest: APIRequest {
     
-    typealias Response = UIImage
+    typealias Response = Data
     
     let baseURL: String
     
@@ -25,10 +25,7 @@ struct ImageGetAPIRequest: APIRequest {
     }
     
     func decodeResponse(data: Data) throws -> Response {
-        guard let image = UIImage(data: data) else {
-            throw ResponseError.imageDataMissing
-        }
-        return image
+        return data
     }
     
     func verify(response: URLResponse) throws -> Bool {
