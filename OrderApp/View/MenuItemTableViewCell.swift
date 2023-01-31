@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MenuItemTableViewCell: UITableViewCell {
+final class MenuItemTableViewCell: UITableViewCell {
     
     var itemName: String? = nil {
         didSet {
