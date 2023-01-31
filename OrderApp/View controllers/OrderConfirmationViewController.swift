@@ -7,12 +7,12 @@
 
 import UIKit
 
-class OrderConfirmationViewController: UIViewController {
+final class OrderConfirmationViewController: UIViewController {
     
     private let minutesToPrepare: Int
     private let restaurantController = RestaurantController.shared
     
-    @IBOutlet var confirmationLabel: UILabel!
+    @IBOutlet private weak var confirmationLabel: UILabel?
     
     required init?(coder: NSCoder, minutesToPrepare: Int) {
         self.minutesToPrepare = minutesToPrepare
@@ -29,7 +29,7 @@ class OrderConfirmationViewController: UIViewController {
     }
     
     private func updateUI() {
-        confirmationLabel.text = "Thank you for your order! Your wait time is approximately \(minutesToPrepare) minutes."
+        confirmationLabel?.text = "Thank you for your order! Your wait time is approximately \(minutesToPrepare) minutes."
     }
     
 }
