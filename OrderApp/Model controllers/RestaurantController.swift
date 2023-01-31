@@ -25,6 +25,10 @@ class RestaurantController {
     
     private init() {}
     
+    var totalAmount: Double {
+        order.totalAmount
+    }
+    
     func addOrder(with menuItem: MenuItem) {
         order.addOrder(with: menuItem)
     }
