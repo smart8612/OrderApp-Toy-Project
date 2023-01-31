@@ -12,7 +12,7 @@ struct RestaurantCategoriesGetAPIRequest: RestaurantAPIRequest {
     typealias Response = CategoriesResponse
     
     private var baseCategoryURL: URL? {
-        baseURL?.appending(path: "categories")
+        baseURL?.appendingPathComponent("categories")
     }
     
     var urlRequest: URLRequest? {

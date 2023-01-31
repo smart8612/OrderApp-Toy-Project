@@ -14,7 +14,7 @@ struct RestaurantMenuItemsGetAPIRequest: RestaurantAPIRequest {
     let categoryName: String
     
     private var baseMenuURL: URL? {
-        baseURL?.appending(path: "menu")
+        baseURL?.appendingPathComponent("menu")
     }
     
     private var menuURLWithQuery: URL? {

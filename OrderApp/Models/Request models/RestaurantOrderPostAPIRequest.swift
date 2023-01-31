@@ -14,7 +14,7 @@ struct RestaurantOrderPostAPIRequest: RestaurantAPIRequest {
     let menuIDs: [Int]
     
     private var baseOrderURL: URL? {
-        baseURL?.appending(path: "order")
+        baseURL?.appendingPathComponent("order")
     }
     
     private var encodedMenuIDs: Data? {
