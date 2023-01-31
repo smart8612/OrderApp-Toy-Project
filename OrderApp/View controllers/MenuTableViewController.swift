@@ -36,10 +36,7 @@ class MenuTableViewController: UITableViewController {
                 let menuItems = try await restaurantController.fetchMenuItems(forCategory: category)
                 updateUI(with: menuItems)
             } catch {
-                displayError(
-                    error,
-                    title: "Failed to fetch menu items for \(self.category)"
-                )
+                displayError(error, title: "Failed to fetch menu items for \(self.category)")
             }
         }
     }
@@ -83,6 +80,7 @@ extension MenuTableViewController {
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = menuItem.name
         contentConfiguration.secondaryText = menuItem.price.formatted(.currency(code: "usd"))
+        contentConfiguration.image = UIImage(systemName: "photo.on.rectangle")
         cell.contentConfiguration = contentConfiguration
     }
     
