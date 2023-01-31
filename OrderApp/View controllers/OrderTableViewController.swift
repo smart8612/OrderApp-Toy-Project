@@ -100,6 +100,7 @@ extension OrderTableViewController {
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = menuItem.name
         contentConfiguration.secondaryText = menuItem.price.formatted(.currency(code: "usd"))
+        contentConfiguration.image = UIImage(systemName: "photo.on.rectangle")
         cell.contentConfiguration = contentConfiguration
     }
     

@@ -66,7 +66,6 @@ extension CategoryTableViewController {
         let category = categories[indexPath.row]
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = category.capitalized
-        contentConfiguration.image = UIImage(systemName: "photo.on.rectangle")
         cell.contentConfiguration = contentConfiguration
     }
     
