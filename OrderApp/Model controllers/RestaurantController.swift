@@ -55,8 +55,8 @@ class RestaurantController {
         return result.items
     }
     
-    func fetchImage(from url: String) async throws -> Data {
-        let apiRequest = ImageGetAPIRequest(baseURL: url)
+    func fetchImage(from url: URL) async throws -> Data {
+        let apiRequest = ImageGetAPIRequest(baseURL: url.formatted())
         let result = try await networkController.send(request: apiRequest)
         return result
     }

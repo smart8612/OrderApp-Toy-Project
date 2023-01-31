@@ -14,7 +14,9 @@ struct ImageGetAPIRequest: APIRequest {
     let baseURL: String
     
     private var imageURL: URL? {
-        URL(string: baseURL)
+        var urlComponents = URLComponents(string: baseURL)
+        urlComponents?.port = 8080
+        return urlComponents?.url
     }
     
     var urlRequest: URLRequest? {

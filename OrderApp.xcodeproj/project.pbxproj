@@ -35,6 +35,7 @@
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
 		C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */; };
 		C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */; };
+		C1D861E12988E60F00BC3DC2 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGetAPIRequest.swift; sourceTree = "<group>"; };
+		C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				C132589D298395ED0058EB12 /* AppDelegate.swift */,
 				C132589F298395ED0058EB12 /* SceneDelegate.swift */,
+				C1D861DF2988E5F400BC3DC2 /* View */,
 				C13258D52983A56A0058EB12 /* View controllers */,
 				C13258D82983A7B10058EB12 /* Models */,
 				C13258E72983C0E10058EB12 /* Model controllers */,
@@ -238,6 +241,14 @@
 				C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C1D861DF2988E5F400BC3DC2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +385,7 @@
 				C13258D72983A7A40058EB12 /* MenuItem.swift in Sources */,
 				C13258DA2983AB5A0058EB12 /* MenuResponse.swift in Sources */,
 				C13258D02983A1910058EB12 /* MenuTableViewController.swift in Sources */,
+				C1D861E12988E60F00BC3DC2 /* MenuItemTableViewCell.swift in Sources */,
 				C13258DC2983ABE70058EB12 /* CategoriesResponse.swift in Sources */,
 				C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */,
 				C13258E12983ADA80058EB12 /* Order.swift in Sources */,
