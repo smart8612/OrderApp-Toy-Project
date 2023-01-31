@@ -13,7 +13,7 @@ final class OrderAppTests: XCTestCase {
     private var restaurantController: RestaurantController!
 
     override func setUpWithError() throws {
-        self.restaurantController = RestaurantController()
+        self.restaurantController = RestaurantController.shared
     }
 
     override func tearDownWithError() throws {
