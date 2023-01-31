@@ -35,9 +35,12 @@ class MenuItemTableViewCell: UITableViewCell {
     
     override func updateConfiguration(using state: UICellConfigurationState) {
         var contentConfiguration = defaultContentConfiguration().updated(for: state)
+        
         contentConfiguration.text = itemName
         contentConfiguration.secondaryText = price?.formatted(.currency(code: "usd"))
         contentConfiguration.image = (image == nil) ? UIImage(systemName: "photo.on.rectangle") : image
+        contentConfiguration.prefersSideBySideTextAndSecondaryText = true
+        contentConfiguration.imageProperties.maximumSize = CGSize(width: 30, height: 30)
         self.contentConfiguration = contentConfiguration
     }
 }
