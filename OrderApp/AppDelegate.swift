@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        configureSharedURLCache()
         return true
     }
 
@@ -31,3 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK: Configure Caching For URLSession Code
+extension AppDelegate {
+    
+    private func configureSharedURLCache() {
+        let temporaryDirectory = NSTemporaryDirectory()
+        let urlCache = URLCache(
+            memoryCapacity: 25_000_000,
+            diskCapacity: 50_000_000,
+            diskPath: temporaryDirectory
+        )
+        URLCache.shared = urlCache
+    }
+    
+}
