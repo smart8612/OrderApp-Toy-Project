@@ -26,15 +26,15 @@ class RestaurantController {
     private init() {}
     
     func addOrder(with menuItem: MenuItem) {
-        order.menuItems.append(menuItem)
+        order.addOrder(with: menuItem)
     }
     
     func deleteOrder(with index: Int) {
-        order.menuItems.remove(at: index)
+        order.deleteOrder(on: index)
     }
     
     func deleteAllOrder() {
-        order.menuItems.removeAll()
+        order.deleteAllOrder()
     }
     
     func submitOrder(forMenuIDs menuIDs: [Int]) async throws -> MinutesToPrepare {

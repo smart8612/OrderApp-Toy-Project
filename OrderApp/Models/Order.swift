@@ -9,6 +9,18 @@ import Foundation
 
 struct Order: Codable {
     
-    var menuItems: [MenuItem] = []
+    private(set) var menuItems: [MenuItem] = []
+    
+    mutating func addOrder(with menuItem: MenuItem) {
+        menuItems.append(menuItem)
+    }
+    
+    mutating func deleteOrder(on index: Int) {
+        menuItems.remove(at: index)
+    }
+    
+    mutating func deleteAllOrder() {
+        menuItems.removeAll()
+    }
     
 }
