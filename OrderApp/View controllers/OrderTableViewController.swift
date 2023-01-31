@@ -7,11 +7,19 @@
 
 import UIKit
 
+@MainActor
 class OrderTableViewController: UITableViewController {
     
     private let restaurantController = RestaurantController.shared
     private var minutesToPrepareOrder = 0
+    private var imageLoadTasks: [IndexPath:Task<Void, Never>] = [:]
 
+    override func viewDidDisappear(_ animated: Bool) {
+        imageLoadTasks.forEach { (key: IndexPath, value: Task<Void, Never>) in
+            value.cancel()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -94,14 +102,32 @@ extension OrderTableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        imageLoadTasks[indexPath]?.cancel()
+    }
+    
     func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? MenuItemTableViewCell else {
+            return
+        }
+        
         let menuItem = restaurantController.order.menuItems[indexPath.row]
         
-        var contentConfiguration = cell.defaultContentConfiguration()
-        contentConfiguration.text = menuItem.name
-        contentConfiguration.secondaryText = menuItem.price.formatted(.currency(code: "usd"))
-        contentConfiguration.image = UIImage(systemName: "photo.on.rectangle")
-        cell.contentConfiguration = contentConfiguration
+        cell.itemName = menuItem.name
+        cell.price = menuItem.price
+        cell.image = nil
+        
+        imageLoadTasks[indexPath] = Task {
+            if let data = try? await restaurantController.fetchImage(from: menuItem.imageURL),
+               let image = UIImage(data: data),
+               let currentIndexPath = self.tableView.indexPath(for: cell) {
+                cell.image = (currentIndexPath == indexPath) ? image:nil
+            } else {
+                cell.image = nil
+            }
+            
+            imageLoadTasks[indexPath] = nil
+        }
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
