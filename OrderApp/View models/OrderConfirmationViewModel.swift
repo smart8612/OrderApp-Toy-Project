@@ -8,9 +8,7 @@
 import Foundation
 import Combine
 
-final class OrderConfirmationViewModel {
-    
-    weak var delegate: OrderConfirmationViewModelDelegate?
+final class OrderConfirmationViewModel: ObservableObject {
     
     let minutesToPrepare: Int
     private let startingOrderDate = Date()
@@ -26,22 +24,18 @@ final class OrderConfirmationViewModel {
         TimeInterval(minutesToPrepare)
     }
     
+    var remainTimeRatio: Float {
+        Float(abs(startingOrderDate.timeIntervalSinceNow) / timeIntervalToPrepare)
+    }
+    
     private func configureTimer() {
         scheduledTimerSubscriber = Timer.publish(every: 0.0001, on: .main, in: .default)
             .autoconnect()
-            .compactMap({ [weak self] date in
-                guard let startingOrderDate = self?.startingOrderDate,
-                      let timeIntervalToPrepare = self?.timeIntervalToPrepare else {
-                    return nil
-                }
-                return (abs(date.timeIntervalSince(startingOrderDate)), timeIntervalToPrepare)
-            })
-            .map({ Float($0 / $1) })
-            .sink(receiveValue: { [weak self] ratio in
-                if ratio >= 1.0 {
+            .sink(receiveValue: { [weak self] _ in
+                if let remainTimeRatio = self?.remainTimeRatio, remainTimeRatio > 1.0 {
                     self?.scheduledTimerSubscriber?.cancel()
                 }
-                self?.delegate?.returnTime(ratio: ratio)
+                self?.objectWillChange.send()
             })
     }
     

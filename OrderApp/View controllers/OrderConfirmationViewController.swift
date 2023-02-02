@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class OrderConfirmationViewController: UIViewController {
     
@@ -13,6 +14,7 @@ final class OrderConfirmationViewController: UIViewController {
     @IBOutlet private weak var timeProgressiveView: UIProgressView!
     
     private let viewModel: OrderConfirmationViewModel
+    private var viewModelSubscribe: Cancellable?
     
     required init?(coder: NSCoder, minutesToPrepare: Int) {
         self.viewModel = OrderConfirmationViewModel(minutesToPrepare: minutesToPrepare)
@@ -25,21 +27,24 @@ final class OrderConfirmationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.delegate = self
+        configureSubscription()
         updateUI()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        viewModelSubscribe?.cancel()
+    }
+    
+    private func configureSubscription() {
+        viewModelSubscribe = viewModel.objectWillChange.sink { [weak self] _ in
+            guard let remainRatio = self?.viewModel.remainTimeRatio else { return }
+            self?.timeProgressiveView.setProgress(remainRatio, animated: true)
+        }
     }
     
     private func updateUI() {
         confirmationLabel?.text = "Thank you for your order! Your wait time is approximately \(viewModel.minutesToPrepare) minutes."
         timeProgressiveView?.setProgress(0.0, animated: true)
-    }
-    
-}
-
-extension OrderConfirmationViewController: OrderConfirmationViewModelDelegate {
-    
-    func returnTime(ratio: Float) {
-        self.timeProgressiveView.setProgress(ratio, animated: true)
     }
     
 }
