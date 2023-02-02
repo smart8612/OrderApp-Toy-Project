@@ -32,10 +32,10 @@ final class OrderConfirmationViewModel: ObservableObject {
         scheduledTimerSubscriber = Timer.publish(every: 0.0001, on: .main, in: .default)
             .autoconnect()
             .sink(receiveValue: { [weak self] _ in
+                self?.objectWillChange.send()
                 if let remainTimeRatio = self?.remainTimeRatio, remainTimeRatio > 1.0 {
                     self?.scheduledTimerSubscriber?.cancel()
                 }
-                self?.objectWillChange.send()
             })
     }
     
