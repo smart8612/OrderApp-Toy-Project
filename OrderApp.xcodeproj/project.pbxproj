@@ -32,7 +32,6 @@
 		C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */; };
 		C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F329842FFB0058EB12 /* RestaurantController.swift */; };
 		C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */; };
-		C1344A59298BDFCD000E1D85 /* OrderConfirmationViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1344A58298BDFCD000E1D85 /* OrderConfirmationViewModelDelegate.swift */; };
 		C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */; };
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
 		C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */; };
@@ -87,7 +86,6 @@
 		C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOrderPostAPIRequest.swift; sourceTree = "<group>"; };
 		C13258F329842FFB0058EB12 /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
 		C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewModel.swift; sourceTree = "<group>"; };
-		C1344A58298BDFCD000E1D85 /* OrderConfirmationViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewModelDelegate.swift; sourceTree = "<group>"; };
 		C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+URLRequest.swift"; sourceTree = "<group>"; };
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -242,18 +240,9 @@
 		C1344A54298BD686000E1D85 /* View models */ = {
 			isa = PBXGroup;
 			children = (
-				C1344A57298BDFAE000E1D85 /* Delegate protocols */,
 				C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */,
 			);
 			path = "View models";
-			sourceTree = "<group>";
-		};
-		C1344A57298BDFAE000E1D85 /* Delegate protocols */ = {
-			isa = PBXGroup;
-			children = (
-				C1344A58298BDFCD000E1D85 /* OrderConfirmationViewModelDelegate.swift */,
-			);
-			path = "Delegate protocols";
 			sourceTree = "<group>";
 		};
 		C17F37FA2984EBBB005F6B4D /* Extensions */ = {
@@ -413,7 +402,6 @@
 				C13258E12983ADA80058EB12 /* Order.swift in Sources */,
 				C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */,
 				C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */,
-				C1344A59298BDFCD000E1D85 /* OrderConfirmationViewModelDelegate.swift in Sources */,
 				C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */,
 				C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */,
 				C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */,
