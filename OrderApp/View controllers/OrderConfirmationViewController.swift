@@ -11,7 +11,7 @@ import Combine
 final class OrderConfirmationViewController: UIViewController {
     
     @IBOutlet private weak var confirmationLabel: UILabel?
-    @IBOutlet private weak var timeProgressiveView: UIProgressView!
+    @IBOutlet private weak var timeProgressiveView: UIProgressView?
     
     private let viewModel: OrderConfirmationViewModel
     private var viewModelSubscribe: Cancellable?
