@@ -38,7 +38,7 @@ final class OrderConfirmationViewController: UIViewController {
     private func configureSubscription() {
         viewModelSubscribe = viewModel.objectWillChange.sink { [weak self] _ in
             guard let remainRatio = self?.viewModel.remainTimeRatio else { return }
-            self?.timeProgressiveView.setProgress(remainRatio, animated: true)
+            self?.timeProgressiveView?.setProgress(remainRatio, animated: true)
         }
     }
     
