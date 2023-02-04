@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 @MainActor
 final class OrderTableViewController: UITableViewController {
@@ -13,6 +14,7 @@ final class OrderTableViewController: UITableViewController {
     private let restaurantController = RestaurantController.shared
     private var minutesToPrepareOrder = 0
     private var imageLoadTasks: [IndexPath:Task<Void, Never>] = [:]
+    private var orderUpdateSubscribe: Cancellable?
 
     override func viewDidDisappear(_ animated: Bool) {
         imageLoadTasks.forEach { (key: IndexPath, value: Task<Void, Never>) in
@@ -26,16 +28,16 @@ final class OrderTableViewController: UITableViewController {
     }
     
     private func configureUI() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateUI),
-            name: .orderUpdateNotification, object: nil
-        )
-        
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        orderUpdateSubscribe = NotificationCenter.default.publisher(
+            for: .orderUpdateNotification,
+            object: nil
+        ).sink(receiveValue: { [weak self] _ in
+            self?.updateUI()
+        })
     }
     
-    @objc
     private func updateUI() {
         tableView.reloadData()
     }
