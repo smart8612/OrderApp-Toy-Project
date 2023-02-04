@@ -38,6 +38,7 @@
 		C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */; };
 		C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */; };
 		C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */; };
+		C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */; };
 		C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */; };
 		C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */; };
 		C1D861E12988E60F00BC3DC2 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */; };
@@ -96,6 +97,7 @@
 		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
 		C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHierarchyControllerDelegate.swift; sourceTree = "<group>"; };
 		C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneHierarchyController.swift; path = OrderApp/SceneHierarchyController.swift; sourceTree = SOURCE_ROOT; };
+		C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterController.swift; sourceTree = "<group>"; };
 		C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGetAPIRequest.swift; sourceTree = "<group>"; };
 		C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				C132589D298395ED0058EB12 /* AppDelegate.swift */,
 				C132589F298395ED0058EB12 /* SceneDelegate.swift */,
 				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
+				C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */,
 				C1D861DF2988E5F400BC3DC2 /* View */,
 				C13258D52983A56A0058EB12 /* View controllers */,
 				C1344A54298BD686000E1D85 /* View models */,
@@ -423,6 +426,7 @@
 				C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */,
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
 				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
+				C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */,
 				C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */,
 				C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */,
 				C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */,

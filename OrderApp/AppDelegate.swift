@@ -9,9 +9,12 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    private let userNotificationCenterController = UserNotificationCenterController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        userNotificationCenterController.configure()
         configureSharedURLCache()
         return true
     }
