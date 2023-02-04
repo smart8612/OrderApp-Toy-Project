@@ -17,7 +17,7 @@ class RestaurantController {
     private(set) var order = Order() {
         didSet {
             NotificationCenter.default.post(
-                name: RestaurantController.orderUpdateNotification,
+                name: .orderUpdateNotification,
                 object: nil
             )
         }
@@ -64,12 +64,5 @@ class RestaurantController {
         let result = try await networkController.send(request: apiRequest)
         return result
     }
-    
-}
-
-// MARK: Notification Define Code
-extension RestaurantController {
-    
-    static let orderUpdateNotification = Notification.Name("RestaurantController.orderUpdated")
     
 }

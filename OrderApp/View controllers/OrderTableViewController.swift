@@ -29,7 +29,7 @@ final class OrderTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(updateUI),
-            name: RestaurantController.orderUpdateNotification, object: nil
+            name: .orderUpdateNotification, object: nil
         )
         
         navigationItem.leftBarButtonItem = editButtonItem

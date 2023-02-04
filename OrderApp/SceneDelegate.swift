@@ -67,7 +67,7 @@ extension SceneDelegate {
         self.orderTabBarItem = orderTabBarItem
         
         orderUpdateSubscribe = NotificationCenter.default.publisher(
-            for: RestaurantController.orderUpdateNotification,
+            for: .orderUpdateNotification,
             object: nil
         ).sink(receiveValue: { [weak self] _ in
             let badgeValue = RestaurantController.shared.order.menuItems.count
