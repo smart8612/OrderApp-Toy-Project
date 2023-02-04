@@ -1,5 +1,5 @@
 //
-//  SceneHirarchyController.swift
+//  SceneHierarchyController.swift
 //  OrderApp
 //
 //  Created by JeongTaek Han on 2023-02-04.
@@ -8,16 +8,16 @@
 import UIKit
 import Combine
 
-final class SceneHirarchyController {
+final class SceneHierarchyController {
     
-    weak var delegate: SceneHirarchyControllerDelegate?
+    weak var delegate: SceneHierarchyControllerDelegate?
     
     private weak var window: UIWindow?
     
     private var orderUpdateSubscribe: Cancellable?
     private weak var orderTabBarItem: UITabBarItem?
     
-    func configure(with delegate: SceneHirarchyControllerDelegate) {
+    func configure(with delegate: SceneHierarchyControllerDelegate) {
         self.delegate = delegate
         window = self.delegate?.loadUIHirarchy()
         configureTabBarUI()

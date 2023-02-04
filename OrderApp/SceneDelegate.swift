@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-    private var sceneHirarchyController = SceneHirarchyController()
+    private var sceneHirarchyController = SceneHierarchyController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -52,7 +52,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 // MARK: RootViewController Handling Code
-extension SceneDelegate: SceneHirarchyControllerDelegate {
+extension SceneDelegate: SceneHierarchyControllerDelegate {
     
     func loadUIHirarchy() -> UIWindow? {
         return self.window
