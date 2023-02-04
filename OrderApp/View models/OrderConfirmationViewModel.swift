@@ -10,37 +10,47 @@ import Combine
 
 final class OrderConfirmationViewModel: ObservableObject {
     
-    let minutesToPrepare: Int
-    private let startingOrderDate = Date()
+    @Published private var orderConfirmation: OrderConfirmation
     
     private var scheduledTimerSubscriber: Cancellable?
+    private let updateCycle: TimeInterval = 0.0001
     
     init(minutesToPrepare: Int) {
-        self.minutesToPrepare = minutesToPrepare
-        self.configureTimer()
-    }
-    
-    private var timeIntervalToPrepare: TimeInterval {
-        TimeInterval(minutesToPrepare)
+        self.orderConfirmation = OrderConfirmation(
+            minutesToPrepare: minutesToPrepare)
+        self.subscribeTimer()
     }
     
     var remainTimeRatio: Float {
-        Float(abs(startingOrderDate.timeIntervalSinceNow) / timeIntervalToPrepare)
+        Float(orderConfirmation.remainTimeRatio)
     }
     
-    private func configureTimer() {
-        scheduledTimerSubscriber = Timer.publish(every: 0.0001, on: .main, in: .default)
+    var minutesToPrepare: Int {
+        orderConfirmation.minutesToPrepare
+    }
+    
+    private func subscribeTimer() {
+        scheduledTimerSubscriber = Timer.publish(every: updateCycle, on: .main, in: .default)
             .autoconnect()
             .sink(receiveValue: { [weak self] _ in
-                self?.objectWillChange.send()
                 if let remainTimeRatio = self?.remainTimeRatio, remainTimeRatio > 1.0 {
-                    self?.scheduledTimerSubscriber?.cancel()
+                    self?.unsubscribe()
+                } else {
+                    self?.updateRemainTime()
                 }
             })
     }
     
-    deinit {
+    private func updateRemainTime() {
+        orderConfirmation.updateTimeRatio()
+    }
+    
+    private func unsubscribe() {
         scheduledTimerSubscriber?.cancel()
+    }
+    
+    deinit {
+        unsubscribe()
     }
     
 }

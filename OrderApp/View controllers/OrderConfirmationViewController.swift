@@ -28,7 +28,7 @@ final class OrderConfirmationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSubscription()
-        updateUI()
+        updateUI(with: viewModel.minutesToPrepare, progress: .zero)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -37,14 +37,17 @@ final class OrderConfirmationViewController: UIViewController {
     
     private func configureSubscription() {
         viewModelSubscribe = viewModel.objectWillChange.sink { [weak self] _ in
-            guard let remainRatio = self?.viewModel.remainTimeRatio else { return }
-            self?.timeProgressiveView?.setProgress(remainRatio, animated: true)
+            guard let remainRatio = self?.viewModel.remainTimeRatio,
+                  let minutesToPrepare = self?.viewModel.minutesToPrepare else {
+                      return
+                  }
+            self?.updateUI(with: minutesToPrepare, progress: remainRatio)
         }
     }
     
-    private func updateUI() {
-        confirmationLabel?.text = "Thank you for your order! Your wait time is approximately \(viewModel.minutesToPrepare) minutes."
-        timeProgressiveView?.setProgress(0.0, animated: true)
+    private func updateUI(with remainTime: Int, progress: Float) {
+        confirmationLabel?.text = "Thank you for your order! Your wait time is approximately \(remainTime) minutes."
+        timeProgressiveView?.setProgress(progress, animated: true)
     }
     
 }
