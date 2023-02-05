@@ -20,6 +20,10 @@ final class UserNotificationCenterController: NSObject, UNUserNotificationCenter
         center.delegate = self
     }
     
+    func send<Request: NotificationRequest>(request: Request, withCompletionHandler: ((Error?) -> Void)?) {
+        center.add(request.request, withCompletionHandler: withCompletionHandler)
+    }
+    
     private func requestPermissions() {
         center.requestAuthorization(options: usedAuthorizationOptions) { granted, error in
             if let error = error {
