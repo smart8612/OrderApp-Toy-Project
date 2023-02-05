@@ -10,7 +10,13 @@ import UserNotifications
 
 final class UserNotificationCenterController: NSObject, UNUserNotificationCenterDelegate {
     
-    let center = UNUserNotificationCenter.current()
+    static let shared = UserNotificationCenterController()
+    
+    private override init() {
+        super.init()
+    }
+    
+    private let center = UNUserNotificationCenter.current()
     
     private var usedAuthorizationOptions: UNAuthorizationOptions {
         [.alert, .badge, .sound, .provisional]
