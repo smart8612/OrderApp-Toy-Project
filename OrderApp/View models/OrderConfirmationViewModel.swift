@@ -19,6 +19,7 @@ final class OrderConfirmationViewModel: ObservableObject {
         self.orderConfirmation = OrderConfirmation(
             minutesToPrepare: minutesToPrepare)
         self.subscribeTimer()
+        self.scheduleNotification()
     }
     
     var remainTimeRatio: Float {
@@ -27,6 +28,15 @@ final class OrderConfirmationViewModel: ObservableObject {
     
     var minutesToPrepare: Int {
         orderConfirmation.minutesToPrepare
+    }
+    
+    private func scheduleNotification() {
+        let request = OrderCompleteNotificationRequest(
+            minutesToPrepare: minutesToPrepare,
+            title: "Order Complete",
+            body: "Your Order is Completed"
+        )
+        UserNotificationCenterController.shared.send(request: request)
     }
     
     private func subscribeTimer() {
