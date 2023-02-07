@@ -38,24 +38,23 @@ final class OrderConfirmationViewController: UIViewController {
     }
     
     private func configureSubscription() {
-        let viewModelSubscribe = viewModel.objectWillChange.sink { [weak self] _ in
-            guard let remainRatio = self?.viewModel.remainTimeRatio,
-                  let minutesToPrepare = self?.viewModel.minutesToPrepare else {
-                      return
-                  }
-            self?.updateUI(with: minutesToPrepare, progress: remainRatio)
-        }
+        let viewModelSubscribe = viewModel.objectWillChange
+            .sink { [weak self] _ in
+                self?.reloadUI()
+            }
         
         let sceneSubscribe = NotificationCenter.default.publisher(for: UIScene.didActivateNotification)
-            .sink(receiveValue: { [weak self] _ in
-                guard let remainRatio = self?.viewModel.remainTimeRatio,
-                      let minutesToPrepare = self?.viewModel.minutesToPrepare else {
-                          return
-                      }
-                self?.updateUI(with: minutesToPrepare, progress: remainRatio)
-            })
+            .sink { [weak self] _ in
+                self?.reloadUI()
+            }
         
         subscribes.append(contentsOf: [viewModelSubscribe, sceneSubscribe])
+    }
+    
+    private func reloadUI() {
+        let remainRatio = viewModel.remainTimeRatio
+        let minutesToPrepare = viewModel.minutesToPrepare
+        updateUI(with: minutesToPrepare, progress: remainRatio)
     }
     
     private func updateUI(with remainTime: Int, progress: Float) {
