@@ -40,7 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        // Handle Notification Here!
+        // Handle notification here
+        // ** MUST call completion handler when finished! **
+        completionHandler()
     }
     
 }
