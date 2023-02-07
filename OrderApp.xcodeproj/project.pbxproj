@@ -34,6 +34,7 @@
 		C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */; };
 		C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */; };
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
+		C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C0299247D700442E5D /* NotificationCategory.swift */; };
 		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
 		C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */; };
 		C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */; };
@@ -95,6 +96,7 @@
 		C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewModel.swift; sourceTree = "<group>"; };
 		C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+URLRequest.swift"; sourceTree = "<group>"; };
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
+		C18727C0299247D700442E5D /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
 		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
 		C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHierarchyControllerDelegate.swift; sourceTree = "<group>"; };
@@ -227,10 +229,9 @@
 		C13258E42983B67D0058EB12 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C13258E22983B60E0058EB12 /* APIRequest.swift */,
-				C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */,
-				C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */,
-				C19BFA2E298EA73700466739 /* NotificationRequest.swift */,
+				C18727BD2992470400442E5D /* Delegate */,
+				C18727BE2992471100442E5D /* Network */,
+				C18727BF2992471C00442E5D /* Notification */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -272,6 +273,32 @@
 				C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C18727BD2992470400442E5D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		C18727BE2992471100442E5D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C13258E22983B60E0058EB12 /* APIRequest.swift */,
+				C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C18727BF2992471C00442E5D /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA2E298EA73700466739 /* NotificationRequest.swift */,
+				C18727C0299247D700442E5D /* NotificationCategory.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		C19BFA30298F702F00466739 /* Notification models */ = {
@@ -456,6 +483,7 @@
 				C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */,
 				C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */,
 				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,
+				C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */,
 				C13258E32983B60E0058EB12 /* APIRequest.swift in Sources */,
 				C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */,
 				C13258E62983BBC40058EB12 /* NetworkController.swift in Sources */,
