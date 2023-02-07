@@ -8,13 +8,11 @@
 import Foundation
 import UserNotifications
 
-final class UserNotificationCenterController: NSObject, UNUserNotificationCenterDelegate {
+final class UserNotificationCenterController {
     
     static let shared = UserNotificationCenterController()
     
-    private override init() {
-        super.init()
-    }
+    private init() {}
     
     private let center = UNUserNotificationCenter.current()
     
@@ -22,8 +20,8 @@ final class UserNotificationCenterController: NSObject, UNUserNotificationCenter
         [.alert, .badge, .sound]
     }
     
-    func configure() {
-        self.center.delegate = self
+    func configure(with object: UNUserNotificationCenterDelegate) {
+        center.delegate = object
         authorizeIfNeeded()
     }
     
