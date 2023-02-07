@@ -24,12 +24,20 @@ struct OrderCompleteNotificationRequest: NotificationRequest {
         UUID().uuidString
     }
     
+    var category: NotificationCategory? {
+        OrderCompleteNotificationCategory()
+    }
+    
     var content: UNNotificationContent {
         let content = UNMutableNotificationContent()
         
         content.sound = .default
         content.title = title
         content.body = body
+        
+        if let categoryId = category?.id {
+            content.categoryIdentifier = categoryId
+        }
         
         return content
     }
