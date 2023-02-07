@@ -11,6 +11,7 @@ import UserNotifications
 protocol NotificationRequest {
     
     var id: String { get }
+    var category: NotificationCategory? { get }
     var content: UNNotificationContent { get }
     var trigger: UNNotificationTrigger { get }
     var request: UNNotificationRequest { get }
