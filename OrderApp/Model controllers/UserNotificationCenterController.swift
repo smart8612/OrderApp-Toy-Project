@@ -37,6 +37,11 @@ final class UserNotificationCenterController {
         }
     }
     
+    func setCategories<Category: NotificationCategory>(_ categories: [Category]) {
+        let categories = categories.map { $0.category }
+        center.setNotificationCategories(Set(categories))
+    }
+    
     private func authorizeIfNeeded(completion: ((Bool) -> ())? = nil) {
         center.getNotificationSettings { settings in
             switch settings.authorizationStatus {
