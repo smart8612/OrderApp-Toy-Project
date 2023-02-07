@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         userNotificationCenterController.configure(with: self)
+        userNotificationCenterController.setCategories([OrderCompleteNotificationCategory()])
         configureSharedURLCache()
         return true
     }
@@ -42,6 +43,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // Handle notification here
         // ** MUST call completion handler when finished! **
+        
+        switch response.actionIdentifier {
+        case "confirm":
+            print("confirm category clicked")
+        default:
+            break
+        }
+        
         completionHandler()
     }
     
