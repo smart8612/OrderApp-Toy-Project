@@ -31,9 +31,21 @@
 		C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */; };
 		C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */; };
 		C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F329842FFB0058EB12 /* RestaurantController.swift */; };
+		C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */; };
 		C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */; };
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
+		C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C0299247D700442E5D /* NotificationCategory.swift */; };
+		C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */; };
+		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
+		C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */; };
+		C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */; };
+		C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */; };
+		C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */; };
+		C19BFA2F298EA73700466739 /* NotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2E298EA73700466739 /* NotificationRequest.swift */; };
+		C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */; };
 		C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */; };
+		C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */; };
+		C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */; };
 		C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */; };
 		C1D861E12988E60F00BC3DC2 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -84,9 +96,21 @@
 		C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuItemsGetAPIRequest.swift; sourceTree = "<group>"; };
 		C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOrderPostAPIRequest.swift; sourceTree = "<group>"; };
 		C13258F329842FFB0058EB12 /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
+		C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewModel.swift; sourceTree = "<group>"; };
 		C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+URLRequest.swift"; sourceTree = "<group>"; };
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
+		C18727C0299247D700442E5D /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
+		C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationCategory.swift; sourceTree = "<group>"; };
+		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
+		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
+		C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHierarchyControllerDelegate.swift; sourceTree = "<group>"; };
+		C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneHierarchyController.swift; path = OrderApp/SceneHierarchyController.swift; sourceTree = SOURCE_ROOT; };
+		C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterController.swift; sourceTree = "<group>"; };
+		C19BFA2E298EA73700466739 /* NotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRequest.swift; sourceTree = "<group>"; };
+		C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationRequest.swift; sourceTree = "<group>"; };
 		C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
+		C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NSUserActivity.swift"; sourceTree = "<group>"; };
+		C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRestorationController.swift; sourceTree = "<group>"; };
 		C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGetAPIRequest.swift; sourceTree = "<group>"; };
 		C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,8 +165,10 @@
 			children = (
 				C132589D298395ED0058EB12 /* AppDelegate.swift */,
 				C132589F298395ED0058EB12 /* SceneDelegate.swift */,
+				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
 				C1D861DF2988E5F400BC3DC2 /* View */,
 				C13258D52983A56A0058EB12 /* View controllers */,
+				C1344A54298BD686000E1D85 /* View models */,
 				C13258D82983A7B10058EB12 /* Models */,
 				C13258E72983C0E10058EB12 /* Model controllers */,
 				C13258E42983B67D0058EB12 /* Protocols */,
@@ -175,8 +201,8 @@
 		C13258D52983A56A0058EB12 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
 				C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */,
+				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
 				C13258CF2983A1910058EB12 /* MenuTableViewController.swift */,
 				C13258D12983A19E0058EB12 /* OrderTableViewController.swift */,
 				C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */,
@@ -189,8 +215,9 @@
 			children = (
 				C13258D62983A7A40058EB12 /* MenuItem.swift */,
 				C13258E02983ADA80058EB12 /* Order.swift */,
-				C13258DF2983AD1B0058EB12 /* Response models */,
-				C13258EA2983C5220058EB12 /* Request models */,
+				C19BFA24298E4DF100466739 /* OrderConfirmation.swift */,
+				C19BFA31298F705800466739 /* Network models */,
+				C19BFA30298F702F00466739 /* Notification models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,8 +235,9 @@
 		C13258E42983B67D0058EB12 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C13258E22983B60E0058EB12 /* APIRequest.swift */,
-				C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */,
+				C18727BD2992470400442E5D /* Delegate */,
+				C18727BE2992471100442E5D /* Network */,
+				C18727BF2992471C00442E5D /* Notification */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -217,8 +245,10 @@
 		C13258E72983C0E10058EB12 /* Model controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */,
 				C13258E52983BBC40058EB12 /* NetworkController.swift */,
 				C13258F329842FFB0058EB12 /* RestaurantController.swift */,
+				C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */,
 			);
 			path = "Model controllers";
 			sourceTree = "<group>";
@@ -234,13 +264,67 @@
 			path = "Request models";
 			sourceTree = "<group>";
 		};
+		C1344A54298BD686000E1D85 /* View models */ = {
+			isa = PBXGroup;
+			children = (
+				C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */,
+			);
+			path = "View models";
+			sourceTree = "<group>";
+		};
 		C17F37FA2984EBBB005F6B4D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */,
 				C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */,
+				C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */,
+				C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C18727BD2992470400442E5D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		C18727BE2992471100442E5D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C13258E22983B60E0058EB12 /* APIRequest.swift */,
+				C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C18727BF2992471C00442E5D /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA2E298EA73700466739 /* NotificationRequest.swift */,
+				C18727C0299247D700442E5D /* NotificationCategory.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		C19BFA30298F702F00466739 /* Notification models */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */,
+				C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */,
+			);
+			path = "Notification models";
+			sourceTree = "<group>";
+		};
+		C19BFA31298F705800466739 /* Network models */ = {
+			isa = PBXGroup;
+			children = (
+				C13258DF2983AD1B0058EB12 /* Response models */,
+				C13258EA2983C5220058EB12 /* Request models */,
+			);
+			path = "Network models";
 			sourceTree = "<group>";
 		};
 		C1D861DF2988E5F400BC3DC2 /* View */ = {
@@ -390,21 +474,33 @@
 				C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */,
 				C13258E12983ADA80058EB12 /* Order.swift in Sources */,
 				C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */,
+				C19BFA2F298EA73700466739 /* NotificationRequest.swift in Sources */,
+				C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */,
 				C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */,
 				C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */,
 				C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */,
 				C13258EC2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift in Sources */,
 				C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */,
+				C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */,
 				C13258E92983C29E0058EB12 /* RestaurantAPIRequest.swift in Sources */,
 				C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */,
+				C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */,
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
 				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
+				C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */,
+				C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */,
 				C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */,
 				C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */,
+				C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */,
+				C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */,
+				C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */,
 				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,
+				C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */,
 				C13258E32983B60E0058EB12 /* APIRequest.swift in Sources */,
 				C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */,
 				C13258E62983BBC40058EB12 /* NetworkController.swift in Sources */,
+				C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */,
+				C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

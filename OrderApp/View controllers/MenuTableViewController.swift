@@ -8,7 +8,7 @@
 import UIKit
 
 @MainActor
-class MenuTableViewController: UITableViewController {
+final class MenuTableViewController: UITableViewController {
     
     private let restaurantController = RestaurantController.shared
     private var menuItems: [MenuItem] = []
@@ -35,10 +35,11 @@ class MenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        restaurantController.updateUserActivity(with: .menu(category: category))
     }
     
     private func configureUI() {
-        self.title = category.capitalized
+        title = category.capitalized
         
         Task {
             do {
@@ -52,10 +53,10 @@ class MenuTableViewController: UITableViewController {
     
     private func updateUI(with menuItems: [MenuItem]) {
         self.menuItems = menuItems
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
-    @IBSegueAction func showMenuDetail(_ coder: NSCoder, sender: Any?) -> MenuItemDetailViewController? {
+    @IBSegueAction private func showMenuDetail(_ coder: NSCoder, sender: Any?) -> MenuItemDetailViewController? {
         guard let cell = sender as? UITableViewCell,
               let indexPath = tableView.indexPath(for: cell) else {
             return nil

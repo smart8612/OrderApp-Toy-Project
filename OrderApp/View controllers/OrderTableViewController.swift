@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 @MainActor
-class OrderTableViewController: UITableViewController {
+final class OrderTableViewController: UITableViewController {
     
     private let restaurantController = RestaurantController.shared
     private var minutesToPrepareOrder = 0
     private var imageLoadTasks: [IndexPath:Task<Void, Never>] = [:]
+    private var orderUpdateSubscribe: Cancellable?
 
     override func viewDidDisappear(_ animated: Bool) {
         imageLoadTasks.forEach { (key: IndexPath, value: Task<Void, Never>) in
@@ -23,28 +25,26 @@ class OrderTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        restaurantController.updateUserActivity(with: .order)
     }
     
-    func configureUI() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateUI),
-            name: RestaurantController.orderUpdateNotification, object: nil
-        )
+    private func configureUI() {
+        navigationItem.leftBarButtonItem = editButtonItem
         
-        self.navigationItem.leftBarButtonItem = editButtonItem
+        orderUpdateSubscribe = NotificationCenter.default.publisher(
+            for: .orderUpdateNotification,
+            object: nil
+        ).sink(receiveValue: { [weak self] _ in
+            self?.updateUI()
+        })
     }
     
-    @objc
     private func updateUI() {
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
-    @IBAction func submitTapped(_ sender: UIBarButtonItem) {
-        let orderTotal = restaurantController.order.menuItems.reduce(0.0) { partialResult, menuItem in
-            return partialResult + menuItem.price
-        }
-        
+    @IBAction private func submitTapped(_ sender: UIBarButtonItem) {
+        let orderTotal = restaurantController.totalAmount
         let formattedTotal = orderTotal.formatted(.currency(code: "usd"))
         
         let alert = UIAlertController(
@@ -64,11 +64,11 @@ class OrderTableViewController: UITableViewController {
         present(alert, animated: true)
     }
     
-    @IBSegueAction func confirmOrder(_ coder: NSCoder) -> OrderConfirmationViewController? {
+    @IBSegueAction private func confirmOrder(_ coder: NSCoder) -> OrderConfirmationViewController? {
         return OrderConfirmationViewController(coder: coder, minutesToPrepare: minutesToPrepareOrder)
     }
     
-    @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToOrderList(segue: UIStoryboardSegue) {
         if segue.identifier == "dismissConfirmation" {
             restaurantController.deleteAllOrder()
         }
@@ -106,7 +106,7 @@ extension OrderTableViewController {
         imageLoadTasks[indexPath]?.cancel()
     }
     
-    func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
+    private func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? MenuItemTableViewCell else {
             return
         }

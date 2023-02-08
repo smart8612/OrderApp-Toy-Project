@@ -10,14 +10,15 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private var orderTabBarItem: UITabBarItem?
+    
+    private var sceneHirarchyController = SceneHierarchyController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        configureUI()
+        sceneHirarchyController.configure(with: self)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -50,27 +51,61 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
-// MARK: RootViewController Handling Code
+// MARK: State Restoration Handling Code
 extension SceneDelegate {
     
-    private func configureUI() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateOrderBadge),
-            name: RestaurantController.orderUpdateNotification, object: nil
-        )
-        
-        guard let rootTabBarController = window?.rootViewController as? UITabBarController,
-              let orderTabBarItem = rootTabBarController.viewControllers?[1].tabBarItem else {
-            return
-        }
-        self.orderTabBarItem = orderTabBarItem
+    func stateRestorationActivity(for scene: UIScene) -> NSUserActivity? {
+        return RestaurantController.shared.userActivity
     }
     
-    @objc
-    private func updateOrderBadge() {
-        let badgeValue = RestaurantController.shared.order.menuItems.count
-        orderTabBarItem?.badgeValue = (badgeValue == 0) ? nil : String(badgeValue)
+    func scene(_ scene: UIScene, restoreInteractionStateWith stateRestorationActivity: NSUserActivity) {
+        if let restoredOrder = stateRestorationActivity.order {
+            RestaurantController.shared.restore(order: restoredOrder)
+        }
+        
+        guard let restorationController = StateRestorationController(userActivity: stateRestorationActivity),
+              let tabBarController = window?.rootViewController as? UITabBarController,
+                  tabBarController.viewControllers?.count == 2,
+              let categoryTableViewController = (tabBarController.viewControllers?.first as? UINavigationController)?.topViewController as? CategoryTableViewController else {
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        switch restorationController {
+        case .categories:
+            break
+        case .menu(let category):
+            let viewController = storyboard.instantiateViewController(identifier: "menu") {
+                return MenuTableViewController(coder: $0, category: category)
+            }
+            categoryTableViewController.navigationController?
+                .pushViewController(viewController, animated: true)
+        case .menuItemDetail(let menuItem):
+            let menuViewController = storyboard.instantiateViewController(identifier: "menu") {
+                return MenuTableViewController(coder: $0, category: menuItem.category)
+            }
+            let menuDetailViewController = storyboard.instantiateViewController(identifier: "menuItemDetail") {
+                return MenuItemDetailViewController(coder: $0, menuItem: menuItem)
+            }
+            categoryTableViewController.navigationController?
+                .pushViewController(menuViewController, animated: false)
+            categoryTableViewController.navigationController?
+                .pushViewController(menuDetailViewController, animated: false)
+        case .order:
+            tabBarController.selectedIndex = 1
+        }
+        
+        
+    }
+    
+}
+
+// MARK: RootViewController Handling Code
+extension SceneDelegate: SceneHierarchyControllerDelegate {
+    
+    func loadUIHirarchy() -> UIWindow? {
+        return self.window
     }
     
 }

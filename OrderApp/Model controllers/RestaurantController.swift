@@ -14,27 +14,51 @@ class RestaurantController {
     static let shared = RestaurantController()
     
     private let networkController = NetworkController()
+    let userActivity = NSUserActivity(activityType: "com.tistory.singularis7.OrderApp.order")
+    
     private(set) var order = Order() {
         didSet {
             NotificationCenter.default.post(
-                name: RestaurantController.orderUpdateNotification,
+                name: .orderUpdateNotification,
                 object: nil
             )
+            userActivity.order = order
         }
     }
     
     private init() {}
     
+    var totalAmount: Double {
+        order.totalAmount
+    }
+    
     func addOrder(with menuItem: MenuItem) {
-        order.menuItems.append(menuItem)
+        order.addOrder(with: menuItem)
     }
     
     func deleteOrder(with index: Int) {
-        order.menuItems.remove(at: index)
+        order.deleteOrder(on: index)
     }
     
     func deleteAllOrder() {
-        order.menuItems.removeAll()
+        order.deleteAllOrder()
+    }
+    
+    func restore(order: Order) {
+        self.order = order
+    }
+    
+    func updateUserActivity(with controller: StateRestorationController) {
+        switch controller {
+        case .menu(let category):
+            userActivity.menuCategory = category
+        case .menuItemDetail(let menuItem):
+            userActivity.menuItem = menuItem
+        case .order, .categories:
+            break
+        }
+        
+        userActivity.controllerIdentifier = controller.identifier
     }
     
     func submitOrder(forMenuIDs menuIDs: [Int]) async throws -> MinutesToPrepare {
@@ -60,12 +84,5 @@ class RestaurantController {
         let result = try await networkController.send(request: apiRequest)
         return result
     }
-    
-}
-
-// MARK: Notification Define Code
-extension RestaurantController {
-    
-    static let orderUpdateNotification = Notification.Name("RestaurantController.orderUpdated")
     
 }
