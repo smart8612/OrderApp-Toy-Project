@@ -62,6 +62,41 @@ extension SceneDelegate {
         if let restoredOrder = stateRestorationActivity.order {
             RestaurantController.shared.restore(order: restoredOrder)
         }
+        
+        guard let restorationController = StateRestorationController(userActivity: stateRestorationActivity),
+              let tabBarController = window?.rootViewController as? UITabBarController,
+                  tabBarController.viewControllers?.count == 2,
+              let categoryTableViewController = (tabBarController.viewControllers?.first as? UINavigationController)?.topViewController as? CategoryTableViewController else {
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        switch restorationController {
+        case .categories:
+            break
+        case .menu(let category):
+            let viewController = storyboard.instantiateViewController(identifier: "menu") {
+                return MenuTableViewController(coder: $0, category: category)
+            }
+            categoryTableViewController.navigationController?
+                .pushViewController(viewController, animated: true)
+        case .menuItemDetail(let menuItem):
+            let menuViewController = storyboard.instantiateViewController(identifier: "menu") {
+                return MenuTableViewController(coder: $0, category: menuItem.category)
+            }
+            let menuDetailViewController = storyboard.instantiateViewController(identifier: "menuItemDetail") {
+                return MenuItemDetailViewController(coder: $0, menuItem: menuItem)
+            }
+            categoryTableViewController.navigationController?
+                .pushViewController(menuViewController, animated: false)
+            categoryTableViewController.navigationController?
+                .pushViewController(menuDetailViewController, animated: false)
+        case .order:
+            tabBarController.selectedIndex = 1
+        }
+        
+        
     }
     
 }

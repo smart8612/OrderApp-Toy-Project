@@ -10,9 +10,32 @@ import Foundation
 enum StateRestorationController {
     
     enum Identifier: String {
-        
         case categories, menu, menuItemDetail, order
+    }
+    
+    init?(userActivity: NSUserActivity) {
+        guard let identifier = userActivity.controllerIdentifier else {
+            return nil
+        }
         
+        switch identifier {
+        case .categories:
+            self = .categories
+        case .menu:
+            if let category = userActivity.menuCategory {
+                self = .menu(category: category)
+            } else {
+                return nil
+            }
+        case .menuItemDetail:
+            if let menuItem = userActivity.menuItem {
+                self = .menuItemDetail(menuItem)
+            } else {
+                return nil
+            }
+        case .order:
+            self = .order
+        }
     }
     
     case categories
