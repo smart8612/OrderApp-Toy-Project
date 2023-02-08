@@ -201,8 +201,8 @@
 		C13258D52983A56A0058EB12 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
 				C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */,
+				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
 				C13258CF2983A1910058EB12 /* MenuTableViewController.swift */,
 				C13258D12983A19E0058EB12 /* OrderTableViewController.swift */,
 				C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */,

@@ -35,6 +35,7 @@ final class MenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        restaurantController.updateUserActivity(with: .menu(category: category))
     }
     
     private func configureUI() {

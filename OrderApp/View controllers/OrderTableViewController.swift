@@ -25,6 +25,7 @@ final class OrderTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        restaurantController.updateUserActivity(with: .order)
     }
     
     private func configureUI() {

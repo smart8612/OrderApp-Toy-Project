@@ -10,18 +10,19 @@ import UIKit
 @MainActor
 final class CategoryTableViewController: UITableViewController {
     
-    private let restautantController = RestaurantController.shared
+    private let restaurantController = RestaurantController.shared
     private var categories: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        restaurantController.updateUserActivity(with: .categories)
     }
     
     private func configureUI() {
         Task {
             do {
-                let categories = try await restautantController.fetchCategories()
+                let categories = try await restaurantController.fetchCategories()
                 updateUI(with: categories)
             } catch {
                 displayError(error, title: "Failed to Fetch Categories")

@@ -15,6 +15,7 @@ class RestaurantController {
     
     private let networkController = NetworkController()
     let userActivity = NSUserActivity(activityType: "com.tistory.singularis7.OrderApp.order")
+    
     private(set) var order = Order() {
         didSet {
             NotificationCenter.default.post(
@@ -45,6 +46,19 @@ class RestaurantController {
     
     func restore(order: Order) {
         self.order = order
+    }
+    
+    func updateUserActivity(with controller: StateRestorationController) {
+        switch controller {
+        case .menu(let category):
+            userActivity.menuCategory = category
+        case .menuItemDetail(let menuItem):
+            userActivity.menuItem = menuItem
+        case .order, .categories:
+            break
+        }
+        
+        userActivity.controllerIdentifier = controller.identifier
     }
     
     func submitOrder(forMenuIDs menuIDs: [Int]) async throws -> MinutesToPrepare {
