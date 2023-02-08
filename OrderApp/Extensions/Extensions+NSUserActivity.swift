@@ -11,7 +11,7 @@ extension NSUserActivity {
     
     var order: Order? {
         get {
-            guard let jsonData = userInfo?["order"] as? Data else {
+            guard let jsonData = userInfo?[Keys.order.rawValue] as? Data else {
                 return nil
             }
             
@@ -19,11 +19,58 @@ extension NSUserActivity {
         }
         set {
             if let newValue = newValue, let jsonData = try? JSONEncoder().encode(newValue) {
-                userInfo?["order"] = jsonData
+                userInfo?[Keys.order.rawValue] = jsonData
             } else {
-                userInfo?["order"] = nil
+                userInfo?[Keys.order.rawValue] = nil
             }
         }
+    }
+    
+    var controllerIdentifier: StateRestorationController.Identifier? {
+        get {
+            if let controllerIdentifierString = userInfo?[Keys.controllerIdentifier.rawValue] as? String {
+                return .init(rawValue: controllerIdentifierString)
+            } else {
+                return nil
+            }
+        }
+        set {
+            userInfo?[Keys.controllerIdentifier.rawValue] = newValue?.rawValue
+        }
+    }
+    
+    var menuCategory: String? {
+        get {
+            return userInfo?[Keys.menuCategory.rawValue] as? String
+        }
+        set {
+            userInfo?[Keys.menuCategory.rawValue] = newValue
+        }
+    }
+    
+    var menuItem: MenuItem? {
+        get {
+            guard let jsonData = userInfo?[Keys.menuItem.rawValue] as? Data else {
+                return nil
+            }
+            return try? JSONDecoder().decode(MenuItem.self, from: jsonData)
+        }
+        set {
+            if let newValue = newValue, let jsonData = try? JSONEncoder().encode(newValue) {
+                userInfo?[Keys.menuItem.rawValue] = jsonData
+            } else {
+                userInfo?[Keys.menuItem.rawValue] = nil
+            }
+        }
+    }
+    
+    enum Keys: String {
+        
+        case order
+        case controllerIdentifier
+        case menuCategory
+        case menuItem
+        
     }
     
 }
