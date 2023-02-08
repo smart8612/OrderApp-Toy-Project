@@ -51,6 +51,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+// MARK: State Restoration Handling Code
+extension SceneDelegate {
+    
+    func stateRestorationActivity(for scene: UIScene) -> NSUserActivity? {
+        return RestaurantController.shared.userActivity
+    }
+    
+    func scene(_ scene: UIScene, restoreInteractionStateWith stateRestorationActivity: NSUserActivity) {
+        if let restoredOrder = stateRestorationActivity.order {
+            RestaurantController.shared.restore(order: restoredOrder)
+        }
+    }
+    
+}
+
 // MARK: RootViewController Handling Code
 extension SceneDelegate: SceneHierarchyControllerDelegate {
     

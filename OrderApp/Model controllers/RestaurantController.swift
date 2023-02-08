@@ -14,12 +14,14 @@ class RestaurantController {
     static let shared = RestaurantController()
     
     private let networkController = NetworkController()
+    let userActivity = NSUserActivity(activityType: "com.tistory.singularis7.OrderApp.order")
     private(set) var order = Order() {
         didSet {
             NotificationCenter.default.post(
                 name: .orderUpdateNotification,
                 object: nil
             )
+            userActivity.order = order
         }
     }
     
@@ -39,6 +41,10 @@ class RestaurantController {
     
     func deleteAllOrder() {
         order.deleteAllOrder()
+    }
+    
+    func restore(order: Order) {
+        self.order = order
     }
     
     func submitOrder(forMenuIDs menuIDs: [Int]) async throws -> MinutesToPrepare {
