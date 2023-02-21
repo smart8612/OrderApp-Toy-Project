@@ -104,7 +104,7 @@
 		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
 		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
 		C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHierarchyControllerDelegate.swift; sourceTree = "<group>"; };
-		C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneHierarchyController.swift; path = OrderApp/SceneHierarchyController.swift; sourceTree = SOURCE_ROOT; };
+		C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneHierarchyController.swift; path = "OrderApp/Other controllers/SceneHierarchyController.swift"; sourceTree = SOURCE_ROOT; };
 		C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterController.swift; sourceTree = "<group>"; };
 		C19BFA2E298EA73700466739 /* NotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRequest.swift; sourceTree = "<group>"; };
 		C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationRequest.swift; sourceTree = "<group>"; };
@@ -163,20 +163,19 @@
 		C132589C298395ED0058EB12 /* OrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				C13258AB298395EE0058EB12 /* Info.plist */,
 				C132589D298395ED0058EB12 /* AppDelegate.swift */,
 				C132589F298395ED0058EB12 /* SceneDelegate.swift */,
-				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
-				C1D861DF2988E5F400BC3DC2 /* View */,
+				C13258A3298395ED0058EB12 /* Main.storyboard */,
+				C1D861DF2988E5F400BC3DC2 /* Views */,
 				C13258D52983A56A0058EB12 /* View controllers */,
 				C1344A54298BD686000E1D85 /* View models */,
-				C13258D82983A7B10058EB12 /* Models */,
 				C13258E72983C0E10058EB12 /* Model controllers */,
+				C18793A429A493D5004315C4 /* Other controllers */,
+				C13258D82983A7B10058EB12 /* Models */,
 				C13258E42983B67D0058EB12 /* Protocols */,
 				C17F37FA2984EBBB005F6B4D /* Extensions */,
-				C13258A3298395ED0058EB12 /* Main.storyboard */,
-				C13258A8298395EE0058EB12 /* LaunchScreen.storyboard */,
-				C13258A6298395EE0058EB12 /* Assets.xcassets */,
-				C13258AB298395EE0058EB12 /* Info.plist */,
+				C18793A529A4946B004315C4 /* Resources */,
 			);
 			path = OrderApp;
 			sourceTree = "<group>";
@@ -245,8 +244,6 @@
 		C13258E72983C0E10058EB12 /* Model controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */,
-				C13258E52983BBC40058EB12 /* NetworkController.swift */,
 				C13258F329842FFB0058EB12 /* RestaurantController.swift */,
 				C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */,
 			);
@@ -309,6 +306,25 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		C18793A429A493D5004315C4 /* Other controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
+				C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */,
+				C13258E52983BBC40058EB12 /* NetworkController.swift */,
+			);
+			path = "Other controllers";
+			sourceTree = "<group>";
+		};
+		C18793A529A4946B004315C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C13258A6298395EE0058EB12 /* Assets.xcassets */,
+				C13258A8298395EE0058EB12 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C19BFA30298F702F00466739 /* Notification models */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,12 +343,12 @@
 			path = "Network models";
 			sourceTree = "<group>";
 		};
-		C1D861DF2988E5F400BC3DC2 /* View */ = {
+		C1D861DF2988E5F400BC3DC2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

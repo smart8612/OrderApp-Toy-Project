@@ -26,7 +26,10 @@ final class OrderAppUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
+        app.navigationBars["My Order"].buttons["Submit"].tap()
+        app/*@START_MENU_TOKEN@*/.scrollViews/*[[".otherElements[\"Confirm Order\"].scrollViews",".scrollViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.otherElements.buttons["Submit"].tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Dismiss"]/*[[".buttons[\"Dismiss\"].staticTexts[\"Dismiss\"]",".staticTexts[\"Dismiss\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
