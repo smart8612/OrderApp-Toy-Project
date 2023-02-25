@@ -212,9 +212,7 @@
 		C13258D82983A7B10058EB12 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C13258D62983A7A40058EB12 /* MenuItem.swift */,
-				C13258E02983ADA80058EB12 /* Order.swift */,
-				C19BFA24298E4DF100466739 /* OrderConfirmation.swift */,
+				C18A7BD729A9F09E007093B1 /* Entities */,
 				C19BFA31298F705800466739 /* Network models */,
 				C19BFA30298F702F00466739 /* Notification models */,
 			);
@@ -323,6 +321,16 @@
 				C13258A8298395EE0058EB12 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C18A7BD729A9F09E007093B1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C13258D62983A7A40058EB12 /* MenuItem.swift */,
+				C13258E02983ADA80058EB12 /* Order.swift */,
+				C19BFA24298E4DF100466739 /* OrderConfirmation.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C19BFA30298F702F00466739 /* Notification models */ = {
