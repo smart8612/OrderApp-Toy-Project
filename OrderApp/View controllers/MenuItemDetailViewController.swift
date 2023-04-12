@@ -31,6 +31,10 @@ final class MenuItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         restaurantController.updateUserActivity(with: .menuItemDetail(menuItem))
     }
     

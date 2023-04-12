@@ -25,6 +25,9 @@ final class OrderTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         restaurantController.updateUserActivity(with: .order)
     }
     
