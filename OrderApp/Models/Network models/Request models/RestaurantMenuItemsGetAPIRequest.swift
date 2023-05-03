@@ -28,7 +28,7 @@ struct RestaurantMenuItemsGetAPIRequest: RestaurantAPIRequest {
         ]
         
         return urlComponent?.url
-    }   
+    }
     
     var urlRequest: URLRequest? {
         guard let menuURLWithQuery = menuURLWithQuery else {
