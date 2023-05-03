@@ -67,7 +67,7 @@
 
 #### Functional Asyncronous Programming
 
-* [[WWDC2019] Introducing to Combine][https://singularis7.tistory.com/98]
+* [[WWDC2019] Introducing to Combine](https://singularis7.tistory.com/98)
 
 #### Concurrency
 
