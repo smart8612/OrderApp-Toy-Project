@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct ImageGetAPIRequest: APIRequest {
+struct ImageGetAPIRequest: RestaurantAPIRequest {
     
     typealias Response = Data
     
-    let baseURL: String
+    let path: String
     
     private var imageURL: URL? {
-        var urlComponents = URLComponents(string: baseURL)
-        urlComponents?.port = 8080
-        return urlComponents?.url
+        guard var baseURL = baseURL else { return nil }
+        baseURL.appendPathComponent(path)
+        return baseURL
     }
     
     var urlRequest: URLRequest? {
