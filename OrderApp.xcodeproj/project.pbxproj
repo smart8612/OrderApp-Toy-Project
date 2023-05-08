@@ -36,6 +36,7 @@
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
 		C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C0299247D700442E5D /* NotificationCategory.swift */; };
 		C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */; };
+		C19A025A2A08C6F300E156B1 /* SettingsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */; };
 		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
 		C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */; };
 		C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */; };
@@ -101,6 +102,7 @@
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		C18727C0299247D700442E5D /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 		C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationCategory.swift; sourceTree = "<group>"; };
+		C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewController.swift; sourceTree = "<group>"; };
 		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
 		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
 		C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHierarchyControllerDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		C13258D52983A56A0058EB12 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */,
 				C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */,
 				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
 				C13258CF2983A1910058EB12 /* MenuTableViewController.swift */,
@@ -511,6 +514,7 @@
 				C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */,
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
 				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
+				C19A025A2A08C6F300E156B1 /* SettingsCollectionViewController.swift in Sources */,
 				C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */,
 				C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */,
 				C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */,
