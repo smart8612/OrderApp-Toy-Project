@@ -14,10 +14,8 @@ final class SceneHierarchyController {
     
     private weak var window: UIWindow?
     
-    private var orderUpdateSubscribe: Cancellable?
+    private var subscriptions: [Cancellable]?
     private weak var orderTabBarItem: UITabBarItem?
-    
-    private let settings = SettingsController()
     
     func configure(with delegate: SceneHierarchyControllerDelegate) {
         self.delegate = delegate
@@ -32,7 +30,7 @@ final class SceneHierarchyController {
     }
     
     private func configureGlobalUI() {
-        window?.overrideUserInterfaceStyle = settings.colorSchema
+        window?.overrideUserInterfaceStyle = UserDefaults.standard.colorSchema
     }
     
     private func configureTabBarUI() {
@@ -45,17 +43,23 @@ final class SceneHierarchyController {
     }
     
     private func subscribe() {
-        orderUpdateSubscribe = NotificationCenter.default.publisher(
-            for: .orderUpdateNotification,
-            object: nil
-        ).sink(receiveValue: { [weak self] _ in
-            let badgeValue = RestaurantController.shared.order.menuItems.count
-            self?.orderTabBarItem?.badgeValue = (badgeValue == 0) ? nil : String(badgeValue)
-        })
+        subscriptions = [
+            NotificationCenter.default.publisher(
+                for: .orderUpdateNotification
+            ).sink { [weak self] _ in
+                let badgeValue = RestaurantController.shared.order.menuItems.count
+                self?.orderTabBarItem?.badgeValue = (badgeValue == 0) ? nil : String(badgeValue)
+            },
+            NotificationCenter.default.publisher(
+                for: UserDefaults.didChangeNotification
+            ).sink { [weak self] _ in
+              self?.configureGlobalUI()
+            }
+        ]
     }
     
     private func unsubscribe() {
-        orderUpdateSubscribe?.cancel()
+        subscriptions?.forEach { $0.cancel() }
     }
     
     deinit {
