@@ -17,11 +17,22 @@ final class SceneHierarchyController {
     private var orderUpdateSubscribe: Cancellable?
     private weak var orderTabBarItem: UITabBarItem?
     
+    private let settings = SettingsController()
+    
     func configure(with delegate: SceneHierarchyControllerDelegate) {
         self.delegate = delegate
         window = self.delegate?.loadUIHirarchy()
-        configureTabBarUI()
+        configureUI()
         subscribe()
+    }
+    
+    private func configureUI() {
+        configureGlobalUI()
+        configureTabBarUI()
+    }
+    
+    private func configureGlobalUI() {
+        window?.overrideUserInterfaceStyle = settings.colorSchema
     }
     
     private func configureTabBarUI() {

@@ -37,6 +37,7 @@
 		C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C0299247D700442E5D /* NotificationCategory.swift */; };
 		C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */; };
 		C19A025A2A08C6F300E156B1 /* SettingsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */; };
+		C19A025F2A08D57100E156B1 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A025E2A08D57100E156B1 /* SettingsController.swift */; };
 		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
 		C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */; };
 		C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */; };
@@ -103,6 +104,7 @@
 		C18727C0299247D700442E5D /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 		C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationCategory.swift; sourceTree = "<group>"; };
 		C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewController.swift; sourceTree = "<group>"; };
+		C19A025E2A08D57100E156B1 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
 		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
 		C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHierarchyControllerDelegate.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 		C18793A429A493D5004315C4 /* Other controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C19A025E2A08D57100E156B1 /* SettingsController.swift */,
 				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
 				C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */,
 				C13258E52983BBC40058EB12 /* NetworkController.swift */,
@@ -511,6 +514,7 @@
 				C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */,
 				C13258E92983C29E0058EB12 /* RestaurantAPIRequest.swift in Sources */,
 				C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */,
+				C19A025F2A08D57100E156B1 /* SettingsController.swift in Sources */,
 				C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */,
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
 				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
