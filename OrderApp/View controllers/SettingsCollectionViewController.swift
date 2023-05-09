@@ -30,7 +30,7 @@ final class SettingsCollectionViewController: UICollectionViewController {
     }
     
     private func updateStatus() {
-        dataSource.apply(snapshot, animatingDifferences: false)
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
     
     private func configureUI() {
