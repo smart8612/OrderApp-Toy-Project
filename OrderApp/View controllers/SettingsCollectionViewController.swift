@@ -34,14 +34,17 @@ final class SettingsCollectionViewController: UICollectionViewController {
     }
     
     private func configureUI() {
-        let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        config.headerMode = .supplementary
+        config.footerMode = .supplementary
         let layout = UICollectionViewCompositionalLayout.list(using: config)
         collectionView.setCollectionViewLayout(layout, animated: false)
     }
     
     private func configureSubscriber() {
-        subscription = NotificationCenter.default.publisher(for: UserDefaults.didChangeNotification).sink {
-            [weak self] _ in
+        subscription = NotificationCenter.default.publisher(
+            for: UserDefaults.didChangeNotification
+        ).sink { [weak self] _ in
             self?.updateStatus()
         }
     }
@@ -57,21 +60,48 @@ final class SettingsCollectionViewController: UICollectionViewController {
         return snapshot
     }
     
-    private var cellRegistration = UICollectionView.CellRegistration<CheckableCollectionViewListCell, SettingsViewModel.Item<Int>> { (cell, indexPath, item) in
-        cell.title = item.title
-        cell.value = item.isChecked
-    }
-    
-    private lazy var dataSource = UICollectionViewDiffableDataSource<SettingsViewModel.Section, SettingsViewModel.Item<Int>>(collectionView: collectionView) { [weak self]
-        (collectionView, indexPath, item) -> UICollectionViewCell? in
-        guard let cellRegistration = self?.cellRegistration else { return nil }
-        return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-    }
+    private lazy var dataSource: UICollectionViewDiffableDataSource<SettingsViewModel.Section, SettingsViewModel.Item<Int>> = {
+        let dataSource = UICollectionViewDiffableDataSource<SettingsViewModel.Section, SettingsViewModel.Item<Int>>(
+            collectionView: collectionView
+        ) { (collectionView, indexPath, item) -> UICollectionViewCell? in
+            collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration, for: indexPath, item: item)
+        }
+        
+        dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
+            let currentSnapshot = dataSource.snapshot()
+            let section = currentSnapshot.sectionIdentifiers[indexPath.section]
+            
+            let cell = collectionView.dequeueConfiguredReusableSupplementary(
+                using: (kind == UICollectionView.elementKindSectionHeader) ? self.headerRegistration:self.footerRegistration,
+                for: indexPath
+            )
+            var contentConfig = cell.defaultContentConfiguration()
+            contentConfig.text = (kind == UICollectionView.elementKindSectionHeader) ? section.title:section.description
+            cell.contentConfiguration = contentConfig
+            
+            return cell
+        }
+        
+        return dataSource
+    }()
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         guard let schema = UIUserInterfaceStyle(rawValue: item.value) else { return }
         UserDefaults.standard.colorSchema = schema
     }
+    
+    private var cellRegistration = UICollectionView.CellRegistration<CheckableCollectionViewListCell, SettingsViewModel.Item<Int>> { (cell, indexPath, item) in
+        cell.title = item.title
+        cell.value = item.isChecked
+    }
+    
+    private var headerRegistration = UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(
+        elementKind: UICollectionView.elementKindSectionHeader
+        , handler: { (_, _, _) in })
+    
+    private var footerRegistration = UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(
+        elementKind: UICollectionView.elementKindSectionFooter
+        , handler: { (_, _, _) in })
 
 }
