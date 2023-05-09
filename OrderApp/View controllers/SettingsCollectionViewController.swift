@@ -30,7 +30,7 @@ final class SettingsCollectionViewController: UICollectionViewController {
     }
     
     private func updateStatus() {
-        dataSource.apply(snapshot)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
     
     private func configureUI() {
@@ -89,6 +89,7 @@ final class SettingsCollectionViewController: UICollectionViewController {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         guard let schema = UIUserInterfaceStyle(rawValue: item.value) else { return }
         UserDefaults.standard.colorSchema = schema
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
     
     private var cellRegistration = UICollectionView.CellRegistration<CheckableCollectionViewListCell, SettingsViewModel.Item<Int>> { (cell, indexPath, item) in
