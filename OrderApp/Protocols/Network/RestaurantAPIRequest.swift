@@ -16,7 +16,7 @@ protocol RestaurantAPIRequest: APIRequest {
 extension RestaurantAPIRequest {
     
     var baseURL: URL? {
-        URL(string: "http://localhost:8080/")
+        URL(string: "http://localhost:8080")
     }
     
 }
