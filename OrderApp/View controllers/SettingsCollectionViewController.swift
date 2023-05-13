@@ -33,12 +33,16 @@ final class SettingsCollectionViewController: UICollectionViewController {
         dataSource.apply(snapshot, animatingDifferences: true)
     }
     
-    private func configureUI() {
+    private func listLayout() -> UICollectionViewLayout {
         var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         config.headerMode = .supplementary
         config.footerMode = .supplementary
-        let layout = UICollectionViewCompositionalLayout.list(using: config)
-        collectionView.setCollectionViewLayout(layout, animated: false)
+        return UICollectionViewCompositionalLayout.list(using: config)
+    }
+    
+    private func configureUI() {
+        let listLayout = listLayout()
+        collectionView.setCollectionViewLayout(listLayout, animated: false)
     }
     
     private func configureSubscriber() {
