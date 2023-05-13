@@ -37,7 +37,6 @@
 		C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C0299247D700442E5D /* NotificationCategory.swift */; };
 		C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */; };
 		C19A025A2A08C6F300E156B1 /* SettingsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */; };
-		C19A02612A08E55200E156B1 /* CheckableCollectionViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A02602A08E55200E156B1 /* CheckableCollectionViewListCell.swift */; };
 		C19A02632A091C5800E156B1 /* Extensions+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A02622A091C5800E156B1 /* Extensions+UserDefaults.swift */; };
 		C19A02652A091E4B00E156B1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A02642A091E4B00E156B1 /* SettingsViewModel.swift */; };
 		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
@@ -47,6 +46,7 @@
 		C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */; };
 		C19BFA2F298EA73700466739 /* NotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2E298EA73700466739 /* NotificationRequest.swift */; };
 		C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */; };
+		C1BD78692A0F65D100D39718 /* AppearanceSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD78682A0F65D100D39718 /* AppearanceSettingController.swift */; };
 		C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */; };
 		C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */; };
 		C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */; };
@@ -106,7 +106,6 @@
 		C18727C0299247D700442E5D /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 		C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationCategory.swift; sourceTree = "<group>"; };
 		C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewController.swift; sourceTree = "<group>"; };
-		C19A02602A08E55200E156B1 /* CheckableCollectionViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckableCollectionViewListCell.swift; sourceTree = "<group>"; };
 		C19A02622A091C5800E156B1 /* Extensions+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UserDefaults.swift"; sourceTree = "<group>"; };
 		C19A02642A091E4B00E156B1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterController.swift; sourceTree = "<group>"; };
 		C19BFA2E298EA73700466739 /* NotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRequest.swift; sourceTree = "<group>"; };
 		C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationRequest.swift; sourceTree = "<group>"; };
+		C1BD78682A0F65D100D39718 /* AppearanceSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingController.swift; sourceTree = "<group>"; };
 		C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NSUserActivity.swift"; sourceTree = "<group>"; };
 		C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRestorationController.swift; sourceTree = "<group>"; };
@@ -318,6 +318,7 @@
 		C18793A429A493D5004315C4 /* Other controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C1BD786A2A0F670F00D39718 /* Setting controllers */,
 				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
 				C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */,
 				C13258E52983BBC40058EB12 /* NetworkController.swift */,
@@ -362,11 +363,18 @@
 			path = "Network models";
 			sourceTree = "<group>";
 		};
+		C1BD786A2A0F670F00D39718 /* Setting controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C1BD78682A0F65D100D39718 /* AppearanceSettingController.swift */,
+			);
+			path = "Setting controllers";
+			sourceTree = "<group>";
+		};
 		C1D861DF2988E5F400BC3DC2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */,
-				C19A02602A08E55200E156B1 /* CheckableCollectionViewListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -527,6 +535,7 @@
 				C19A025A2A08C6F300E156B1 /* SettingsCollectionViewController.swift in Sources */,
 				C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */,
 				C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */,
+				C1BD78692A0F65D100D39718 /* AppearanceSettingController.swift in Sources */,
 				C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */,
 				C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */,
 				C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */,
@@ -538,7 +547,6 @@
 				C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */,
 				C13258E62983BBC40058EB12 /* NetworkController.swift in Sources */,
 				C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */,
-				C19A02612A08E55200E156B1 /* CheckableCollectionViewListCell.swift in Sources */,
 				C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */,
 				C19A02632A091C5800E156B1 /* Extensions+UserDefaults.swift in Sources */,
 			);
