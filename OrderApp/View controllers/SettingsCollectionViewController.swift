@@ -40,10 +40,6 @@ final class SettingsCollectionViewController<ViewModelType: SettingPresentable>:
         configureSubscriber()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        subscription?.cancel()
-    }
-    
     private func configureSubscriber() {
         subscription = NotificationCenter.default.publisher(
             for: UserDefaults.didChangeNotification
@@ -80,10 +76,13 @@ final class SettingsCollectionViewController<ViewModelType: SettingPresentable>:
         
         if item.isGroup {
             settingDelegate?.provideSettingViewController(of: item) { item, vc in
+                guard let vc = vc else { return }
                 vc.title = item.title
                 vc.navigationItem.largeTitleDisplayMode = .never
                 navigationController?.pushViewController(vc, animated: true)
             }
+        } else {
+            settingDelegate?.action(for: item)
         }
         
         collectionView.deselectItem(at: indexPath, animated: true)

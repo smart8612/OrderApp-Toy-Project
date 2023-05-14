@@ -57,12 +57,15 @@ final class MainSettingsViewModel: SettingPresentable {
 extension MainSettingsViewModel: SettingPresentableDelegate {
     
     func provideSettingViewController(of item: any SettingItemPresentable,
-        presentAction: (any SettingItemPresentable, UIViewController) -> Void) {
+        presentAction: (any SettingItemPresentable, UIViewController?) -> Void) {
         if item as! MainSettingsViewModel.Item == items[0] {
             let viewModel = AppearanceSettingsViewModel()
             let viewController = SettingsCollectionViewController(viewModel: viewModel)
+            viewController.settingDelegate = viewModel
             presentAction(item, viewController)
         }
     }
+    
+    func action(for item: any SettingItemPresentable) { }
     
 }
