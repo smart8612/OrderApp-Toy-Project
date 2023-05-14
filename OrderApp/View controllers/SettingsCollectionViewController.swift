@@ -81,6 +81,7 @@ final class SettingsCollectionViewController<ViewModelType: SettingPresentable>:
         if item.isGroup {
             settingDelegate?.provideSettingViewController(of: item) { item, vc in
                 vc.title = item.title
+                vc.navigationItem.largeTitleDisplayMode = .never
                 navigationController?.pushViewController(vc, animated: true)
             }
         }

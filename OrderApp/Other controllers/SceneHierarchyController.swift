@@ -48,6 +48,7 @@ final class SceneHierarchyController {
         let settingVC = UINavigationController(rootViewController: settingTabVC)
         settingVC.title = "Setting"
         settingVC.navigationBar.prefersLargeTitles = true
+        settingVC.navigationItem.largeTitleDisplayMode = .automatic
         settingVC.tabBarItem?.image = UIImage(systemName: "gear")
         tabBarController.viewControllers?.append(settingVC)
     }
