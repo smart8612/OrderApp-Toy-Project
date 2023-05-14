@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 final class MainSettingsViewModel: SettingPresentable {
@@ -16,7 +17,7 @@ final class MainSettingsViewModel: SettingPresentable {
         [
             Item(
                 title: "Themes",
-                description: appearanceSettingController.currentColorSchema,
+                description: appearanceSettingController.currentColorSchemaDescription,
                 section: .general,
                 isGroup: true,
                 isChecked: false
@@ -54,6 +55,88 @@ final class MainSettingsViewModel: SettingPresentable {
     
 }
 
+extension MainSettingsViewModel: SettingPresentableDelegate {
+    
+    func provideSettingViewController(of item: any SettingItemPresentable,
+        presentAction: (any SettingItemPresentable, UIViewController) -> Void) {
+        if item as! MainSettingsViewModel.Item == items[0] {
+            let viewModel = AppearanceSettingsViewModel()
+            let viewController = SettingsCollectionViewController(viewModel: viewModel)
+            presentAction(item, viewController)
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+final class AppearanceSettingsViewModel: SettingPresentable {
+    
+    private var appearanceSettingController = AppearanceSettingController()
+    
+    var items: [Item] {
+        [
+            Item(
+                title: "System Default",
+                section: .theme,
+                isGroup: false,
+                isChecked: appearanceSettingController.isUnspecifiedColorSchema
+            ),
+            Item(
+                title: "Light Mode",
+                section: .theme,
+                isGroup: false,
+                isChecked: appearanceSettingController.isUnspecifiedColorSchema
+            ),
+            Item(
+                title: "Dark Mode",
+                section: .theme,
+                isGroup: false,
+                isChecked: appearanceSettingController.isUnspecifiedColorSchema
+            ),
+        ]
+    }
+    
+    enum Section: SettingSectionPresentable {
+        case theme
+        
+        var title: String? {
+            switch self {
+            case .theme:
+                return "Theme"
+            }
+        }
+        
+        var description: String? {
+            switch self {
+            case .theme:
+                return "Configure app's colot theme schema."
+            }
+        }
+    }
+    
+    struct Item: SettingItemPresentable {
+        
+        var title: String
+        var description: String?
+        var section: Section
+        
+        var isGroup: Bool
+        var isChecked: Bool
+        
+    }
+    
+}
 
 protocol SettingSectionPresentable: Hashable {
     
@@ -81,5 +164,12 @@ protocol SettingPresentable {
     associatedtype Item: SettingItemPresentable
     
     var items: [Item] { get }
+    
+}
+
+
+protocol SettingPresentableDelegate: AnyObject {
+    
+    func provideSettingViewController(of item: any SettingItemPresentable, presentAction: (any SettingItemPresentable, UIViewController) -> Void)
     
 }

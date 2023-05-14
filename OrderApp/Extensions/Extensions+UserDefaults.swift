@@ -19,18 +19,6 @@ extension UserDefaults {
         }
     }
     
-    var isUnspecifiedColorSchema: Bool {
-        colorSchema == .unspecified
-    }
-    
-    var isLightColorSchema: Bool {
-        colorSchema == .light
-    }
-    
-    var isDarkColorSchema: Bool {
-        colorSchema == .dark
-    }
-    
     enum Keys: String, CaseIterable {
         case colorSchema
     }

@@ -12,6 +12,7 @@ import Combine
 final class SettingsCollectionViewController<ViewModelType: SettingPresentable>: UICollectionViewController {
     
     private let viewModel: ViewModelType
+    weak var settingDelegate: (any SettingPresentableDelegate)?
     
     private var subscription: Cancellable?
     
@@ -64,9 +65,9 @@ final class SettingsCollectionViewController<ViewModelType: SettingPresentable>:
                 using: (kind == UICollectionView.elementKindSectionHeader) ? self.headerRegistration:self.footerRegistration,
                 for: indexPath
             )
-//            var contentConfig = cell.defaultContentConfiguration()
-//            contentConfig.text = (kind == UICollectionView.elementKindSectionHeader) ? section.title:section.description
-//            cell.contentConfiguration = contentConfig
+            var contentConfig = cell.defaultContentConfiguration()
+            contentConfig.text = (kind == UICollectionView.elementKindSectionHeader) ? section.title:section.description
+            cell.contentConfiguration = contentConfig
             
             return cell
         }
@@ -75,9 +76,15 @@ final class SettingsCollectionViewController<ViewModelType: SettingPresentable>:
     }()
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-//        guard let schema = UIUserInterfaceStyle(rawValue: item.value) else { return }
-//        UserDefaults.standard.colorSchema = schema
+        guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
+        
+        if item.isGroup {
+            settingDelegate?.provideSettingViewController(of: item) { item, vc in
+                vc.title = item.title
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
         collectionView.deselectItem(at: indexPath, animated: true)
     }
     
