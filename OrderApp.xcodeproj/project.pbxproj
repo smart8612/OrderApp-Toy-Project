@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C11795792A10C62F00ABF994 /* SettingPresentableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11795782A10C62F00ABF994 /* SettingPresentableDelegate.swift */; };
-		C117957D2A10C66B00ABF994 /* SettingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117957C2A10C66B00ABF994 /* SettingPresentable.swift */; };
-		C117957F2A10C68400ABF994 /* SettingItemPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117957E2A10C68400ABF994 /* SettingItemPresentable.swift */; };
-		C11795812A10C6B400ABF994 /* SettingSectionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11795802A10C6B400ABF994 /* SettingSectionPresentable.swift */; };
-		C11795852A10D04C00ABF994 /* AppearanceSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11795842A10D04C00ABF994 /* AppearanceSettingsViewModel.swift */; };
 		C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132589D298395ED0058EB12 /* AppDelegate.swift */; };
 		C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132589F298395ED0058EB12 /* SceneDelegate.swift */; };
 		C13258A5298395ED0058EB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13258A3298395ED0058EB12 /* Main.storyboard */; };
@@ -41,9 +36,6 @@
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
 		C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C0299247D700442E5D /* NotificationCategory.swift */; };
 		C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */; };
-		C19A025A2A08C6F300E156B1 /* SettingsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */; };
-		C19A02632A091C5800E156B1 /* Extensions+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A02622A091C5800E156B1 /* Extensions+UserDefaults.swift */; };
-		C19A02652A091E4B00E156B1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A02642A091E4B00E156B1 /* SettingsViewModel.swift */; };
 		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
 		C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */; };
 		C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */; };
@@ -51,15 +43,12 @@
 		C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */; };
 		C19BFA2F298EA73700466739 /* NotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2E298EA73700466739 /* NotificationRequest.swift */; };
 		C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */; };
-		C1BD78692A0F65D100D39718 /* AppearanceSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD78682A0F65D100D39718 /* AppearanceSettingController.swift */; };
 		C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */; };
 		C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */; };
 		C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */; };
 		C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */; };
 		C1D861E12988E60F00BC3DC2 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */; };
-		C1EE5CCD2A11F99D0067B475 /* SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EE5CCC2A11F99D0067B475 /* SettingPage.swift */; };
-		C1EE5CD02A11FA060067B475 /* MainSettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EE5CCF2A11FA060067B475 /* MainSettingPage.swift */; };
-		C1EE5CD22A11FA250067B475 /* AppearanceSettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EE5CD12A11FA250067B475 /* AppearanceSettingPage.swift */; };
+		C1EE5CD62A1210990067B475 /* SettingKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1EE5CD52A1210990067B475 /* SettingKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,11 +69,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C11795782A10C62F00ABF994 /* SettingPresentableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresentableDelegate.swift; sourceTree = "<group>"; };
-		C117957C2A10C66B00ABF994 /* SettingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresentable.swift; sourceTree = "<group>"; };
-		C117957E2A10C68400ABF994 /* SettingItemPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemPresentable.swift; sourceTree = "<group>"; };
-		C11795802A10C6B400ABF994 /* SettingSectionPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSectionPresentable.swift; sourceTree = "<group>"; };
-		C11795842A10D04C00ABF994 /* AppearanceSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsViewModel.swift; sourceTree = "<group>"; };
 		C132589A298395ED0058EB12 /* OrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132589D298395ED0058EB12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C132589F298395ED0058EB12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,9 +102,6 @@
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		C18727C0299247D700442E5D /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 		C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationCategory.swift; sourceTree = "<group>"; };
-		C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewController.swift; sourceTree = "<group>"; };
-		C19A02622A091C5800E156B1 /* Extensions+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UserDefaults.swift"; sourceTree = "<group>"; };
-		C19A02642A091E4B00E156B1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
 		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
 		C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHierarchyControllerDelegate.swift; sourceTree = "<group>"; };
@@ -128,15 +109,11 @@
 		C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterController.swift; sourceTree = "<group>"; };
 		C19BFA2E298EA73700466739 /* NotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRequest.swift; sourceTree = "<group>"; };
 		C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationRequest.swift; sourceTree = "<group>"; };
-		C1BD78682A0F65D100D39718 /* AppearanceSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingController.swift; sourceTree = "<group>"; };
 		C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NSUserActivity.swift"; sourceTree = "<group>"; };
 		C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRestorationController.swift; sourceTree = "<group>"; };
 		C1D861DD2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGetAPIRequest.swift; sourceTree = "<group>"; };
 		C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
-		C1EE5CCC2A11F99D0067B475 /* SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPage.swift; sourceTree = "<group>"; };
-		C1EE5CCF2A11FA060067B475 /* MainSettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingPage.swift; sourceTree = "<group>"; };
-		C1EE5CD12A11FA250067B475 /* AppearanceSettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EE5CD62A1210990067B475 /* SettingKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,15 +142,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C11795862A10D19900ABF994 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				C19A02642A091E4B00E156B1 /* SettingsViewModel.swift */,
-				C11795842A10D04C00ABF994 /* AppearanceSettingsViewModel.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		C1325891298395ED0058EB12 = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +202,6 @@
 		C13258D52983A56A0058EB12 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C19A02592A08C6F300E156B1 /* SettingsCollectionViewController.swift */,
 				C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */,
 				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
 				C13258CF2983A1910058EB12 /* MenuTableViewController.swift */,
@@ -249,7 +217,6 @@
 				C18A7BD729A9F09E007093B1 /* Entities */,
 				C19BFA31298F705800466739 /* Network models */,
 				C19BFA30298F702F00466739 /* Notification models */,
-				C1EE5CCE2A11F9F00067B475 /* Setting models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,7 +234,6 @@
 		C13258E42983B67D0058EB12 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C1EE5CCB2A11F7D20067B475 /* Settings */,
 				C18727BD2992470400442E5D /* Delegate */,
 				C18727BE2992471100442E5D /* Network */,
 				C18727BF2992471C00442E5D /* Notification */,
@@ -299,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */,
-				C11795862A10D19900ABF994 /* Settings */,
 			);
 			path = "View models";
 			sourceTree = "<group>";
@@ -311,7 +276,6 @@
 				C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */,
 				C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */,
 				C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */,
-				C19A02622A091C5800E156B1 /* Extensions+UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,7 +309,6 @@
 		C18793A429A493D5004315C4 /* Other controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C1BD786A2A0F670F00D39718 /* Settings */,
 				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
 				C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */,
 				C13258E52983BBC40058EB12 /* NetworkController.swift */,
@@ -390,41 +353,12 @@
 			path = "Network models";
 			sourceTree = "<group>";
 		};
-		C1BD786A2A0F670F00D39718 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				C1BD78682A0F65D100D39718 /* AppearanceSettingController.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		C1D861DF2988E5F400BC3DC2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		C1EE5CCB2A11F7D20067B475 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				C11795782A10C62F00ABF994 /* SettingPresentableDelegate.swift */,
-				C117957C2A10C66B00ABF994 /* SettingPresentable.swift */,
-				C11795802A10C6B400ABF994 /* SettingSectionPresentable.swift */,
-				C117957E2A10C68400ABF994 /* SettingItemPresentable.swift */,
-				C1EE5CCC2A11F99D0067B475 /* SettingPage.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		C1EE5CCE2A11F9F00067B475 /* Setting models */ = {
-			isa = PBXGroup;
-			children = (
-				C1EE5CCF2A11FA060067B475 /* MainSettingPage.swift */,
-				C1EE5CD12A11FA250067B475 /* AppearanceSettingPage.swift */,
-			);
-			path = "Setting models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +377,9 @@
 			dependencies = (
 			);
 			name = OrderApp;
+			packageProductDependencies = (
+				C1EE5CD52A1210990067B475 /* SettingKit */,
+			);
 			productName = OrderApp;
 			productReference = C132589A298395ED0058EB12 /* OrderApp.app */;
 			productType = "com.apple.product-type.application";
@@ -515,6 +452,9 @@
 				Base,
 			);
 			mainGroup = C1325891298395ED0058EB12;
+			packageReferences = (
+				C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */,
+			);
 			productRefGroup = C132589B298395ED0058EB12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -560,37 +500,27 @@
 			files = (
 				C13258D72983A7A40058EB12 /* MenuItem.swift in Sources */,
 				C13258DA2983AB5A0058EB12 /* MenuResponse.swift in Sources */,
-				C1EE5CD02A11FA060067B475 /* MainSettingPage.swift in Sources */,
 				C13258D02983A1910058EB12 /* MenuTableViewController.swift in Sources */,
 				C1D861E12988E60F00BC3DC2 /* MenuItemTableViewCell.swift in Sources */,
 				C13258DC2983ABE70058EB12 /* CategoriesResponse.swift in Sources */,
 				C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */,
 				C13258E12983ADA80058EB12 /* Order.swift in Sources */,
 				C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */,
-				C11795812A10C6B400ABF994 /* SettingSectionPresentable.swift in Sources */,
-				C19A02652A091E4B00E156B1 /* SettingsViewModel.swift in Sources */,
 				C19BFA2F298EA73700466739 /* NotificationRequest.swift in Sources */,
-				C1EE5CCD2A11F99D0067B475 /* SettingPage.swift in Sources */,
 				C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */,
 				C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */,
-				C117957D2A10C66B00ABF994 /* SettingPresentable.swift in Sources */,
 				C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */,
 				C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */,
 				C13258EC2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift in Sources */,
 				C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */,
-				C117957F2A10C68400ABF994 /* SettingItemPresentable.swift in Sources */,
 				C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */,
 				C13258E92983C29E0058EB12 /* RestaurantAPIRequest.swift in Sources */,
 				C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */,
 				C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */,
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
-				C1EE5CD22A11FA250067B475 /* AppearanceSettingPage.swift in Sources */,
 				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
-				C19A025A2A08C6F300E156B1 /* SettingsCollectionViewController.swift in Sources */,
 				C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */,
-				C11795852A10D04C00ABF994 /* AppearanceSettingsViewModel.swift in Sources */,
 				C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */,
-				C1BD78692A0F65D100D39718 /* AppearanceSettingController.swift in Sources */,
 				C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */,
 				C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */,
 				C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */,
@@ -599,12 +529,10 @@
 				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,
 				C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */,
 				C13258E32983B60E0058EB12 /* APIRequest.swift in Sources */,
-				C11795792A10C62F00ABF994 /* SettingPresentableDelegate.swift in Sources */,
 				C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */,
 				C13258E62983BBC40058EB12 /* NetworkController.swift in Sources */,
 				C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */,
 				C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */,
-				C19A02632A091C5800E156B1 /* Extensions+UserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +876,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/smart8612/SettingKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1EE5CD52A1210990067B475 /* SettingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */;
+			productName = SettingKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C1325892298395ED0058EB12 /* Project object */;
 }
