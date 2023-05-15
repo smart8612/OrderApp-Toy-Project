@@ -5,7 +5,8 @@
 //  Created by JeongTaek Han on 2023/05/14.
 //
 
-import UIKit
+import Foundation
+
 
 final class AppearanceSettingsViewModel: SettingPresentable {
     
@@ -67,12 +68,13 @@ final class AppearanceSettingsViewModel: SettingPresentable {
 
 extension AppearanceSettingsViewModel: SettingPresentableDelegate {
     
-    func provideSettingViewController(of item: any SettingItemPresentable, presentAction: (any SettingItemPresentable, UIViewController?) -> Void) {
-        presentAction(item, nil)
+    func provideSettingViewController(of item: any SettingItemPresentable, presentAction: ((any SettingPage)?) -> Void) {
+        presentAction(nil)
     }
     
     func action(for item: any SettingItemPresentable) {
         guard let item = item as? AppearanceSettingsViewModel.Item else { return }
+        let items = items
         
         if item == items[0] {
             appearanceSettingController.changeColorSchema(to: .unspecified)

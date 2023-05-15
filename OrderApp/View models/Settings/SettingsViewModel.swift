@@ -5,7 +5,7 @@
 //  Created by JeongTaek Han on 2023/05/08.
 //
 
-import UIKit
+import Foundation
 
 
 final class MainSettingsViewModel: SettingPresentable {
@@ -56,13 +56,9 @@ final class MainSettingsViewModel: SettingPresentable {
 
 extension MainSettingsViewModel: SettingPresentableDelegate {
     
-    func provideSettingViewController(of item: any SettingItemPresentable,
-        presentAction: (any SettingItemPresentable, UIViewController?) -> Void) {
+    func provideSettingViewController(of item: any SettingItemPresentable, presentAction: ((any SettingPage)?) -> Void) {
         if item as! MainSettingsViewModel.Item == items[0] {
-            let viewModel = AppearanceSettingsViewModel()
-            let viewController = SettingsCollectionViewController(viewModel: viewModel)
-            viewController.settingDelegate = viewModel
-            presentAction(item, viewController)
+            presentAction(AppearanceSettingPage())
         }
     }
     

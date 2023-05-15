@@ -75,11 +75,11 @@ final class SettingsCollectionViewController<ViewModelType: SettingPresentable>:
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         
         if item.isGroup {
-            settingDelegate?.provideSettingViewController(of: item) { item, vc in
-                guard let vc = vc else { return }
-                vc.title = item.title
-                vc.navigationItem.largeTitleDisplayMode = .never
-                navigationController?.pushViewController(vc, animated: true)
+            settingDelegate?.provideSettingViewController(of: item) { settingPage in
+                guard let settingPage = settingPage else { return }
+                let viewController = settingPage.viewController
+                viewController.navigationItem.largeTitleDisplayMode = .never
+                navigationController?.pushViewController(viewController, animated: true)
             }
         } else {
             settingDelegate?.action(for: item)

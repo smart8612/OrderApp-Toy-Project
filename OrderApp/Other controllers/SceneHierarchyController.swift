@@ -45,19 +45,13 @@ final class SceneHierarchyController {
     }
     
     private func configureSetting(on tabBarController: UITabBarController) {
-        let settingVC = UINavigationController(rootViewController: settingTabVC)
-        settingVC.title = "Setting"
-        settingVC.navigationBar.prefersLargeTitles = true
-        settingVC.navigationItem.largeTitleDisplayMode = .automatic
-        settingVC.tabBarItem?.image = UIImage(systemName: "gear")
-        tabBarController.viewControllers?.append(settingVC)
+        settingViewController.tabBarItem?.image = UIImage(systemName: "gear")
+        tabBarController.viewControllers?.append(settingViewController)
     }
     
-    private let settingTabVC: SettingsCollectionViewController<MainSettingsViewModel> = {
-        let viewModel = MainSettingsViewModel()
-        let viewController = SettingsCollectionViewController(viewModel: viewModel)
-        viewController.settingDelegate = viewModel
-        viewController.title = "Setting"
+    private lazy var settingViewController: UIViewController = {
+        let mainSettingPage = MainSettingPage()
+        let viewController = mainSettingPage.viewControllerEmbeddedInNavigationController
         return viewController
     }()
     
