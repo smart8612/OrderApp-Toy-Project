@@ -34,9 +34,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="AoW-s7-Bqf" kind="show" destinationCreationSelector="showMenu:sender:" id="dEJ-gz-SGf"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -45,6 +42,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Restaurant" id="bAL-ic-N0f"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="LXa-sU-cIL">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Refreshing">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
+                    <connections>
+                        <segue destination="AoW-s7-Bqf" kind="show" identifier="showMenuSegue" destinationCreationSelector="showMenu:sender:" id="IEs-wd-Zsj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJw-ea-gGg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

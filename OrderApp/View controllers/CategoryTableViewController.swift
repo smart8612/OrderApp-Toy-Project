@@ -7,7 +7,7 @@
 
 import UIKit
 
-@MainActor
+
 final class CategoryTableViewController: UITableViewController {
     
     private let restaurantController = RestaurantController.shared
@@ -15,43 +15,70 @@ final class CategoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
+        register()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateUI()
+    }
+    
+    @IBSegueAction func showMenu(_ coder: NSCoder, sender: Any?) -> MenuTableViewController? {
+        guard let category = sender as? String else { return nil }
+        return MenuTableViewController(coder: coder, category: category)
+    }
+    
+}
+
+// MARK: Register Handling function
+extension CategoryTableViewController {
+    
+    private func register() {
+        registerStateRestoration()
+        registerTargetAction()
+    }
+    
+    private func registerStateRestoration() {
         restaurantController.updateUserActivity(with: .categories)
     }
     
-    private func configureUI() {
+    private func registerTargetAction() {
+        refreshControl?.addTarget(self, action: #selector(updateUI), for: .valueChanged)
+    }
+    
+}
+
+// MARK: Presentation Handling function
+extension CategoryTableViewController {
+    
+    @objc
+    private func updateUI() {
         Task {
             do {
                 let categories = try await restaurantController.fetchCategories()
-                updateUI(with: categories)
+                applyUI(with: categories)
             } catch {
                 displayError(error, title: "Failed to Fetch Categories")
             }
+            refreshControl?.endRefreshing()
         }
     }
     
-    private func updateUI(with categories: [String]) {
+    private func applyUI(with categories: [String]) {
         self.categories = categories
         tableView.reloadData()
-    }
-    
-    @IBSegueAction private func showMenu(_ coder: NSCoder, sender: Any?) -> MenuTableViewController? {
-        guard let cell = sender as? UITableViewCell,
-              let indexPath = self.tableView.indexPath(for: cell) else {
-                  return nil
-              }
-        let category = categories[indexPath.row]
-        return MenuTableViewController(coder: coder, category: category)
     }
     
 }
 
 // MARK: TableView & DataSource Handling Code
 extension CategoryTableViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        performSegue(withIdentifier: SegueKeys.showMenuSegue.id, sender: category)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -72,6 +99,14 @@ extension CategoryTableViewController {
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = category.capitalized
         cell.contentConfiguration = contentConfiguration
+    }
+    
+    private enum SegueKeys: String {
+        case showMenuSegue
+        
+        var id: String {
+            self.rawValue
+        }
     }
     
 }
