@@ -15,11 +15,12 @@ final class CategoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        register()
+        registerTargetAction()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        registerStateRestoration()
         updateUI()
     }
     
@@ -32,11 +33,6 @@ final class CategoryTableViewController: UITableViewController {
 
 // MARK: Register Handling function
 extension CategoryTableViewController {
-    
-    private func register() {
-        registerStateRestoration()
-        registerTargetAction()
-    }
     
     private func registerStateRestoration() {
         restaurantController.updateUserActivity(with: .categories)
@@ -76,7 +72,7 @@ extension CategoryTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = categories[indexPath.row]
-        performSegue(withIdentifier: SegueKeys.showMenuSegue.id, sender: category)
+        performSegue(withIdentifier: Keys.showMenuSegue.id, sender: category)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -101,7 +97,7 @@ extension CategoryTableViewController {
         cell.contentConfiguration = contentConfiguration
     }
     
-    private enum SegueKeys: String {
+    private enum Keys: String {
         case showMenuSegue
         
         var id: String {
