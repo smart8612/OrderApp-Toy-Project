@@ -110,6 +110,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="bH4-pQ-LF0"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="c84-YR-ne5">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle">
                             <fragment content="Refreshing">
@@ -244,7 +245,7 @@
                     <navigationItem key="navigationItem" title="My Order" id="IHE-8Y-vUf">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="Gex-Lx-KBg">
                             <connections>
-                                <action selector="submitTapped:" destination="QSO-hQ-gAB" id="ctq-3p-rka"/>
+                                <action selector="submitButtonTapped:" destination="QSO-hQ-gAB" id="ctq-3p-rka"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
