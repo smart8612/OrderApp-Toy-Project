@@ -8,18 +8,19 @@
 import UIKit
 import Combine
 
+
 final class OrderConfirmationViewController: UIViewController {
+    
+    private let viewModel: OrderConfirmationViewModel
     
     @IBOutlet private weak var confirmationLabel: UILabel?
     @IBOutlet private weak var timeProgressiveView: UIProgressView?
     
-    private let viewModel: OrderConfirmationViewModel
-    private var viewModelSubscribe: Cancellable?
-    
-    private var subscribes: [Cancellable] = []
+    private var subscriprions: [Cancellable] = []
     
     required init?(coder: NSCoder, minutesToPrepare: Int) {
-        self.viewModel = OrderConfirmationViewModel(minutesToPrepare: minutesToPrepare)
+        self.viewModel = OrderConfirmationViewModel(
+            minutesToPrepare: minutesToPrepare)
         super.init(coder: coder)
     }
     
@@ -29,37 +30,61 @@ final class OrderConfirmationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSubscription()
-        updateUI(with: viewModel.minutesToPrepare, progress: .zero)
+        registerSubscription()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateUI()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        subscribes.forEach { $0.cancel() }
+        super.viewDidDisappear(animated)
+        cancelSubscription()
     }
     
-    private func configureSubscription() {
+}
+
+// MARK: Presentation Handling function
+extension OrderConfirmationViewController {
+    
+    private func updateUI() {
+        let remainRatio = viewModel.remainTimeRatio
+        let minutesToPrepare = viewModel.minutesToPrepare
+        applyUI(with: minutesToPrepare, progress: remainRatio)
+    }
+    
+    private func applyUI(with remainTime: Int, progress: Float) {
+        confirmationLabel?.text = """
+        Thank you for your order! Your wait time is approximately \(remainTime) minutes.
+        """
+        timeProgressiveView?.setProgress(progress, animated: true)
+    }
+    
+}
+
+// MARK: Subscription Handling function
+extension OrderConfirmationViewController {
+    
+    private func registerSubscription() {
         let viewModelSubscribe = viewModel.objectWillChange
             .sink { [weak self] _ in
-                self?.reloadUI()
+                self?.updateUI()
             }
         
         let sceneSubscribe = NotificationCenter.default.publisher(for: UIScene.didActivateNotification)
             .sink { [weak self] _ in
-                self?.reloadUI()
+                self?.updateUI()
             }
         
-        subscribes.append(contentsOf: [viewModelSubscribe, sceneSubscribe])
+        subscriprions.append(contentsOf: [
+            viewModelSubscribe,
+            sceneSubscribe
+        ])
     }
     
-    private func reloadUI() {
-        let remainRatio = viewModel.remainTimeRatio
-        let minutesToPrepare = viewModel.minutesToPrepare
-        updateUI(with: minutesToPrepare, progress: remainRatio)
-    }
-    
-    private func updateUI(with remainTime: Int, progress: Float) {
-        confirmationLabel?.text = "Thank you for your order! Your wait time is approximately \(remainTime) minutes."
-        timeProgressiveView?.setProgress(progress, animated: true)
+    private func cancelSubscription() {
+        subscriprions.forEach { $0.cancel() }
     }
     
 }
