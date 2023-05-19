@@ -48,7 +48,7 @@
                         <attributedString key="attributedTitle">
                             <fragment content="Refreshing">
                                 <attributes>
-                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <font key="NSFont" size="11" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -109,6 +109,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="bH4-pQ-LF0"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="c84-YR-ne5">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Refreshing">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6N7-ob-ojP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
