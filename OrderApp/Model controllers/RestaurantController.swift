@@ -12,7 +12,7 @@ final class RestaurantController {
     
     static let shared = RestaurantController()
     
-    let userActivity = NSUserActivity(activityType: "com.tistory.singularis7.OrderApp.order")
+    private init() {}
     
     private(set) var order = Order() {
         didSet {
@@ -23,8 +23,6 @@ final class RestaurantController {
             userActivity.order = order
         }
     }
-    
-    private init() {}
     
     var totalAmount: Double {
         order.totalAmount
@@ -46,19 +44,8 @@ final class RestaurantController {
         self.order = order
     }
     
-    func updateUserActivity(with controller: StateRestorationController) {
-        switch controller {
-        case .menu(let category):
-            userActivity.menuCategory = category
-        case .menuItemDetail(let menuItem):
-            userActivity.menuItem = menuItem
-        case .order, .categories:
-            break
-        }
-        
-        userActivity.controllerIdentifier = controller.identifier
-    }
-    
 }
 
 extension RestaurantController: RestaurantAPIFetchable { }
+
+extension RestaurantController: OrderStateRestorable { }

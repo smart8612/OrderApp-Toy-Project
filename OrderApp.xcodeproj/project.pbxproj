@@ -34,6 +34,7 @@
 		C1855D9D2A187A0B003BC34F /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1855D9C2A187A0B003BC34F /* NetworkKit */; };
 		C1855DA02A1889A7003BC34F /* UserNotificationKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1855D9F2A1889A7003BC34F /* UserNotificationKit */; };
 		C1855DA22A1897EE003BC34F /* RestaurantAPIFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1855DA12A1897EE003BC34F /* RestaurantAPIFetchable.swift */; };
+		C1855DA42A189A7C003BC34F /* OrderStateRestorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1855DA32A189A7C003BC34F /* OrderStateRestorable.swift */; };
 		C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */; };
 		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
 		C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */; };
@@ -95,6 +96,7 @@
 		C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewModel.swift; sourceTree = "<group>"; };
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		C1855DA12A1897EE003BC34F /* RestaurantAPIFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAPIFetchable.swift; sourceTree = "<group>"; };
+		C1855DA32A189A7C003BC34F /* OrderStateRestorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStateRestorable.swift; sourceTree = "<group>"; };
 		C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationCategory.swift; sourceTree = "<group>"; };
 		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
 		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				C18727BD2992470400442E5D /* Delegate */,
 				C18727BE2992471100442E5D /* Network */,
+				C1855DA32A189A7C003BC34F /* OrderStateRestorable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */,
 				C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */,
 				C13258EC2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift in Sources */,
+				C1855DA42A189A7C003BC34F /* OrderStateRestorable.swift in Sources */,
 				C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */,
 				C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */,
 				C13258E92983C29E0058EB12 /* RestaurantAPIRequest.swift in Sources */,
