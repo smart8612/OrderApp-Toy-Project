@@ -32,14 +32,12 @@
 		C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */; };
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
 		C1855D9D2A187A0B003BC34F /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1855D9C2A187A0B003BC34F /* NetworkKit */; };
-		C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C0299247D700442E5D /* NotificationCategory.swift */; };
+		C1855DA02A1889A7003BC34F /* UserNotificationKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1855D9F2A1889A7003BC34F /* UserNotificationKit */; };
 		C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */; };
 		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
 		C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */; };
 		C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */; };
 		C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */; };
-		C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */; };
-		C19BFA2F298EA73700466739 /* NotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2E298EA73700466739 /* NotificationRequest.swift */; };
 		C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */; };
 		C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */; };
 		C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */; };
@@ -95,14 +93,11 @@
 		C13258F329842FFB0058EB12 /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
 		C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewModel.swift; sourceTree = "<group>"; };
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
-		C18727C0299247D700442E5D /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 		C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationCategory.swift; sourceTree = "<group>"; };
 		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
 		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
 		C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHierarchyControllerDelegate.swift; sourceTree = "<group>"; };
 		C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneHierarchyController.swift; path = "OrderApp/Other controllers/SceneHierarchyController.swift"; sourceTree = SOURCE_ROOT; };
-		C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterController.swift; sourceTree = "<group>"; };
-		C19BFA2E298EA73700466739 /* NotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRequest.swift; sourceTree = "<group>"; };
 		C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationRequest.swift; sourceTree = "<group>"; };
 		C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NSUserActivity.swift"; sourceTree = "<group>"; };
@@ -116,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1855DA02A1889A7003BC34F /* UserNotificationKit in Frameworks */,
 				C1855D9D2A187A0B003BC34F /* NetworkKit in Frameworks */,
 				C1EE5CD62A1210990067B475 /* SettingKit in Frameworks */,
 			);
@@ -232,7 +228,6 @@
 			children = (
 				C18727BD2992470400442E5D /* Delegate */,
 				C18727BE2992471100442E5D /* Network */,
-				C18727BF2992471C00442E5D /* Notification */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -291,20 +286,10 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		C18727BF2992471C00442E5D /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				C19BFA2E298EA73700466739 /* NotificationRequest.swift */,
-				C18727C0299247D700442E5D /* NotificationCategory.swift */,
-			);
-			path = Notification;
-			sourceTree = "<group>";
-		};
 		C18793A429A493D5004315C4 /* Other controllers */ = {
 			isa = PBXGroup;
 			children = (
 				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
-				C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */,
 			);
 			path = "Other controllers";
 			sourceTree = "<group>";
@@ -373,6 +358,7 @@
 			packageProductDependencies = (
 				C1EE5CD52A1210990067B475 /* SettingKit */,
 				C1855D9C2A187A0B003BC34F /* NetworkKit */,
+				C1855D9F2A1889A7003BC34F /* UserNotificationKit */,
 			);
 			productName = OrderApp;
 			productReference = C132589A298395ED0058EB12 /* OrderApp.app */;
@@ -449,6 +435,7 @@
 			packageReferences = (
 				C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */,
 				C1855D9B2A187A0B003BC34F /* XCRemoteSwiftPackageReference "NetworkKit" */,
+				C1855D9E2A1889A7003BC34F /* XCRemoteSwiftPackageReference "UserNotificationKit" */,
 			);
 			productRefGroup = C132589B298395ED0058EB12 /* Products */;
 			projectDirPath = "";
@@ -501,7 +488,6 @@
 				C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */,
 				C13258E12983ADA80058EB12 /* Order.swift in Sources */,
 				C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */,
-				C19BFA2F298EA73700466739 /* NotificationRequest.swift in Sources */,
 				C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */,
 				C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */,
 				C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */,
@@ -514,14 +500,12 @@
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
 				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
 				C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */,
-				C19BFA2D298E903600466739 /* UserNotificationCenterController.swift in Sources */,
 				C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */,
 				C1D861DE2988CBFB00BC3DC2 /* ImageGetAPIRequest.swift in Sources */,
 				C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */,
 				C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */,
 				C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */,
 				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,
-				C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */,
 				C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */,
 				C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */,
 				C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */,
@@ -878,6 +862,14 @@
 				kind = branch;
 			};
 		};
+		C1855D9E2A1889A7003BC34F /* XCRemoteSwiftPackageReference "UserNotificationKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/smart8612/UserNotificationKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/smart8612/SettingKit";
@@ -893,6 +885,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C1855D9B2A187A0B003BC34F /* XCRemoteSwiftPackageReference "NetworkKit" */;
 			productName = NetworkKit;
+		};
+		C1855D9F2A1889A7003BC34F /* UserNotificationKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1855D9E2A1889A7003BC34F /* XCRemoteSwiftPackageReference "UserNotificationKit" */;
+			productName = UserNotificationKit;
 		};
 		C1EE5CD52A1210990067B475 /* SettingKit */ = {
 			isa = XCSwiftPackageProductDependency;

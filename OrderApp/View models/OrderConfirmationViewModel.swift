@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UserNotificationKit
 
 final class OrderConfirmationViewModel: ObservableObject {
     
