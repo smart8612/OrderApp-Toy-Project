@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import NetworkKit
 
 final class RestaurantController {
     
@@ -14,34 +13,26 @@ final class RestaurantController {
     
     private init() {}
     
-    private(set) var order = Order() {
+    var order = Order() {
         didSet {
-            NotificationCenter.default.post(
-                name: .orderUpdateNotification,
-                object: nil
-            )
-            userActivity.order = order
+            postOrderUpdateNotification()
+            updateOrderState()
         }
-    }
-    
-    var totalAmount: Double {
-        order.totalAmount
-    }
-    
-    func addOrder(with menuItem: MenuItem) {
-        order.addOrder(with: menuItem)
-    }
-    
-    func deleteOrder(with index: Int) {
-        order.deleteOrder(on: index)
-    }
-    
-    func deleteAllOrder() {
-        order.deleteAllOrder()
     }
     
     func restore(order: Order) {
         self.order = order
+    }
+    
+    private func postOrderUpdateNotification() {
+        NotificationCenter.default.post(
+            name: .orderUpdateNotification,
+            object: nil
+        )
+    }
+    
+    private func updateOrderState() {
+        userActivity.order = order
     }
     
 }

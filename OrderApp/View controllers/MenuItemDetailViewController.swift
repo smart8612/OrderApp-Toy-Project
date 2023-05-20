@@ -50,7 +50,7 @@ final class MenuItemDetailViewController: UIViewController {
             self.addToOrderButton?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
         
-        restaurantController.addOrder(with: menuItem)
+        restaurantController.order.addOrder(with: menuItem)
     }
     
 }

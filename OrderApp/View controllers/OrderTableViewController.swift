@@ -13,7 +13,7 @@ final class OrderTableViewController: UITableViewController {
     
     private var minutesToPrepareOrder = 0
     
-    private let restaurantController = RestaurantController.shared
+    private let viewModel = OrderViewModel()
     private var imageLoadTasks: [IndexPath:Task<Void, Never>] = [:]
     private var orderUpdateSubscription: Cancellable?
     
@@ -45,7 +45,7 @@ final class OrderTableViewController: UITableViewController {
     
     @IBAction private func unwindToOrderList(segue: UIStoryboardSegue) {
         if segue.identifier == "dismissConfirmation" {
-            restaurantController.deleteAllOrder()
+            viewModel.deleteAllOrder()
         }
     }
     
@@ -55,10 +55,10 @@ final class OrderTableViewController: UITableViewController {
 extension OrderTableViewController {
     
     private func uploadOrder() {
-        let menuIds = restaurantController.order.menuItems.map { $0.id }
+        let menuIds = viewModel.order.menuItems.map { $0.id }
         Task {
             do {
-                let minutesToPrepare = try await restaurantController.submitOrder(forMenuIDs: menuIds)
+                let minutesToPrepare = try await viewModel.submitOrder(forMenuIDs: menuIds)
                 minutesToPrepareOrder = minutesToPrepare
                 performSegue(withIdentifier: "confirmOrder", sender: nil)
             } catch {
@@ -81,7 +81,7 @@ extension OrderTableViewController {
     }
     
     private func presentOrderAlert() {
-        let orderTotal = restaurantController.totalAmount
+        let orderTotal = viewModel.totalAmount
         let formattedTotal = orderTotal.formatted(.currency(code: "usd"))
         
         displayAlert(
@@ -102,7 +102,7 @@ extension OrderTableViewController {
 extension OrderTableViewController {
     
     private func registerStateRestoration() {
-        restaurantController.updateUserActivity(with: .order)
+        viewModel.updateStateRestorationOnOrderScene()
     }
     
 }
@@ -139,7 +139,7 @@ extension OrderTableViewController {
 extension OrderTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantController.order.menuItems.count
+        return viewModel.menuItems.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -150,14 +150,14 @@ extension OrderTableViewController {
     
     private func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? MenuItemTableViewCell else { return }
-        let menuItem = restaurantController.order.menuItems[indexPath.row]
+        let menuItem = viewModel.menuItems[indexPath.row]
         
         cell.itemName = menuItem.name
         cell.price = menuItem.price
         cell.image = nil
         
         imageLoadTasks[indexPath] = Task {
-            if let data = try? await restaurantController.fetchImage(from: menuItem.imageURL),
+            if let data = try? await viewModel.fetchImage(from: menuItem.imageURL),
                let image = UIImage(data: data),
                let currentIndexPath = self.tableView.indexPath(for: cell) {
                 cell.image = (currentIndexPath == indexPath) ? image:nil
@@ -175,7 +175,7 @@ extension OrderTableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            restaurantController.deleteOrder(with: indexPath.row)
+            viewModel.deleteOrder(with: indexPath.row)
         }
     }
     
