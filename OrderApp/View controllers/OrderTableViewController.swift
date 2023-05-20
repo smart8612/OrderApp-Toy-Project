@@ -84,22 +84,16 @@ extension OrderTableViewController {
         let orderTotal = restaurantController.totalAmount
         let formattedTotal = orderTotal.formatted(.currency(code: "usd"))
         
-        let alert = UIAlertController(
+        displayAlert(
+            preferredStyle: .actionSheet,
             title: "Confirm Order",
             message: "You are about to submit your order with a total of \(formattedTotal)",
-            preferredStyle: .actionSheet
-        )
-        
-        let actions = [
-            UIAlertAction(title: "Submit", style: .default) { _ in
-                self.uploadOrder()
-            },
-            UIAlertAction(title: "Cancel", style: .cancel)
-        ]
-        
-        actions.forEach { alert.addAction($0) }
-        
-        present(alert, animated: true)
+            actions: [
+                UIAlertAction(title: "Submit", style: .default) { _ in
+                    self.uploadOrder()
+                },
+                UIAlertAction(title: "Cancel", style: .cancel)
+        ])
     }
     
 }

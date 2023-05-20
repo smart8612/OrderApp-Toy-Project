@@ -15,20 +15,23 @@ extension UIViewController {
     
     func displayError(_ error: Error, title: String) {
         displayAlert(
+            preferredStyle: .alert,
             title: title,
             message: error.localizedDescription,
-            actionTitle: "Dismiss"
+            actions: [
+                UIAlertAction(title: "Dismiss", style: .default)
+            ]
         )
     }
     
-    func displayAlert(title: String, message: String, actionTitle: String) {
+    func displayAlert(preferredStyle: UIAlertController.Style, title: String, message: String, actions: [UIAlertAction]) {
         guard self.isOnScreen else { return }
         let alertController = UIAlertController(
             title: title,
             message: message,
-            preferredStyle: .alert
+            preferredStyle: preferredStyle
         )
-        alertController.addAction(UIAlertAction(title: actionTitle, style: .default))
+        actions.forEach { alertController.addAction($0) }
         present(alertController, animated: true)
     }
     
