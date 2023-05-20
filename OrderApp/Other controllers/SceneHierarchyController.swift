@@ -12,11 +12,15 @@ import SettingKit
 final class SceneHierarchyController {
     
     weak var delegate: SceneHierarchyControllerDelegate?
+    private var subscriptions: [Cancellable]?
     
     private weak var window: UIWindow?
-    
-    private var subscriptions: [Cancellable]?
     private weak var orderTabBarItem: UITabBarItem?
+    private let settingViewController: UIViewController = {
+        let mainSettingPage = MainSettingPage()
+        let viewController = mainSettingPage.viewControllerEmbeddedInNavigationController
+        return viewController
+    }()
     
     func configure(with delegate: SceneHierarchyControllerDelegate) {
         self.delegate = delegate
@@ -39,22 +43,14 @@ final class SceneHierarchyController {
               let orderTabBarItem = rootTabBarController.viewControllers?[1].tabBarItem else {
             return
         }
-        
-        configureSetting(on: rootTabBarController)
-        
         self.orderTabBarItem = orderTabBarItem
+        configureSetting(on: rootTabBarController)
     }
     
     private func configureSetting(on tabBarController: UITabBarController) {
         settingViewController.tabBarItem?.image = UIImage(systemName: "gear")
         tabBarController.viewControllers?.append(settingViewController)
     }
-    
-    private lazy var settingViewController: UIViewController = {
-        let mainSettingPage = MainSettingPage()
-        let viewController = mainSettingPage.viewControllerEmbeddedInNavigationController
-        return viewController
-    }()
     
     private func subscribe() {
         subscriptions = [
