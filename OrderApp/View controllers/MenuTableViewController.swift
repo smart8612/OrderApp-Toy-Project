@@ -69,6 +69,7 @@ extension MenuTableViewController {
             } catch {
                 displayError(error, title: "Failed to fetch menu items for \(category)")
             }
+            refreshControl?.endRefreshing()
         }
     }
     
