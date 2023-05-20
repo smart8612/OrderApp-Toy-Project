@@ -65,7 +65,7 @@ extension SceneDelegate {
         
         guard let restorationController = StateRestorationController(userActivity: stateRestorationActivity),
               let tabBarController = window?.rootViewController as? UITabBarController,
-                  tabBarController.viewControllers?.count == 2,
+                  tabBarController.viewControllers?.count == 3,
               let categoryTableViewController = (tabBarController.viewControllers?.first as? UINavigationController)?.topViewController as? CategoryTableViewController else {
             return
         }
