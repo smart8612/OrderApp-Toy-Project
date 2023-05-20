@@ -55,10 +55,9 @@ final class OrderTableViewController: UITableViewController {
 extension OrderTableViewController {
     
     private func uploadOrder() {
-        let menuIds = viewModel.order.menuItems.map { $0.id }
         Task {
             do {
-                let minutesToPrepare = try await viewModel.submitOrder(forMenuIDs: menuIds)
+                let minutesToPrepare = try await viewModel.submitOrder()
                 minutesToPrepareOrder = minutesToPrepare
                 performSegue(withIdentifier: "confirmOrder", sender: nil)
             } catch {
@@ -85,7 +84,7 @@ extension OrderTableViewController {
         let formattedTotal = orderTotal.formatted(.currency(code: "usd"))
         
         displayAlert(
-            preferredStyle: .actionSheet,
+            preferredStyle: .alert,
             title: "Confirm Order",
             message: "You are about to submit your order with a total of \(formattedTotal)",
             actions: [

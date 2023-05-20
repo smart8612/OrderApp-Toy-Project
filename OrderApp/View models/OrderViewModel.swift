@@ -41,6 +41,11 @@ final class OrderViewModel {
         restaurantController.updateUserActivity(with: .order)
     }
     
+    func submitOrder() async throws -> MinutesToPrepare {
+        let menuIds = menuItems.map { $0.id }
+        return try await submitOrder(forMenuIDs: menuIds)
+    }
+    
 }
 
 extension OrderViewModel: RestaurantAPIFetchable { }
