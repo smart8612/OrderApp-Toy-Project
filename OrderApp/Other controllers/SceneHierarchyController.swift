@@ -15,7 +15,15 @@ final class SceneHierarchyController {
     private var subscriptions: [Cancellable]?
     
     private weak var window: UIWindow?
-    private weak var orderTabBarItem: UITabBarItem?
+    
+    private var rootTabBarController: UITabBarController? {
+        window?.rootTabBarController
+    }
+    
+    private var orderTabBarItem: UITabBarItem? {
+        rootTabBarController?.orderViewController?.tabBarItem
+    }
+    
     private let settingViewController: UIViewController = {
         let mainSettingPage = MainSettingPage()
         let viewController = mainSettingPage.viewControllerEmbeddedInNavigationController
@@ -29,6 +37,15 @@ final class SceneHierarchyController {
         subscribe()
     }
     
+    deinit {
+        cancelAllSubscriptions()
+    }
+    
+}
+
+// MARK: UI Presentation Handler
+fileprivate extension SceneHierarchyController {
+    
     private func configureUI() {
         configureGlobalUI()
         configureTabBarUI()
@@ -39,11 +56,7 @@ final class SceneHierarchyController {
     }
     
     private func configureTabBarUI() {
-        guard let rootTabBarController = window?.rootViewController as? UITabBarController,
-              let orderTabBarItem = rootTabBarController.viewControllers?[1].tabBarItem else {
-            return
-        }
-        self.orderTabBarItem = orderTabBarItem
+        guard let rootTabBarController = rootTabBarController else { return }
         configureSetting(on: rootTabBarController)
     }
     
@@ -52,13 +65,17 @@ final class SceneHierarchyController {
         tabBarController.viewControllers?.append(settingViewController)
     }
     
+}
+
+// MARK: Combine Subscription Handler
+fileprivate extension SceneHierarchyController {
+    
     private func subscribe() {
         subscriptions = [
             NotificationCenter.default.publisher(
                 for: .orderUpdateNotification
             ).sink { [weak self] _ in
-                let badgeValue = RestaurantController.shared.order.menuItems.count
-                self?.orderTabBarItem?.badgeValue = (badgeValue == 0) ? nil : String(badgeValue)
+                self?.orderTabBarItem?.updateOrderBadge()
             },
             NotificationCenter.default.publisher(
                 for: UserDefaults.didChangeNotification
@@ -68,12 +85,36 @@ final class SceneHierarchyController {
         ]
     }
     
-    private func unsubscribe() {
+    private func cancelAllSubscriptions() {
         subscriptions?.forEach { $0.cancel() }
     }
     
-    deinit {
-        unsubscribe()
+}
+
+// MARK: UIWindow Handler
+fileprivate extension UIWindow {
+    
+    var rootTabBarController: UITabBarController? {
+        self.rootViewController as? UITabBarController
+    }
+    
+}
+
+// MARK: Root Tab Bar Controller Handler
+fileprivate extension UITabBarController {
+    
+    var orderViewController: UIViewController? {
+        self.viewControllers?[1]
+    }
+    
+}
+
+// MARK: Order Tab Bar Item Handler
+fileprivate extension UITabBarItem {
+    
+    func updateOrderBadge() {
+        let badgeValue = RestaurantController.shared.order.menuItems.count
+        self.badgeValue = (badgeValue == 0) ? nil : String(badgeValue)
     }
     
 }
