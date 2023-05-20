@@ -10,11 +10,8 @@ import NetworkKit
 
 final class RestaurantController {
     
-    typealias MinutesToPrepare = Int
-    
     static let shared = RestaurantController()
     
-    private let networkController = NetworkController()
     let userActivity = NSUserActivity(activityType: "com.tistory.singularis7.OrderApp.order")
     
     private(set) var order = Order() {
@@ -62,28 +59,6 @@ final class RestaurantController {
         userActivity.controllerIdentifier = controller.identifier
     }
     
-    func submitOrder(forMenuIDs menuIDs: [Int]) async throws -> MinutesToPrepare {
-        let apiRequest = RestaurantOrderPostAPIRequest(menuIDs: menuIDs)
-        let result = try await networkController.send(request: apiRequest)
-        return result.preperationTime
-    }
-    
-    func fetchCategories() async throws -> [String] {
-        let apiRequest = RestaurantCategoriesGetAPIRequest()
-        let result = try await networkController.send(request: apiRequest)
-        return result.categories
-    }
-    
-    func fetchMenuItems(forCategory categoryName: String) async throws -> [MenuItem] {
-        let apiRequest = RestaurantMenuItemsGetAPIRequest(categoryName: categoryName)
-        let result = try await networkController.send(request: apiRequest)
-        return result.items
-    }
-    
-    func fetchImage(from url: URL) async throws -> Data {
-        let apiRequest = ImageGetAPIRequest(path: url.absoluteString)
-        let result = try await networkController.send(request: apiRequest)
-        return result
-    }
-    
 }
+
+extension RestaurantController: RestaurantAPIFetchable { }
