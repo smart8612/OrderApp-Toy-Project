@@ -24,16 +24,14 @@
 		C13258DC2983ABE70058EB12 /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258DB2983ABE70058EB12 /* CategoriesResponse.swift */; };
 		C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258DD2983AC620058EB12 /* OrderResponse.swift */; };
 		C13258E12983ADA80058EB12 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258E02983ADA80058EB12 /* Order.swift */; };
-		C13258E32983B60E0058EB12 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258E22983B60E0058EB12 /* APIRequest.swift */; };
-		C13258E62983BBC40058EB12 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258E52983BBC40058EB12 /* NetworkController.swift */; };
 		C13258E92983C29E0058EB12 /* RestaurantAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */; };
 		C13258EC2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258EB2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift */; };
 		C13258EE29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */; };
 		C13258F2298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */; };
 		C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F329842FFB0058EB12 /* RestaurantController.swift */; };
 		C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */; };
-		C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */; };
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
+		C1855D9D2A187A0B003BC34F /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1855D9C2A187A0B003BC34F /* NetworkKit */; };
 		C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C0299247D700442E5D /* NotificationCategory.swift */; };
 		C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */; };
 		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
@@ -90,15 +88,12 @@
 		C13258DB2983ABE70058EB12 /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
 		C13258DD2983AC620058EB12 /* OrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponse.swift; sourceTree = "<group>"; };
 		C13258E02983ADA80058EB12 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		C13258E22983B60E0058EB12 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		C13258E52983BBC40058EB12 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAPIRequest.swift; sourceTree = "<group>"; };
 		C13258EB2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCategoriesGetAPIRequest.swift; sourceTree = "<group>"; };
 		C13258ED29841AE70058EB12 /* RestaurantMenuItemsGetAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuItemsGetAPIRequest.swift; sourceTree = "<group>"; };
 		C13258F1298425A30058EB12 /* RestaurantOrderPostAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOrderPostAPIRequest.swift; sourceTree = "<group>"; };
 		C13258F329842FFB0058EB12 /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
 		C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewModel.swift; sourceTree = "<group>"; };
-		C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+URLRequest.swift"; sourceTree = "<group>"; };
 		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		C18727C0299247D700442E5D /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 		C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationCategory.swift; sourceTree = "<group>"; };
@@ -121,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1855D9D2A187A0B003BC34F /* NetworkKit in Frameworks */,
 				C1EE5CD62A1210990067B475 /* SettingKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +268,6 @@
 		C17F37FA2984EBBB005F6B4D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C17F37FB2984EBF6005F6B4D /* Extensions+URLRequest.swift */,
 				C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */,
 				C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */,
 				C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */,
@@ -291,7 +286,6 @@
 		C18727BE2992471100442E5D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				C13258E22983B60E0058EB12 /* APIRequest.swift */,
 				C13258E82983C29E0058EB12 /* RestaurantAPIRequest.swift */,
 			);
 			path = Network;
@@ -311,7 +305,6 @@
 			children = (
 				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
 				C19BFA2C298E903600466739 /* UserNotificationCenterController.swift */,
-				C13258E52983BBC40058EB12 /* NetworkController.swift */,
 			);
 			path = "Other controllers";
 			sourceTree = "<group>";
@@ -379,6 +372,7 @@
 			name = OrderApp;
 			packageProductDependencies = (
 				C1EE5CD52A1210990067B475 /* SettingKit */,
+				C1855D9C2A187A0B003BC34F /* NetworkKit */,
 			);
 			productName = OrderApp;
 			productReference = C132589A298395ED0058EB12 /* OrderApp.app */;
@@ -454,6 +448,7 @@
 			mainGroup = C1325891298395ED0058EB12;
 			packageReferences = (
 				C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */,
+				C1855D9B2A187A0B003BC34F /* XCRemoteSwiftPackageReference "NetworkKit" */,
 			);
 			productRefGroup = C132589B298395ED0058EB12 /* Products */;
 			projectDirPath = "";
@@ -510,7 +505,6 @@
 				C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */,
 				C13258DE2983AC620058EB12 /* OrderResponse.swift in Sources */,
 				C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */,
-				C17F37FC2984EBF6005F6B4D /* Extensions+URLRequest.swift in Sources */,
 				C13258EC2983C5640058EB12 /* RestaurantCategoriesGetAPIRequest.swift in Sources */,
 				C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */,
 				C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */,
@@ -528,9 +522,7 @@
 				C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */,
 				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,
 				C18727C1299247D700442E5D /* NotificationCategory.swift in Sources */,
-				C13258E32983B60E0058EB12 /* APIRequest.swift in Sources */,
 				C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */,
-				C13258E62983BBC40058EB12 /* NetworkController.swift in Sources */,
 				C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */,
 				C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */,
 			);
@@ -878,6 +870,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C1855D9B2A187A0B003BC34F /* XCRemoteSwiftPackageReference "NetworkKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/smart8612/NetworkKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/smart8612/SettingKit";
@@ -889,6 +889,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C1855D9C2A187A0B003BC34F /* NetworkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1855D9B2A187A0B003BC34F /* XCRemoteSwiftPackageReference "NetworkKit" */;
+			productName = NetworkKit;
+		};
 		C1EE5CD52A1210990067B475 /* SettingKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */;

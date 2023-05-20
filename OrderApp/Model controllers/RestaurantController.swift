@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import NetworkKit
 
-class RestaurantController {
+final class RestaurantController {
     
     typealias MinutesToPrepare = Int
     
