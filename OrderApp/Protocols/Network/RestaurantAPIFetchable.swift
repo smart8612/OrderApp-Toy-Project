@@ -23,7 +23,7 @@ extension RestaurantAPIFetchable {
         return result.preperationTime
     }
     
-    func fetchCategories() async throws -> [String] {
+    func fetchCategories() async throws -> [Category] {
         let apiRequest = RestaurantCategoriesGetAPIRequest()
         let result = try await NetworkController().send(request: apiRequest)
         return result.categories

@@ -9,6 +9,6 @@ import Foundation
 
 struct CategoriesResponse: Codable {
     
-    let categories: [String]
+    let categories: [Category]
     
 }

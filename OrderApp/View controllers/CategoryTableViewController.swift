@@ -52,7 +52,7 @@ extension CategoryTableViewController {
         Task {
             do {
                 let categories = try await restaurantController.fetchCategories()
-                applyUI(with: categories)
+                applyUI(with: categories.map { $0.name })
             } catch {
                 displayError(error, title: "Failed to Fetch Categories")
             }
