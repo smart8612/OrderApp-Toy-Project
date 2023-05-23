@@ -13,7 +13,7 @@ struct MenuItem {
     var name: String
     var detailText: String
     var price: Double
-    var category: String
+    var category: Category
     var imageURL: URL
     
 }

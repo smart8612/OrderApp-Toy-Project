@@ -83,7 +83,7 @@ extension SceneDelegate {
                 .pushViewController(viewController, animated: true)
         case .menuItemDetail(let menuItem):
             let menuViewController = storyboard.instantiateViewController(identifier: "menu") {
-                return MenuTableViewController(coder: $0, category: menuItem.category)
+                return MenuTableViewController(coder: $0, category: menuItem.category.name)
             }
             let menuDetailViewController = storyboard.instantiateViewController(identifier: "menuItemDetail") {
                 return MenuItemDetailViewController(coder: $0, menuItem: menuItem)
