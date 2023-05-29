@@ -12,7 +12,6 @@
 		C13258A5298395ED0058EB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13258A3298395ED0058EB12 /* Main.storyboard */; };
 		C13258A7298395EE0058EB12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13258A6298395EE0058EB12 /* Assets.xcassets */; };
 		C13258AA298395EE0058EB12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13258A8298395EE0058EB12 /* LaunchScreen.storyboard */; };
-		C13258B5298395EE0058EB12 /* OrderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258B4298395EE0058EB12 /* OrderAppTests.swift */; };
 		C13258BF298395EE0058EB12 /* OrderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258BE298395EE0058EB12 /* OrderAppUITests.swift */; };
 		C13258C1298395EE0058EB12 /* OrderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258C0298395EE0058EB12 /* OrderAppUITestsLaunchTests.swift */; };
 		C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */; };
@@ -52,13 +51,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C13258B1298395EE0058EB12 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1325892298395ED0058EB12 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C1325899298395ED0058EB12;
-			remoteInfo = OrderApp;
-		};
 		C13258BB298395EE0058EB12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C1325892298395ED0058EB12 /* Project object */;
@@ -76,8 +68,6 @@
 		C13258A6298395EE0058EB12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C13258A9298395EE0058EB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C13258AB298395EE0058EB12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C13258B0298395EE0058EB12 /* OrderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C13258B4298395EE0058EB12 /* OrderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppTests.swift; sourceTree = "<group>"; };
 		C13258BA298395EE0058EB12 /* OrderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13258BE298395EE0058EB12 /* OrderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppUITests.swift; sourceTree = "<group>"; };
 		C13258C0298395EE0058EB12 /* OrderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -125,13 +115,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C13258AD298395EE0058EB12 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C13258B7298395EE0058EB12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				C132589C298395ED0058EB12 /* OrderApp */,
-				C13258B3298395EE0058EB12 /* OrderAppTests */,
 				C13258BD298395EE0058EB12 /* OrderAppUITests */,
 				C132589B298395ED0058EB12 /* Products */,
 			);
@@ -156,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				C132589A298395ED0058EB12 /* OrderApp.app */,
-				C13258B0298395EE0058EB12 /* OrderAppTests.xctest */,
 				C13258BA298395EE0058EB12 /* OrderAppUITests.xctest */,
 			);
 			name = Products;
@@ -182,14 +163,6 @@
 			path = OrderApp;
 			sourceTree = "<group>";
 		};
-		C13258B3298395EE0058EB12 /* OrderAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				C13258B4298395EE0058EB12 /* OrderAppTests.swift */,
-			);
-			path = OrderAppTests;
-			sourceTree = "<group>";
-		};
 		C13258BD298395EE0058EB12 /* OrderAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */,
-				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
 				C13258CF2983A1910058EB12 /* MenuTableViewController.swift */,
+				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
 				C13258D12983A19E0058EB12 /* OrderTableViewController.swift */,
 				C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */,
 			);
@@ -376,24 +349,6 @@
 			productReference = C132589A298395ED0058EB12 /* OrderApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C13258AF298395EE0058EB12 /* OrderAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C13258C7298395EE0058EB12 /* Build configuration list for PBXNativeTarget "OrderAppTests" */;
-			buildPhases = (
-				C13258AC298395EE0058EB12 /* Sources */,
-				C13258AD298395EE0058EB12 /* Frameworks */,
-				C13258AE298395EE0058EB12 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C13258B2298395EE0058EB12 /* PBXTargetDependency */,
-			);
-			name = OrderAppTests;
-			productName = OrderAppTests;
-			productReference = C13258B0298395EE0058EB12 /* OrderAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		C13258B9298395EE0058EB12 /* OrderAppUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C13258CA298395EE0058EB12 /* Build configuration list for PBXNativeTarget "OrderAppUITests" */;
@@ -425,10 +380,6 @@
 					C1325899298395ED0058EB12 = {
 						CreatedOnToolsVersion = 14.2;
 					};
-					C13258AF298395EE0058EB12 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = C1325899298395ED0058EB12;
-					};
 					C13258B9298395EE0058EB12 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = C1325899298395ED0058EB12;
@@ -454,7 +405,6 @@
 			projectRoot = "";
 			targets = (
 				C1325899298395ED0058EB12 /* OrderApp */,
-				C13258AF298395EE0058EB12 /* OrderAppTests */,
 				C13258B9298395EE0058EB12 /* OrderAppUITests */,
 			);
 		};
@@ -468,13 +418,6 @@
 				C13258AA298395EE0058EB12 /* LaunchScreen.storyboard in Resources */,
 				C13258A7298395EE0058EB12 /* Assets.xcassets in Resources */,
 				C13258A5298395ED0058EB12 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C13258AE298395EE0058EB12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,14 +471,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C13258AC298395EE0058EB12 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C13258B5298395EE0058EB12 /* OrderAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C13258B6298395EE0058EB12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,11 +483,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C13258B2298395EE0058EB12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C1325899298395ED0058EB12 /* OrderApp */;
-			targetProxy = C13258B1298395EE0058EB12 /* PBXContainerItemProxy */;
-		};
 		C13258BC298395EE0058EB12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C1325899298395ED0058EB12 /* OrderApp */;
@@ -752,46 +682,6 @@
 			};
 			name = Release;
 		};
-		C13258C8298395EE0058EB12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MLY2NY4CXP;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.singularis7.OrderAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrderApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OrderApp";
-			};
-			name = Debug;
-		};
-		C13258C9298395EE0058EB12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MLY2NY4CXP;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.singularis7.OrderAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrderApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OrderApp";
-			};
-			name = Release;
-		};
 		C13258CB298395EE0058EB12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -845,15 +735,6 @@
 			buildConfigurations = (
 				C13258C5298395EE0058EB12 /* Debug */,
 				C13258C6298395EE0058EB12 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C13258C7298395EE0058EB12 /* Build configuration list for PBXNativeTarget "OrderAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C13258C8298395EE0058EB12 /* Debug */,
-				C13258C9298395EE0058EB12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
