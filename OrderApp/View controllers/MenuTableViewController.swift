@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OrderClient
 
 
 final class MenuTableViewController: UITableViewController {

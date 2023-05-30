@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OrderClient
 
 
 final class MenuItemDetailViewController: UIViewController {
@@ -50,7 +51,7 @@ final class MenuItemDetailViewController: UIViewController {
             self.addToOrderButton?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
         
-        restaurantController.order.addOrder(with: menuItem)
+        restaurantController.addOrder(with: menuItem)
     }
     
 }

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import OrderClient
+
 
 final class RestaurantController {
     
@@ -13,15 +15,42 @@ final class RestaurantController {
     
     private init() {}
     
-    var order = Order() {
-        didSet {
-            postOrderUpdateNotification()
-            updateOrderState()
-        }
+    private(set) var orderController = OrderController(order: .init()) {
+        didSet { updateState() }
+    }
+    
+    var order: Order {
+        get { orderController.order }
+        set { orderController = OrderController(order: newValue) }
+    }
+    
+    var menuItems: [MenuItem] {
+        order.menuItems
+    }
+    
+    var totalAmount: Double {
+        orderController.totalAmount
+    }
+    
+    func addOrder(with menuItem: MenuItem) {
+        orderController.addOrder(with: menuItem)
+    }
+    
+    func deleteOrder(on index: Int) {
+        orderController.deleteOrder(on: index)
+    }
+    
+    func deleteAllOrder() {
+        orderController.deleteAllOrder()
     }
     
     func restore(order: Order) {
         self.order = order
+    }
+    
+    private func updateState() {
+        postOrderUpdateNotification()
+        updateOrderState()
     }
     
     private func postOrderUpdateNotification() {

@@ -6,35 +6,31 @@
 //
 
 import Foundation
+import OrderClient
 
 
 final class OrderViewModel {
     
     private let restaurantController = RestaurantController.shared
     
-    var order: Order {
-        get { restaurantController.order }
-        set { restaurantController.order = newValue }
-    }
-    
     var menuItems: [MenuItem] {
-        order.menuItems
+        restaurantController.order.menuItems
     }
     
     var totalAmount: Double {
-        order.totalAmount
+        restaurantController.totalAmount
     }
     
     func addOrder(with menuItem: MenuItem) {
-        order.addOrder(with: menuItem)
+        restaurantController.addOrder(with: menuItem)
     }
     
     func deleteOrder(with index: Int) {
-        order.deleteOrder(on: index)
+        restaurantController.deleteOrder(on: index)
     }
     
     func deleteAllOrder() {
-        order.deleteAllOrder()
+        restaurantController.deleteAllOrder()
     }
     
     func updateStateRestorationOnOrderScene() {
