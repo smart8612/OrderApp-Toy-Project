@@ -7,7 +7,6 @@
 
 import UIKit
 import Combine
-import SettingKit
 
 final class SceneHierarchyController {
     
@@ -23,12 +22,6 @@ final class SceneHierarchyController {
     private var orderTabBarItem: UITabBarItem? {
         rootTabBarController?.orderViewController?.tabBarItem
     }
-    
-    private let settingViewController: UIViewController = {
-        let mainSettingPage = MainSettingPage()
-        let viewController = mainSettingPage.viewControllerEmbeddedInNavigationController
-        return viewController
-    }()
     
     func configure(with delegate: SceneHierarchyControllerDelegate) {
         self.delegate = delegate
@@ -48,23 +41,12 @@ fileprivate extension SceneHierarchyController {
     
     private func configureUI() {
         configureGlobalUI()
-        configureTabBarUI()
     }
     
     private func configureGlobalUI() {
         window?.overrideUserInterfaceStyle = UserDefaults.standard.colorSchema
     }
-    
-    private func configureTabBarUI() {
-        guard let rootTabBarController = rootTabBarController else { return }
-        configureSetting(on: rootTabBarController)
-    }
-    
-    private func configureSetting(on tabBarController: UITabBarController) {
-        settingViewController.tabBarItem?.image = UIImage(systemName: "gear")
-        tabBarController.viewControllers?.append(settingViewController)
-    }
-    
+
 }
 
 // MARK: Combine Subscription Handler

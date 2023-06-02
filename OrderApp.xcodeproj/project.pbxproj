@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12AF54F2A28D24D00512357 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF54E2A28D24D00512357 /* SettingsViewController.swift */; };
+		C12AF5512A28D97400512357 /* RootSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF5502A28D97400512357 /* RootSplitViewController.swift */; };
+		C12AF5532A2906B200512357 /* SidebarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */; };
 		C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132589D298395ED0058EB12 /* AppDelegate.swift */; };
 		C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132589F298395ED0058EB12 /* SceneDelegate.swift */; };
 		C13258A5298395ED0058EB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13258A3298395ED0058EB12 /* Main.storyboard */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C12AF54E2A28D24D00512357 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C12AF5502A28D97400512357 /* RootSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSplitViewController.swift; sourceTree = "<group>"; };
+		C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SidebarCollectionViewController.swift; path = "OrderApp/View controllers/SidebarCollectionViewController.swift"; sourceTree = "<group>"; };
 		C132589A298395ED0058EB12 /* OrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132589D298395ED0058EB12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C132589F298395ED0058EB12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 		C1325891298395ED0058EB12 = {
 			isa = PBXGroup;
 			children = (
+				C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */,
 				C132589C298395ED0058EB12 /* OrderApp */,
 				C13258BD298395EE0058EB12 /* OrderAppUITests */,
 				C132589B298395ED0058EB12 /* Products */,
@@ -158,6 +165,8 @@
 				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
 				C13258D12983A19E0058EB12 /* OrderTableViewController.swift */,
 				C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */,
+				C12AF54E2A28D24D00512357 /* SettingsViewController.swift */,
+				C12AF5502A28D97400512357 /* RootSplitViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -376,7 +385,9 @@
 				C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */,
 				C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */,
 				C1855DA42A189A7C003BC34F /* OrderStateRestorable.swift in Sources */,
+				C12AF5532A2906B200512357 /* SidebarCollectionViewController.swift in Sources */,
 				C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */,
+				C12AF5512A28D97400512357 /* RootSplitViewController.swift in Sources */,
 				C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */,
 				C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */,
 				C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */,
@@ -385,6 +396,7 @@
 				C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */,
 				C1855DA62A189E01003BC34F /* OrderViewModel.swift in Sources */,
 				C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */,
+				C12AF54F2A28D24D00512357 /* SettingsViewController.swift in Sources */,
 				C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */,
 				C1ECE6822A24973E00CA8221 /* OrderController.swift in Sources */,
 				C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */,
@@ -558,7 +570,7 @@
 				DEVELOPMENT_TEAM = MLY2NY4CXP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrderApp/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -587,7 +599,7 @@
 				DEVELOPMENT_TEAM = MLY2NY4CXP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrderApp/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
