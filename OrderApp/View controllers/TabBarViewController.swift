@@ -17,11 +17,8 @@ final class TabBarViewController: UITabBarController {
     
     private var subscription: AnyCancellable?
     
-    private var orderTableViewController: OrderTableViewController? {
-        viewControllers?
-            .compactMap { $0 as? UINavigationController }
-            .compactMap { $0.viewControllers.first as? OrderTableViewController }
-            .first as? OrderTableViewController
+    private var orderTableViewController: UIViewController? {
+        viewControllers?[1]
     }
     
     private var orderTabBarItem: UITabBarItem? {
