@@ -16,29 +16,22 @@ final class RootSplitViewController: UISplitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
         updateUI()
     }
     
     private func updateUI() {
-        let screenWidth = traitCollection.horizontalSizeClass
-        
-        if screenWidth != .compact {
-            showDetailViewController(
-                selectedMenu.viewController,
-                sender: nil
-            )
-        } else {
-            guard let tbc = viewController(for: .compact) as? UITabBarController else { return }
-            tbc.selectedIndex = selectedMenu.rawValue
+        if !isCollapsed {
+            setViewController(selectedMenu.viewController, for: .secondary)
         }
     }
     
 }
 
-// MARK: SplitViewController Delegate
+// MARK: UISplitViewController Delegate
 extension RootSplitViewController: UISplitViewControllerDelegate {
     
-    func splitViewController(_ svc: UISplitViewController, willShow column: UISplitViewController.Column) {
+    func splitViewControllerDidExpand(_ svc: UISplitViewController) {
         updateUI()
     }
     

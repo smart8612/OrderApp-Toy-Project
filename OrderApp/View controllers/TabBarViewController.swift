@@ -34,11 +34,13 @@ final class TabBarViewController: UITabBarController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         subscribe()
         updateUI()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         unsubscribe()
     }
     
