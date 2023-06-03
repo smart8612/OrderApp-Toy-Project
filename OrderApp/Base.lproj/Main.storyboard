@@ -398,10 +398,10 @@
             </objects>
             <point key="canvasLocation" x="1862" y="1113"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Kn1-TW-oGt">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xeV-LJ-Kgt" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xeV-LJ-Kgt" customClass="TabBarViewController" customModule="OrderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="7rD-Sc-Fag"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tpf-1W-1Sk">

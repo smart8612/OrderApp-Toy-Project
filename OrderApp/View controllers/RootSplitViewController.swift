@@ -10,26 +10,37 @@ import UIKit
 
 final class RootSplitViewController: UISplitViewController {
     
-    var selectedMenu: MenuItem = .restaurant {
-        didSet { showSelectedMenu() }
+    var selectedMenu: TabItem = .restaurant {
+        didSet { updateUI() }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
-        showSelectedMenu()
+        updateUI()
     }
     
-    private func showSelectedMenu() {
-        showDetailViewController(
-            selectedMenu.viewController,
-            sender: nil
-        )
+    private func updateUI() {
+        let screenWidth = traitCollection.horizontalSizeClass
+        
+        if screenWidth != .compact {
+            showDetailViewController(
+                selectedMenu.viewController,
+                sender: nil
+            )
+        } else {
+            guard let tbc = viewController(for: .compact) as? UITabBarController else { return }
+            tbc.selectedIndex = selectedMenu.rawValue
+        }
     }
-
+    
 }
 
+// MARK: SplitViewController Delegate
 extension RootSplitViewController: UISplitViewControllerDelegate {
+    
+    func splitViewController(_ svc: UISplitViewController, willShow column: UISplitViewController.Column) {
+        updateUI()
+    }
     
 }
 
@@ -38,7 +49,7 @@ extension RootSplitViewController {
     
     typealias Item = SidebarCollectionViewController.Item
     
-    enum MenuItem: CaseIterable {
+    enum TabItem: Int, CaseIterable {
         case restaurant
         case myOrder
         case settings
@@ -67,7 +78,6 @@ extension RootSplitViewController {
     }
     
 }
-
 
 // MARK: Associated View Controllers
 extension RootSplitViewController {

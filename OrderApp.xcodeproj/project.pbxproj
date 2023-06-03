@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C102BB0B2A2B043D003386C7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */; };
 		C12AF54F2A28D24D00512357 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF54E2A28D24D00512357 /* SettingsViewController.swift */; };
 		C12AF5512A28D97400512357 /* RootSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF5502A28D97400512357 /* RootSplitViewController.swift */; };
 		C12AF5532A2906B200512357 /* SidebarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		C12AF54E2A28D24D00512357 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C12AF5502A28D97400512357 /* RootSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSplitViewController.swift; sourceTree = "<group>"; };
 		C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SidebarCollectionViewController.swift; path = "OrderApp/View controllers/SidebarCollectionViewController.swift"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */,
 				C12AF54E2A28D24D00512357 /* SettingsViewController.swift */,
 				C12AF5502A28D97400512357 /* RootSplitViewController.swift */,
+				C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */,
 				C12AF5512A28D97400512357 /* RootSplitViewController.swift in Sources */,
 				C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */,
+				C102BB0B2A2B043D003386C7 /* TabBarViewController.swift in Sources */,
 				C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */,
 				C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */,
 				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,

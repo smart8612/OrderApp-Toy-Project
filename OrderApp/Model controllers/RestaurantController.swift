@@ -28,6 +28,10 @@ final class RestaurantController {
         order.menuItems
     }
     
+    var orderCount: Int {
+        menuItems.count
+    }
+    
     var totalAmount: Double {
         orderController.totalAmount
     }
