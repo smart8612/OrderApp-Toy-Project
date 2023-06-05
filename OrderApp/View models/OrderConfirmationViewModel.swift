@@ -31,6 +31,10 @@ final class OrderConfirmationViewModel: ObservableObject {
         orderConfirmation.minutesToPrepare
     }
     
+    func deleteAllOrder() {
+        RestaurantController.shared.deleteAllOrder()
+    }
+    
     private func scheduleNotification() {
         let request = OrderCompleteNotificationRequest(
             minutesToPrepare: minutesToPrepare,

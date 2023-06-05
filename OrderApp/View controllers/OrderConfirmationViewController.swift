@@ -43,6 +43,10 @@ final class OrderConfirmationViewController: UIViewController {
         cancelSubscription()
     }
     
+    @IBAction func dismissButtonClicked(_ sender: UIButton) {
+        viewModel.deleteAllOrder()
+        dismiss(animated: true)
+    }
 }
 
 // MARK: Presentation Handling function

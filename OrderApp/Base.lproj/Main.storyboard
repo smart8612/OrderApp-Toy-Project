@@ -279,7 +279,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Dismiss"/>
                                         <connections>
-                                            <segue destination="Su1-oh-Q8m" kind="unwind" identifier="dismissConfirmation" unwindAction="unwindToOrderListWithSegue:" id="FxR-zP-IyB"/>
+                                            <action selector="dismissButtonClicked:" destination="NHH-ky-jtq" eventType="touchUpInside" id="ZHp-bX-rLI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -301,7 +301,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jd-Z3-doP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Su1-oh-Q8m" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2740" y="379"/>
         </scene>

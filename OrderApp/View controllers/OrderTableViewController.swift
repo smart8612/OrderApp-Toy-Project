@@ -43,12 +43,6 @@ final class OrderTableViewController: UITableViewController {
         return OrderConfirmationViewController(coder: coder, minutesToPrepare: minutesToPrepareOrder)
     }
     
-    @IBAction private func unwindToOrderList(segue: UIStoryboardSegue) {
-        if segue.identifier == "dismissConfirmation" {
-            viewModel.deleteAllOrder()
-        }
-    }
-    
 }
 
 // MARK: Helper function
