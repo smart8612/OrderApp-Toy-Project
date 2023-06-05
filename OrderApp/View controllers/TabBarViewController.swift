@@ -51,7 +51,7 @@ final class TabBarViewController: UITabBarController {
     }
     
     private func removeChildren() {
-        setViewControllers([], animated: false)
+        viewControllers = nil
     }
     
     private func updateUI() {

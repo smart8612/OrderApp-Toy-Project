@@ -16,16 +16,26 @@ final class RootSplitViewController: UISplitViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
+        setViewController(UIViewController(), for: .secondary)
         updateUIForSecondary(oldSelectedMenu: selectedMenu)
     }
     
     private func updateUIForSecondary(oldSelectedMenu: TabItem) {
         guard traitCollection.horizontalSizeClass != .compact else { return }
-        if oldSelectedMenu == selectedMenu, let secondaryVC = viewController(for: .secondary) as? UINavigationController {
+        if oldSelectedMenu == selectedMenu, let secondaryVC = viewController(for: .secondary) as? UINavigationController, secondaryVC.viewControllers.count >= 2 {
             secondaryVC.popToRootViewController(animated: true)
             return
         }
         showDetailViewController(selectedMenu.viewController, sender: self)
+    }
+    
+}
+
+extension RootSplitViewController: UISplitViewControllerDelegate {
+    
+    func splitViewControllerDidExpand(_ svc: UISplitViewController) {
+        updateUIForSecondary(oldSelectedMenu: selectedMenu)
     }
     
 }
