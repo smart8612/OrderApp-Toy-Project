@@ -32,13 +32,26 @@ final class TabBarViewController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addChildren()
         subscribe()
         updateUI()
     }
     
+    private func addChildren() {
+        let childVCs = TabItem.allCases
+            .map { ($0.viewController, UITabBarItem(title: $0.item.title , image: $0.item.image, tag: $0.rawValue)) }
+            .map { $0.tabBarItem = $1; return $0 }
+        setViewControllers(childVCs, animated: false)
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        removeChildren()
         unsubscribe()
+    }
+    
+    private func removeChildren() {
+        setViewControllers([], animated: false)
     }
     
     private func updateUI() {

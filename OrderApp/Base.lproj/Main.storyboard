@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -164,7 +164,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SC-pV-0pI">
-                                <rect key="frame" x="15" y="703.66666666666663" width="363" height="50.333333333333371"/>
+                                <rect key="frame" x="15" y="752.66666666666663" width="363" height="50.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add To Order" buttonSize="large"/>
                                 <connections>
@@ -305,11 +305,11 @@
             </objects>
             <point key="canvasLocation" x="2740" y="379"/>
         </scene>
-        <!--Restaurant-->
+        <!--Navigation Controller-->
         <scene sceneID="T6H-1b-gpE">
             <objects>
                 <navigationController storyboardIdentifier="RestaurantScene" automaticallyAdjustsScrollViewInsets="NO" id="6w9-5d-j5c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Restaurant" image="list.bullet" catalog="system" id="JEx-gb-7rR"/>
+                    <tabBarItem key="tabBarItem" title="" id="JEx-gb-7rR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Wix-Qf-nMc">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -363,11 +363,11 @@
             </objects>
             <point key="canvasLocation" x="-379" y="1315"/>
         </scene>
-        <!--My Order-->
+        <!--Navigation Controller-->
         <scene sceneID="fRn-mN-lDa">
             <objects>
                 <navigationController storyboardIdentifier="MyOrderScene" automaticallyAdjustsScrollViewInsets="NO" id="g4R-Iw-IM0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Order" image="bag" catalog="system" id="mII-Bs-d8j"/>
+                    <tabBarItem key="tabBarItem" title="" id="mII-Bs-d8j"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="3ZV-WM-ut1">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -409,11 +409,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="6w9-5d-j5c" kind="relationship" relationship="viewControllers" id="HdR-U8-fbs"/>
-                        <segue destination="g4R-Iw-IM0" kind="relationship" relationship="viewControllers" id="sN0-ed-wRn"/>
-                        <segue destination="2M2-qy-HT2" kind="relationship" relationship="viewControllers" id="zcr-dM-I1T"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOh-6k-hHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -437,11 +432,11 @@
             </objects>
             <point key="canvasLocation" x="-1331" y="1315"/>
         </scene>
-        <!--Settings-->
+        <!--Navigation Controller-->
         <scene sceneID="e1x-t2-o2T">
             <objects>
                 <navigationController storyboardIdentifier="SettingsScene" automaticallyAdjustsScrollViewInsets="NO" id="2M2-qy-HT2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="7Fw-LL-xWf"/>
+                    <tabBarItem key="tabBarItem" title="" id="7Fw-LL-xWf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Z2j-pl-K69">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -458,9 +453,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bag" catalog="system" width="128" height="128"/>
-        <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

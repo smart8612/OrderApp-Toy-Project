@@ -11,28 +11,32 @@ import UIKit
 final class RootSplitViewController: UISplitViewController {
     
     var selectedMenu: TabItem = .restaurant {
-        didSet { updateUI() }
+        didSet { updateUIForSecondary(oldSelectedMenu: oldValue) }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
         updateUI()
     }
     
-    private func updateUI() {
-        if !isCollapsed {
-            setViewController(selectedMenu.viewController, for: .secondary)
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateUI()
+    }
+    
+    private func updateUIForSecondary(oldSelectedMenu: TabItem) {
+        guard traitCollection.horizontalSizeClass != .compact else { return }
+        if oldSelectedMenu == selectedMenu {
+            guard let secondaryVC = viewController(for: .secondary) as? UINavigationController else { return }
+            secondaryVC.popToRootViewController(animated: true)
+        } else {
+            showDetailViewController(selectedMenu.viewController, sender: self)
         }
     }
     
-}
-
-// MARK: UISplitViewController Delegate
-extension RootSplitViewController: UISplitViewControllerDelegate {
-    
-    func splitViewControllerDidExpand(_ svc: UISplitViewController) {
-        updateUI()
+    private func updateUI() {
+        guard traitCollection.horizontalSizeClass != .compact else { return }
+        showDetailViewController(selectedMenu.viewController, sender: self)
     }
     
 }
@@ -61,11 +65,11 @@ extension RootSplitViewController {
         var viewController: UIViewController {
             switch self {
             case .restaurant:
-                return RootSplitViewController.restaurantSceneViewContoller
+                return RootSplitViewController.createRestaurantScene()
             case .myOrder:
-                return RootSplitViewController.myOrderSceneViewController
+                return RootSplitViewController.createMyOrderScene()
             case .settings:
-                return RootSplitViewController.settingsSceneViewController
+                return RootSplitViewController.createSettingScene()
             }
         }
     }
@@ -75,19 +79,19 @@ extension RootSplitViewController {
 // MARK: Associated View Controllers
 extension RootSplitViewController {
     
-    private static var restaurantSceneViewContoller: UIViewController = {
+    private static func createRestaurantScene() -> UIViewController {
         UIStoryboard(name: "Main", bundle: .main)
             .instantiateViewController(withIdentifier: "RestaurantScene")
-    }()
+    }
     
-    private static var myOrderSceneViewController: UIViewController = {
+    private static func createMyOrderScene() -> UIViewController {
         UIStoryboard(name: "Main", bundle: .main)
             .instantiateViewController(withIdentifier: "MyOrderScene")
-    }()
+    }
     
-    private static var settingsSceneViewController: UIViewController = {
+    private static func createSettingScene() -> UIViewController {
         UIStoryboard(name: "Main", bundle: .main)
             .instantiateViewController(withIdentifier: "SettingsScene")
-    }()
+    }
     
 }
