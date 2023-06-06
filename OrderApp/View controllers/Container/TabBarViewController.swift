@@ -52,7 +52,6 @@ final class TabBarViewController: UITabBarController {
     private func updateUI() {
         guard let rootViewController = rootViewController else { return }
         let index = rootViewController.selectedMenu.rawValue
-        print(index)
         selectedViewController = viewControllers?[index]
         orderTabBarItem?.updateOrderBadge()
     }
