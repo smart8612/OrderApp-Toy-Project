@@ -11,8 +11,8 @@ import Combine
 
 final class TabBarViewController: UITabBarController {
     
-    private var rootSplitViewController: RootSplitViewController? {
-        splitViewController as? RootSplitViewController
+    private var rootViewController: RootViewController? {
+        splitViewController?.parent as? RootViewController
     }
     
     private var subscription: AnyCancellable?
@@ -28,13 +28,18 @@ final class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
+        addChildren()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        addChildren()
         subscribe()
         updateUI()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        unsubscribe()
     }
     
     private func addChildren() {
@@ -44,19 +49,12 @@ final class TabBarViewController: UITabBarController {
         setViewControllers(childVCs, animated: false)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        removeChildren()
-        unsubscribe()
-    }
-    
-    private func removeChildren() {
-        viewControllers = nil
-    }
-    
     private func updateUI() {
+        guard let rootViewController = rootViewController else { return }
+        let index = rootViewController.selectedMenu.rawValue
+        print(index)
+        selectedViewController = viewControllers?[index]
         orderTabBarItem?.updateOrderBadge()
-        selectedIndex = rootSplitViewController?.selectedMenu.rawValue ?? 0
     }
     
     private func subscribe() {
@@ -75,12 +73,12 @@ final class TabBarViewController: UITabBarController {
 
 extension TabBarViewController: UITabBarControllerDelegate {
     
-    typealias TabItem = RootSplitViewController.TabItem
+    typealias TabItem = RootViewController.TabItem
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let selectedIndex = tabBarController.selectedIndex
         if let tabItem = TabItem(rawValue: selectedIndex) {
-            rootSplitViewController?.selectedMenu = tabItem
+            rootViewController?.selectedMenu = tabItem
         }
     }
     

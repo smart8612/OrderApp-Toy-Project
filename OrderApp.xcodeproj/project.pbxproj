@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		C102BB0B2A2B043D003386C7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */; };
 		C12AF54F2A28D24D00512357 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF54E2A28D24D00512357 /* SettingsViewController.swift */; };
-		C12AF5512A28D97400512357 /* RootSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF5502A28D97400512357 /* RootSplitViewController.swift */; };
 		C12AF5532A2906B200512357 /* SidebarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */; };
+		C13221B82A2E1DD100B331ED /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13221B72A2E1DD100B331ED /* RootViewController.swift */; };
 		C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132589D298395ED0058EB12 /* AppDelegate.swift */; };
 		C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132589F298395ED0058EB12 /* SceneDelegate.swift */; };
 		C13258A5298395ED0058EB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13258A3298395ED0058EB12 /* Main.storyboard */; };
@@ -56,8 +56,8 @@
 /* Begin PBXFileReference section */
 		C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		C12AF54E2A28D24D00512357 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		C12AF5502A28D97400512357 /* RootSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSplitViewController.swift; sourceTree = "<group>"; };
 		C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCollectionViewController.swift; sourceTree = "<group>"; };
+		C13221B72A2E1DD100B331ED /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C132589A298395ED0058EB12 /* OrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132589D298395ED0058EB12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C132589F298395ED0058EB12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,8 +168,8 @@
 				C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */,
 				C12AF54E2A28D24D00512357 /* SettingsViewController.swift */,
 				C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */,
-				C12AF5502A28D97400512357 /* RootSplitViewController.swift */,
 				C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */,
+				C13221B72A2E1DD100B331ED /* RootViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -390,7 +390,6 @@
 				C1855DA42A189A7C003BC34F /* OrderStateRestorable.swift in Sources */,
 				C12AF5532A2906B200512357 /* SidebarCollectionViewController.swift in Sources */,
 				C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */,
-				C12AF5512A28D97400512357 /* RootSplitViewController.swift in Sources */,
 				C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */,
 				C102BB0B2A2B043D003386C7 /* TabBarViewController.swift in Sources */,
 				C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */,
@@ -402,6 +401,7 @@
 				C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */,
 				C12AF54F2A28D24D00512357 /* SettingsViewController.swift in Sources */,
 				C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */,
+				C13221B82A2E1DD100B331ED /* RootViewController.swift in Sources */,
 				C1ECE6822A24973E00CA8221 /* OrderController.swift in Sources */,
 				C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */,
 				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,

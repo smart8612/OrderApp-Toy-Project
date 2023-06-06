@@ -10,29 +10,36 @@ import UIKit
 
 final class SidebarCollectionViewController: UICollectionViewController {
     
-    private var rootSplitViewController: RootSplitViewController? {
-        splitViewController as? RootSplitViewController
+    private var rootViewController: RootViewController? {
+        splitViewController?.parent as? RootViewController
+    }
+    
+    init() { super.init(collectionViewLayout: Self.generateLayout()) }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        collectionView.setCollectionViewLayout(Self.generateLayout(), animated: false)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.setCollectionViewLayout(Self.generateLayout(), animated: false)
-        clearsSelectionOnViewWillAppear = false
+        navigationItem.title = "Order"
+        navigationController?.navigationBar.prefersLargeTitles = true
         dataSource.apply(snapshot)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        selectSideBarCell(at: rootSplitViewController?.selectedMenu ?? .restaurant)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let selectedMenu = rootViewController?.selectedMenu else { return }
+        selectSideBarCell(at: selectedMenu)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let menuItem = dataSource.itemIdentifier(for: indexPath) else { return }
-        guard let svc = rootSplitViewController else { return }
-        svc.selectedMenu = menuItem
+        rootViewController?.selectedMenu = menuItem
     }
     
-    func selectSideBarCell(at tabItem: TabItem) {
+    private func selectSideBarCell(at tabItem: TabItem) {
         guard let indexPath = dataSource.indexPath(for: tabItem) else { return }
         collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
     }
@@ -70,7 +77,7 @@ extension SidebarCollectionViewController {
     typealias Cell = UICollectionViewListCell
     typealias CellRegistration = UICollectionView.CellRegistration<Cell, Item>
     
-    typealias TabItem = RootSplitViewController.TabItem
+    typealias TabItem = RootViewController.TabItem
     typealias DataSource = UICollectionViewDiffableDataSource<Section, TabItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TabItem>
     
