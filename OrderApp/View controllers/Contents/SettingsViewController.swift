@@ -35,6 +35,11 @@ class SettingsViewController: UIViewController {
         viewController.didMove(toParent: self)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        registerStateRestoration()
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         willMove(toParent: nil)
@@ -43,6 +48,10 @@ class SettingsViewController: UIViewController {
             $0.view.removeFromSuperview()
             $0.removeFromParent()
         }
+    }
+    
+    private func registerStateRestoration() {
+        RestaurantController.shared.updateUserActivity(with: .setting)
     }
     
 }

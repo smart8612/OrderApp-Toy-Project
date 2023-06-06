@@ -54,6 +54,8 @@ final class RootViewController: UIViewController {
             restore(menuItemDetail: menuItem)
         case .order:
             selectedMenu = .myOrder
+        case .setting:
+            selectedMenu = .settings
         }
     }
     
@@ -101,6 +103,7 @@ extension RootViewController: UISplitViewControllerDelegate {
         guard let src = restoredState else { return }
         nav.popToRootViewController(animated: false)
         restore(state: src)
+        restoredState = nil
     }
     
     func splitViewControllerDidCollapse(_ svc: UISplitViewController) {
@@ -109,6 +112,7 @@ extension RootViewController: UISplitViewControllerDelegate {
         guard let src = restoredState else { return }
         nav.popToRootViewController(animated: false)
         restore(state: src)
+        restoredState = nil
     }
     
 }

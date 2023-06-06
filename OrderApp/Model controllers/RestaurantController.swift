@@ -32,7 +32,7 @@ final class RestaurantController {
             userActivity.menuCategory = category
         case .menuItemDetail(let menuItem):
             userActivity.menuItem = menuItem
-        case .order, .categories:
+        case .order, .categories, .setting:
             break
         }
         
