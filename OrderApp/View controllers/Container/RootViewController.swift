@@ -19,6 +19,7 @@ final class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        svc.delegate = self
         addSplitViewController()
         tabOnChanged()
     }
@@ -41,7 +42,22 @@ final class RootViewController: UIViewController {
         }
     }
     
-    func restore(menu categoryName: String) {
+    func restore(state src: StateRestorationController) {
+        switch src {
+        case .categories:
+            selectedMenu = .restaurant
+        case .menu(let category):
+            selectedMenu = .restaurant
+            restore(menu: category)
+        case .menuItemDetail(let menuItem):
+            selectedMenu = .restaurant
+            restore(menuItemDetail: menuItem)
+        case .order:
+            selectedMenu = .myOrder
+        }
+    }
+    
+    private func restore(menu categoryName: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let viewController = storyboard.instantiateViewController(identifier: "menu") {
             return MenuTableViewController(coder: $0, category: categoryName)
@@ -49,7 +65,7 @@ final class RootViewController: UIViewController {
         push(viewController)
     }
     
-    func restore(menuItemDetail: MenuItem) {
+    private func restore(menuItemDetail: MenuItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         restore(menu: menuItemDetail.category.name)
         let viewController = storyboard.instantiateViewController(identifier: "menuItemDetail") {
@@ -67,6 +83,32 @@ final class RootViewController: UIViewController {
             guard let nvc = svc.viewController(for: .secondary) as? UINavigationController else { return }
             nvc.pushViewController(viewController, animated: false)
         }
+    }
+    
+    private var restoredState: StateRestorationController?
+    
+}
+
+extension RootViewController: UISplitViewControllerDelegate {
+    
+    func splitViewController(_ svc: UISplitViewController, willShow column: UISplitViewController.Column) {
+        let state = RestaurantController.shared.userActivity
+        restoredState = StateRestorationController(userActivity: state)
+    }
+    
+    func splitViewControllerDidExpand(_ svc: UISplitViewController) {
+        guard let nav = svc.viewController(for: .secondary) as? UINavigationController else { return }
+        guard let src = restoredState else { return }
+        nav.popToRootViewController(animated: false)
+        restore(state: src)
+    }
+    
+    func splitViewControllerDidCollapse(_ svc: UISplitViewController) {
+        guard let tbc = svc.viewController(for: .compact) as? UITabBarController else { return }
+        guard let nav = tbc.selectedViewController as? UINavigationController else { return }
+        guard let src = restoredState else { return }
+        nav.popToRootViewController(animated: false)
+        restore(state: src)
     }
     
 }

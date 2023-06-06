@@ -46,19 +46,7 @@ final class SceneHierarchyController {
     
     func restore(state src: StateRestorationController) {
         guard let rootScene = findViewController(on: RootViewController.self) else { return }
-        
-        switch src {
-        case .categories:
-            rootScene.selectedMenu = .restaurant
-        case .menu(let category):
-            rootScene.selectedMenu = .restaurant
-            rootScene.restore(menu: category)
-        case .menuItemDetail(let menuItem):
-            rootScene.selectedMenu = .restaurant
-            rootScene.restore(menuItemDetail: menuItem)
-        case .order:
-            rootScene.selectedMenu = .myOrder
-        }
+        rootScene.restore(state: src)
     }
     
     deinit {
