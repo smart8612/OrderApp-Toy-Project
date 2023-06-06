@@ -111,6 +111,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C13221B92A2EF90000B331ED /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */,
+				C13258CF2983A1910058EB12 /* MenuTableViewController.swift */,
+				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
+				C13258D12983A19E0058EB12 /* OrderTableViewController.swift */,
+				C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */,
+				C12AF54E2A28D24D00512357 /* SettingsViewController.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		C13221BA2A2EF91200B331ED /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */,
+				C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */,
+				C13221B72A2E1DD100B331ED /* RootViewController.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		C1325891298395ED0058EB12 = {
 			isa = PBXGroup;
 			children = (
@@ -161,15 +184,8 @@
 		C13258D52983A56A0058EB12 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */,
-				C13258CF2983A1910058EB12 /* MenuTableViewController.swift */,
-				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
-				C13258D12983A19E0058EB12 /* OrderTableViewController.swift */,
-				C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */,
-				C12AF54E2A28D24D00512357 /* SettingsViewController.swift */,
-				C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */,
-				C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */,
-				C13221B72A2E1DD100B331ED /* RootViewController.swift */,
+				C13221B92A2EF90000B331ED /* Contents */,
+				C13221BA2A2EF91200B331ED /* Container */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
