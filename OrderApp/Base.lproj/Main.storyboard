@@ -326,7 +326,7 @@
         <!--Root View Controller-->
         <scene sceneID="nu5-KK-7M0">
             <objects>
-                <viewController id="qD5-Fe-1S7" customClass="RootViewController" customModule="OrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rootScene" id="qD5-Fe-1S7" customClass="RootViewController" customModule="OrderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3v8-7g-Fbb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

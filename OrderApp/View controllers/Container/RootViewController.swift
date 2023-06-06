@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OrderClient
 
 
 final class RootViewController: UIViewController {
@@ -37,6 +38,34 @@ final class RootViewController: UIViewController {
             } else {
                 svc.showDetailViewController(selectedMenu.viewController, sender: self)
             }
+        }
+    }
+    
+    func restore(menu categoryName: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let viewController = storyboard.instantiateViewController(identifier: "menu") {
+            return MenuTableViewController(coder: $0, category: categoryName)
+        }
+        push(viewController)
+    }
+    
+    func restore(menuItemDetail: MenuItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        restore(menu: menuItemDetail.category.name)
+        let viewController = storyboard.instantiateViewController(identifier: "menuItemDetail") {
+            return MenuItemDetailViewController(coder: $0, menuItem: menuItemDetail)
+        }
+        push(viewController)
+    }
+    
+    private func push(_ viewController: UIViewController) {
+        if traitCollection.horizontalSizeClass == .compact {
+            guard let tbc = svc.viewController(for: .compact) as? UITabBarController else { return }
+            guard let nvc = tbc.selectedViewController as? UINavigationController else { return }
+            nvc.pushViewController(viewController, animated: false)
+        } else {
+            guard let nvc = svc.viewController(for: .secondary) as? UINavigationController else { return }
+            nvc.pushViewController(viewController, animated: false)
         }
     }
     

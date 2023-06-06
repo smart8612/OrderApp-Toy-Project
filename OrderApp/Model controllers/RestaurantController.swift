@@ -24,6 +24,21 @@ final class RestaurantController {
         set { orderController = OrderController(order: newValue) }
     }
     
+    var userActivity = NSUserActivity(activityType: "com.tistory.singularis7.OrderApp.order")
+    
+    func updateUserActivity(with controller: StateRestorationController) {
+        switch controller {
+        case .menu(let category):
+            userActivity.menuCategory = category
+        case .menuItemDetail(let menuItem):
+            userActivity.menuItem = menuItem
+        case .order, .categories:
+            break
+        }
+        
+        userActivity.controllerIdentifier = controller.identifier
+    }
+    
     var menuItems: [MenuItem] {
         order.menuItems
     }
@@ -65,11 +80,9 @@ final class RestaurantController {
     }
     
     private func updateOrderState() {
-        userActivity.order = order
+        userActivity.order = orderController.order
     }
     
 }
 
 extension RestaurantController: RestaurantAPIFetchable { }
-
-extension RestaurantController: OrderStateRestorable { }
