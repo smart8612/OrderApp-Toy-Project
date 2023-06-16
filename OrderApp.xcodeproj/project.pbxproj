@@ -24,6 +24,7 @@
 		C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */; };
 		C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F329842FFB0058EB12 /* RestaurantController.swift */; };
 		C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */; };
+		C14B75F82A3C381A00CC9633 /* OrderClient in Frameworks */ = {isa = PBXBuildFile; productRef = C14B75F72A3C381A00CC9633 /* OrderClient */; };
 		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
 		C1855DA02A1889A7003BC34F /* UserNotificationKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1855D9F2A1889A7003BC34F /* UserNotificationKit */; };
 		C1855DA62A189E01003BC34F /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1855DA52A189E01003BC34F /* OrderViewModel.swift */; };
@@ -37,7 +38,6 @@
 		C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */; };
 		C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */; };
 		C1D861E12988E60F00BC3DC2 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */; };
-		C1ECE6802A248F0200CA8221 /* OrderClient in Frameworks */ = {isa = PBXBuildFile; productRef = C1ECE67F2A248F0200CA8221 /* OrderClient */; };
 		C1ECE6822A24973E00CA8221 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ECE6812A24973E00CA8221 /* OrderController.swift */; };
 		C1EE5CD62A1210990067B475 /* SettingKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1EE5CD52A1210990067B475 /* SettingKit */; };
 /* End PBXBuildFile section */
@@ -93,8 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C14B75F82A3C381A00CC9633 /* OrderClient in Frameworks */,
 				C1855DA02A1889A7003BC34F /* UserNotificationKit in Frameworks */,
-				C1ECE6802A248F0200CA8221 /* OrderClient in Frameworks */,
 				C1EE5CD62A1210990067B475 /* SettingKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +303,7 @@
 			packageProductDependencies = (
 				C1EE5CD52A1210990067B475 /* SettingKit */,
 				C1855D9F2A1889A7003BC34F /* UserNotificationKit */,
-				C1ECE67F2A248F0200CA8221 /* OrderClient */,
+				C14B75F72A3C381A00CC9633 /* OrderClient */,
 			);
 			productName = OrderApp;
 			productReference = C132589A298395ED0058EB12 /* OrderApp.app */;
@@ -358,7 +358,7 @@
 			packageReferences = (
 				C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */,
 				C1855D9E2A1889A7003BC34F /* XCRemoteSwiftPackageReference "UserNotificationKit" */,
-				C1ECE67E2A248F0200CA8221 /* XCRemoteSwiftPackageReference "OrderClient" */,
+				C14B75F62A3C381A00CC9633 /* XCRemoteSwiftPackageReference "OrderClient" */,
 			);
 			productRefGroup = C132589B298395ED0058EB12 /* Products */;
 			projectDirPath = "";
@@ -703,17 +703,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C14B75F62A3C381A00CC9633 /* XCRemoteSwiftPackageReference "OrderClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/smart8612/OrderClient";
+			requirement = {
+				kind = exactVersion;
+				version = "0.1.0-alpha";
+			};
+		};
 		C1855D9E2A1889A7003BC34F /* XCRemoteSwiftPackageReference "UserNotificationKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/smart8612/UserNotificationKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		C1ECE67E2A248F0200CA8221 /* XCRemoteSwiftPackageReference "OrderClient" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/smart8612/OrderClient";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -730,15 +730,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C14B75F72A3C381A00CC9633 /* OrderClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C14B75F62A3C381A00CC9633 /* XCRemoteSwiftPackageReference "OrderClient" */;
+			productName = OrderClient;
+		};
 		C1855D9F2A1889A7003BC34F /* UserNotificationKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C1855D9E2A1889A7003BC34F /* XCRemoteSwiftPackageReference "UserNotificationKit" */;
 			productName = UserNotificationKit;
-		};
-		C1ECE67F2A248F0200CA8221 /* OrderClient */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1ECE67E2A248F0200CA8221 /* XCRemoteSwiftPackageReference "OrderClient" */;
-			productName = OrderClient;
 		};
 		C1EE5CD52A1210990067B475 /* SettingKit */ = {
 			isa = XCSwiftPackageProductDependency;
