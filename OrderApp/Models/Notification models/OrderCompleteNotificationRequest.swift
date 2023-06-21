@@ -7,6 +7,7 @@
 
 import Foundation
 import UserNotifications
+import UserNotificationKit
 
 struct OrderCompleteNotificationRequest: NotificationRequest {
     

@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import OrderClient
 
-@MainActor
+
 final class MenuItemDetailViewController: UIViewController {
     
     private let menuItem: MenuItem
     private let restaurantController = RestaurantController.shared
+    private var imageLoadTask: Task<Void, Never>?
     
     @IBOutlet private weak var imageView: UIImageView?
     @IBOutlet private weak var nameLabel: UILabel?
@@ -28,22 +30,42 @@ final class MenuItemDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        registerStateRestoration()
         updateUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        restaurantController.updateUserActivity(with: .menuItemDetail(menuItem))
+    override func viewDidDisappear(_ animated: Bool) {
+        cancelImageLoadTask()
     }
     
+    @IBAction private func orderButtonTapped(_ sender: UIButton) {
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0.1
+        ) {
+            self.addToOrderButton?.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+            self.addToOrderButton?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        
+        restaurantController.addOrder(with: menuItem)
+    }
+    
+}
+
+// MARK: Presentation Handling function
+extension MenuItemDetailViewController {
+    
+    @objc
     private func updateUI() {
         nameLabel?.text = menuItem.name
         priceLabel?.text = menuItem.price.formatted(.currency(code: "usd"))
         detailTextLabel?.text = menuItem.detailText
         
-        Task {
+        imageLoadTask = Task {
             guard let data = try? await restaurantController.fetchImage(from: menuItem.imageURL),
                   let image = UIImage(data: data) else {
                 return
@@ -52,13 +74,22 @@ final class MenuItemDetailViewController: UIViewController {
         }
     }
     
-    @IBAction private func orderButtonTapped(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1) {
-            self.addToOrderButton?.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-            self.addToOrderButton?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        }
-        
-        restaurantController.addOrder(with: menuItem)
+}
+
+// MARK: Register Handling function
+extension MenuItemDetailViewController {
+    
+    private func registerStateRestoration() {
+        restaurantController.updateUserActivity(with: .menuItemDetail(menuItem))
+    }
+    
+}
+
+// MARK: Task Handling function
+extension MenuItemDetailViewController {
+    
+    private func cancelImageLoadTask() {
+        imageLoadTask?.cancel()
     }
     
 }

@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import OrderClient
 
-@MainActor
+
 final class MenuTableViewController: UITableViewController {
+    
+    private let category: String
     
     private let restaurantController = RestaurantController.shared
     private var menuItems: [MenuItem] = []
-    private let category: String
     private var imageLoadTasks: [IndexPath:Task<Void, Never>] = [:]
     
     init?(coder: NSCoder, category: String) {
@@ -24,40 +26,21 @@ final class MenuTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        imageLoadTasks.forEach { (key: IndexPath, value: Task<Void, Never>) in
-            value.cancel()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        registerTargetAction()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        restaurantController.updateUserActivity(with: .menu(category: category))
+        registerStateRestoration()
+        updateUI()
     }
     
-    private func configureUI() {
-        title = category.capitalized
-        
-        Task {
-            do {
-                let menuItems = try await restaurantController.fetchMenuItems(forCategory: category)
-                updateUI(with: menuItems)
-            } catch {
-                displayError(error, title: "Failed to fetch menu items for \(self.category)")
-            }
-        }
-    }
-    
-    private func updateUI(with menuItems: [MenuItem]) {
-        self.menuItems = menuItems
-        tableView.reloadData()
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        cancelAllImageLoadTasks()
     }
     
     @IBSegueAction private func showMenuDetail(_ coder: NSCoder, sender: Any?) -> MenuItemDetailViewController? {
@@ -67,6 +50,57 @@ final class MenuTableViewController: UITableViewController {
         }
         let menuItem = menuItems[indexPath.row]
         return MenuItemDetailViewController(coder: coder, menuItem: menuItem)
+    }
+    
+}
+
+// MARK: Presentation Handling function
+extension MenuTableViewController {
+    
+    private func configureUI() {
+        title = category.capitalized
+    }
+    
+    @objc
+    private func updateUI() {
+        Task {
+            do {
+                let menuItems = try await restaurantController.fetchMenuItems(forCategory: category)
+                applyUI(with: menuItems)
+            } catch {
+                displayError(error, title: "Failed to fetch menu items for \(category)")
+            }
+            refreshControl?.endRefreshing()
+        }
+    }
+    
+    private func applyUI(with menuItems: [MenuItem]) {
+        self.menuItems = menuItems
+        tableView.reloadData()
+    }
+    
+}
+
+// MARK: Register Handling function
+extension MenuTableViewController {
+    
+    private func registerStateRestoration() {
+        restaurantController.updateUserActivity(with: .menu(category: category))
+    }
+    
+    private func registerTargetAction() {
+        refreshControl?.addTarget(self, action: #selector(updateUI), for: .valueChanged)
+    }
+    
+}
+
+// MARK: Task Handling function
+extension MenuTableViewController {
+    
+    private func cancelAllImageLoadTasks() {
+        imageLoadTasks.forEach { (key: IndexPath, value: Task<Void, Never>) in
+            value.cancel()
+        }
     }
     
 }

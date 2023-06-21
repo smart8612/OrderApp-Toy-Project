@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UserNotificationKit
 
 final class OrderConfirmationViewModel: ObservableObject {
     
@@ -28,6 +29,10 @@ final class OrderConfirmationViewModel: ObservableObject {
     
     var minutesToPrepare: Int {
         orderConfirmation.minutesToPrepare
+    }
+    
+    func deleteAllOrder() {
+        RestaurantController.shared.deleteAllOrder()
     }
     
     private func scheduleNotification() {

@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import OrderClient
+
 
 enum StateRestorationController {
     
     enum Identifier: String {
-        case categories, menu, menuItemDetail, order
+        case categories, menu, menuItemDetail, order, setting
     }
     
     init?(userActivity: NSUserActivity) {
@@ -35,6 +37,8 @@ enum StateRestorationController {
             }
         case .order:
             self = .order
+        case .setting:
+            self = .setting
         }
     }
     
@@ -42,6 +46,7 @@ enum StateRestorationController {
     case menu(category: String)
     case menuItemDetail(MenuItem)
     case order
+    case setting
     
     var identifier: Identifier {
         switch self {
@@ -53,6 +58,8 @@ enum StateRestorationController {
             return .menuItemDetail
         case .order:
             return .order
+        case .setting:
+            return .setting
         }
     }
     

@@ -11,44 +11,78 @@ import Combine
 final class SceneHierarchyController {
     
     weak var delegate: SceneHierarchyControllerDelegate?
+    private var subscriptions: [Cancellable]?
     
     private weak var window: UIWindow?
-    
-    private var orderUpdateSubscribe: Cancellable?
-    private weak var orderTabBarItem: UITabBarItem?
     
     func configure(with delegate: SceneHierarchyControllerDelegate) {
         self.delegate = delegate
         window = self.delegate?.loadUIHirarchy()
-        configureTabBarUI()
+        configureUI()
         subscribe()
     }
     
-    private func configureTabBarUI() {
-        guard let rootTabBarController = window?.rootViewController as? UITabBarController,
-              let orderTabBarItem = rootTabBarController.viewControllers?[1].tabBarItem else {
-            return
+    private func findViewController<T: UIViewController>(on type: T.Type) -> T? {
+        guard let window = window else { return nil }
+        guard let rootViewController = window.rootViewController else { return nil }
+        
+        if let rootViewController = rootViewController as? T {
+            return rootViewController
         }
         
-        self.orderTabBarItem = orderTabBarItem
+        var searchQueue = rootViewController.children
+        while !searchQueue.isEmpty {
+            let childVC = searchQueue.removeFirst()
+            
+            if let childVC = childVC as? T {
+                return childVC
+            } else {
+                searchQueue.append(contentsOf: childVC.children)
+            }
+        }
+        
+        return nil
     }
     
-    private func subscribe() {
-        orderUpdateSubscribe = NotificationCenter.default.publisher(
-            for: .orderUpdateNotification,
-            object: nil
-        ).sink(receiveValue: { [weak self] _ in
-            let badgeValue = RestaurantController.shared.order.menuItems.count
-            self?.orderTabBarItem?.badgeValue = (badgeValue == 0) ? nil : String(badgeValue)
-        })
-    }
-    
-    private func unsubscribe() {
-        orderUpdateSubscribe?.cancel()
+    func restore(state src: StateRestorationController) {
+        guard let rootScene = findViewController(on: RootViewController.self) else { return }
+        rootScene.restore(state: src)
     }
     
     deinit {
-        unsubscribe()
+        cancelAllSubscriptions()
+    }
+    
+}
+
+// MARK: UI Presentation Handler
+fileprivate extension SceneHierarchyController {
+    
+    private func configureUI() {
+        configureGlobalUI()
+    }
+    
+    private func configureGlobalUI() {
+        window?.overrideUserInterfaceStyle = UserDefaults.standard.colorSchema
+    }
+
+}
+
+// MARK: Combine Subscription Handler
+fileprivate extension SceneHierarchyController {
+    
+    private func subscribe() {
+        subscriptions = [
+            NotificationCenter.default.publisher(
+                for: UserDefaults.didChangeNotification
+            ).sink { [weak self] _ in
+              self?.configureGlobalUI()
+            }
+        ]
+    }
+    
+    private func cancelAllSubscriptions() {
+        subscriptions?.forEach { $0.cancel() }
     }
     
 }
