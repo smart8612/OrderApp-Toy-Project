@@ -6,13 +6,13 @@
 //
 
 import UIKit
-import SettingKit
+import SettingsKit
 
 
 class SettingsViewController: UIViewController {
     
     private var settingViewController: UIViewController {
-        MainSettingPage().viewController
+        MainSettingsPage().viewController
     }
     
     override func viewDidLoad() {
