@@ -1,0 +1,751 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C101185C2A3CA1AD001ADFCE /* UserNotificationKit in Frameworks */ = {isa = PBXBuildFile; productRef = C101185B2A3CA1AD001ADFCE /* UserNotificationKit */; };
+		C102BB0B2A2B043D003386C7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */; };
+		C12AF54F2A28D24D00512357 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF54E2A28D24D00512357 /* SettingsViewController.swift */; };
+		C12AF5532A2906B200512357 /* SidebarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */; };
+		C13221B82A2E1DD100B331ED /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13221B72A2E1DD100B331ED /* RootViewController.swift */; };
+		C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132589D298395ED0058EB12 /* AppDelegate.swift */; };
+		C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132589F298395ED0058EB12 /* SceneDelegate.swift */; };
+		C13258A5298395ED0058EB12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13258A3298395ED0058EB12 /* Main.storyboard */; };
+		C13258A7298395EE0058EB12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13258A6298395EE0058EB12 /* Assets.xcassets */; };
+		C13258AA298395EE0058EB12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13258A8298395EE0058EB12 /* LaunchScreen.storyboard */; };
+		C13258BF298395EE0058EB12 /* OrderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258BE298395EE0058EB12 /* OrderAppUITests.swift */; };
+		C13258C1298395EE0058EB12 /* OrderAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258C0298395EE0058EB12 /* OrderAppUITestsLaunchTests.swift */; };
+		C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */; };
+		C13258D02983A1910058EB12 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258CF2983A1910058EB12 /* MenuTableViewController.swift */; };
+		C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258D12983A19E0058EB12 /* OrderTableViewController.swift */; };
+		C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */; };
+		C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13258F329842FFB0058EB12 /* RestaurantController.swift */; };
+		C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */; };
+		C14B75F82A3C381A00CC9633 /* OrderClient in Frameworks */ = {isa = PBXBuildFile; productRef = C14B75F72A3C381A00CC9633 /* OrderClient */; };
+		C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */; };
+		C1855DA62A189E01003BC34F /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1855DA52A189E01003BC34F /* OrderViewModel.swift */; };
+		C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */; };
+		C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA24298E4DF100466739 /* OrderConfirmation.swift */; };
+		C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */; };
+		C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */; };
+		C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */; };
+		C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */; };
+		C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */; };
+		C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */; };
+		C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */; };
+		C1D861E12988E60F00BC3DC2 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */; };
+		C1ECE6822A24973E00CA8221 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ECE6812A24973E00CA8221 /* OrderController.swift */; };
+		C1EE5CD62A1210990067B475 /* SettingKit in Frameworks */ = {isa = PBXBuildFile; productRef = C1EE5CD52A1210990067B475 /* SettingKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C13258BB298395EE0058EB12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1325892298395ED0058EB12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1325899298395ED0058EB12;
+			remoteInfo = OrderApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		C12AF54E2A28D24D00512357 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCollectionViewController.swift; sourceTree = "<group>"; };
+		C13221B72A2E1DD100B331ED /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		C132589A298395ED0058EB12 /* OrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C132589D298395ED0058EB12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C132589F298395ED0058EB12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C13258A4298395ED0058EB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C13258A6298395EE0058EB12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C13258A9298395EE0058EB12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C13258AB298395EE0058EB12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C13258BA298395EE0058EB12 /* OrderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C13258BE298395EE0058EB12 /* OrderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppUITests.swift; sourceTree = "<group>"; };
+		C13258C0298395EE0058EB12 /* OrderAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		C13258CF2983A1910058EB12 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		C13258D12983A19E0058EB12 /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailViewController.swift; sourceTree = "<group>"; };
+		C13258F329842FFB0058EB12 /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
+		C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewModel.swift; sourceTree = "<group>"; };
+		C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
+		C1855DA52A189E01003BC34F /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationCategory.swift; sourceTree = "<group>"; };
+		C19BFA24298E4DF100466739 /* OrderConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
+		C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NotificationName.swift"; sourceTree = "<group>"; };
+		C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHierarchyControllerDelegate.swift; sourceTree = "<group>"; };
+		C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneHierarchyController.swift; path = "OrderApp/Other controllers/SceneHierarchyController.swift"; sourceTree = SOURCE_ROOT; };
+		C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCompleteNotificationRequest.swift; sourceTree = "<group>"; };
+		C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
+		C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+NSUserActivity.swift"; sourceTree = "<group>"; };
+		C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateRestorationController.swift; sourceTree = "<group>"; };
+		C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		C1ECE6812A24973E00CA8221 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1325897298395ED0058EB12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C101185C2A3CA1AD001ADFCE /* UserNotificationKit in Frameworks */,
+				C14B75F82A3C381A00CC9633 /* OrderClient in Frameworks */,
+				C1EE5CD62A1210990067B475 /* SettingKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13258B7298395EE0058EB12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C13221B92A2EF90000B331ED /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				C13258CD2983A1850058EB12 /* CategoryTableViewController.swift */,
+				C13258CF2983A1910058EB12 /* MenuTableViewController.swift */,
+				C13258D32983A3230058EB12 /* MenuItemDetailViewController.swift */,
+				C13258D12983A19E0058EB12 /* OrderTableViewController.swift */,
+				C1BE54862987AFA400240CA3 /* OrderConfirmationViewController.swift */,
+				C12AF54E2A28D24D00512357 /* SettingsViewController.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		C13221BA2A2EF91200B331ED /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				C12AF5522A2906B200512357 /* SidebarCollectionViewController.swift */,
+				C102BB0A2A2B043D003386C7 /* TabBarViewController.swift */,
+				C13221B72A2E1DD100B331ED /* RootViewController.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		C1325891298395ED0058EB12 = {
+			isa = PBXGroup;
+			children = (
+				C132589C298395ED0058EB12 /* OrderApp */,
+				C13258BD298395EE0058EB12 /* OrderAppUITests */,
+				C132589B298395ED0058EB12 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C132589B298395ED0058EB12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C132589A298395ED0058EB12 /* OrderApp.app */,
+				C13258BA298395EE0058EB12 /* OrderAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C132589C298395ED0058EB12 /* OrderApp */ = {
+			isa = PBXGroup;
+			children = (
+				C13258AB298395EE0058EB12 /* Info.plist */,
+				C132589D298395ED0058EB12 /* AppDelegate.swift */,
+				C132589F298395ED0058EB12 /* SceneDelegate.swift */,
+				C13258A3298395ED0058EB12 /* Main.storyboard */,
+				C1D861DF2988E5F400BC3DC2 /* Views */,
+				C13258D52983A56A0058EB12 /* View controllers */,
+				C1344A54298BD686000E1D85 /* View models */,
+				C13258E72983C0E10058EB12 /* Model controllers */,
+				C18793A429A493D5004315C4 /* Other controllers */,
+				C13258D82983A7B10058EB12 /* Models */,
+				C13258E42983B67D0058EB12 /* Protocols */,
+				C17F37FA2984EBBB005F6B4D /* Extensions */,
+				C18793A529A4946B004315C4 /* Resources */,
+			);
+			path = OrderApp;
+			sourceTree = "<group>";
+		};
+		C13258BD298395EE0058EB12 /* OrderAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C13258BE298395EE0058EB12 /* OrderAppUITests.swift */,
+				C13258C0298395EE0058EB12 /* OrderAppUITestsLaunchTests.swift */,
+			);
+			path = OrderAppUITests;
+			sourceTree = "<group>";
+		};
+		C13258D52983A56A0058EB12 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C13221B92A2EF90000B331ED /* Contents */,
+				C13221BA2A2EF91200B331ED /* Container */,
+			);
+			path = "View controllers";
+			sourceTree = "<group>";
+		};
+		C13258D82983A7B10058EB12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C18A7BD729A9F09E007093B1 /* Entities */,
+				C19BFA30298F702F00466739 /* Notification models */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C13258E42983B67D0058EB12 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C18727BD2992470400442E5D /* Delegate */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C13258E72983C0E10058EB12 /* Model controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C13258F329842FFB0058EB12 /* RestaurantController.swift */,
+				C1C8ADBC2993D43700A27BA1 /* StateRestorationController.swift */,
+				C1ECE6812A24973E00CA8221 /* OrderController.swift */,
+			);
+			path = "Model controllers";
+			sourceTree = "<group>";
+		};
+		C1344A54298BD686000E1D85 /* View models */ = {
+			isa = PBXGroup;
+			children = (
+				C1344A55298BD6BB000E1D85 /* OrderConfirmationViewModel.swift */,
+				C1855DA52A189E01003BC34F /* OrderViewModel.swift */,
+			);
+			path = "View models";
+			sourceTree = "<group>";
+		};
+		C17F37FA2984EBBB005F6B4D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C17F37FD298505A5005F6B4D /* Extensions+UIViewController.swift */,
+				C19BFA26298E6E6500466739 /* Extensions+NotificationName.swift */,
+				C1C8ADBA299374D600A27BA1 /* Extensions+NSUserActivity.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C18727BD2992470400442E5D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA28298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		C18793A429A493D5004315C4 /* Other controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA2A298E7E9400466739 /* SceneHierarchyController.swift */,
+			);
+			path = "Other controllers";
+			sourceTree = "<group>";
+		};
+		C18793A529A4946B004315C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C13258A6298395EE0058EB12 /* Assets.xcassets */,
+				C13258A8298395EE0058EB12 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C18A7BD729A9F09E007093B1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA24298E4DF100466739 /* OrderConfirmation.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C19BFA30298F702F00466739 /* Notification models */ = {
+			isa = PBXGroup;
+			children = (
+				C19BFA32298F709F00466739 /* OrderCompleteNotificationRequest.swift */,
+				C18727C229924C0400442E5D /* OrderCompleteNotificationCategory.swift */,
+			);
+			path = "Notification models";
+			sourceTree = "<group>";
+		};
+		C1D861DF2988E5F400BC3DC2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1D861E02988E60F00BC3DC2 /* MenuItemTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C1325899298395ED0058EB12 /* OrderApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C13258C4298395EE0058EB12 /* Build configuration list for PBXNativeTarget "OrderApp" */;
+			buildPhases = (
+				C1325896298395ED0058EB12 /* Sources */,
+				C1325897298395ED0058EB12 /* Frameworks */,
+				C1325898298395ED0058EB12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrderApp;
+			packageProductDependencies = (
+				C1EE5CD52A1210990067B475 /* SettingKit */,
+				C14B75F72A3C381A00CC9633 /* OrderClient */,
+				C101185B2A3CA1AD001ADFCE /* UserNotificationKit */,
+			);
+			productName = OrderApp;
+			productReference = C132589A298395ED0058EB12 /* OrderApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C13258B9298395EE0058EB12 /* OrderAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C13258CA298395EE0058EB12 /* Build configuration list for PBXNativeTarget "OrderAppUITests" */;
+			buildPhases = (
+				C13258B6298395EE0058EB12 /* Sources */,
+				C13258B7298395EE0058EB12 /* Frameworks */,
+				C13258B8298395EE0058EB12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C13258BC298395EE0058EB12 /* PBXTargetDependency */,
+			);
+			name = OrderAppUITests;
+			productName = OrderAppUITests;
+			productReference = C13258BA298395EE0058EB12 /* OrderAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1325892298395ED0058EB12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					C1325899298395ED0058EB12 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					C13258B9298395EE0058EB12 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = C1325899298395ED0058EB12;
+					};
+				};
+			};
+			buildConfigurationList = C1325895298395ED0058EB12 /* Build configuration list for PBXProject "OrderApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C1325891298395ED0058EB12;
+			packageReferences = (
+				C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */,
+				C14B75F62A3C381A00CC9633 /* XCRemoteSwiftPackageReference "OrderClient" */,
+				C101185A2A3CA1AD001ADFCE /* XCRemoteSwiftPackageReference "UserNotificationKit" */,
+			);
+			productRefGroup = C132589B298395ED0058EB12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1325899298395ED0058EB12 /* OrderApp */,
+				C13258B9298395EE0058EB12 /* OrderAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1325898298395ED0058EB12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13258AA298395EE0058EB12 /* LaunchScreen.storyboard in Resources */,
+				C13258A7298395EE0058EB12 /* Assets.xcassets in Resources */,
+				C13258A5298395ED0058EB12 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13258B8298395EE0058EB12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1325896298395ED0058EB12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13258D02983A1910058EB12 /* MenuTableViewController.swift in Sources */,
+				C1D861E12988E60F00BC3DC2 /* MenuItemTableViewCell.swift in Sources */,
+				C13258D42983A3230058EB12 /* MenuItemDetailViewController.swift in Sources */,
+				C1344A56298BD6BB000E1D85 /* OrderConfirmationViewModel.swift in Sources */,
+				C13258F429842FFB0058EB12 /* RestaurantController.swift in Sources */,
+				C12AF5532A2906B200512357 /* SidebarCollectionViewController.swift in Sources */,
+				C1BE54872987AFA400240CA3 /* OrderConfirmationViewController.swift in Sources */,
+				C1C8ADBD2993D43700A27BA1 /* StateRestorationController.swift in Sources */,
+				C102BB0B2A2B043D003386C7 /* TabBarViewController.swift in Sources */,
+				C17F37FE298505A5005F6B4D /* Extensions+UIViewController.swift in Sources */,
+				C19BFA33298F709F00466739 /* OrderCompleteNotificationRequest.swift in Sources */,
+				C13258D22983A19E0058EB12 /* OrderTableViewController.swift in Sources */,
+				C132589E298395ED0058EB12 /* AppDelegate.swift in Sources */,
+				C1C8ADBB299374D600A27BA1 /* Extensions+NSUserActivity.swift in Sources */,
+				C1855DA62A189E01003BC34F /* OrderViewModel.swift in Sources */,
+				C19BFA29298E7DAB00466739 /* SceneHierarchyControllerDelegate.swift in Sources */,
+				C12AF54F2A28D24D00512357 /* SettingsViewController.swift in Sources */,
+				C19BFA2B298E7E9400466739 /* SceneHierarchyController.swift in Sources */,
+				C13221B82A2E1DD100B331ED /* RootViewController.swift in Sources */,
+				C1ECE6822A24973E00CA8221 /* OrderController.swift in Sources */,
+				C18727C329924C0400442E5D /* OrderCompleteNotificationCategory.swift in Sources */,
+				C13258A0298395ED0058EB12 /* SceneDelegate.swift in Sources */,
+				C13258CE2983A1850058EB12 /* CategoryTableViewController.swift in Sources */,
+				C19BFA25298E4DF100466739 /* OrderConfirmation.swift in Sources */,
+				C19BFA27298E6E6500466739 /* Extensions+NotificationName.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C13258B6298395EE0058EB12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13258C1298395EE0058EB12 /* OrderAppUITestsLaunchTests.swift in Sources */,
+				C13258BF298395EE0058EB12 /* OrderAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C13258BC298395EE0058EB12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1325899298395ED0058EB12 /* OrderApp */;
+			targetProxy = C13258BB298395EE0058EB12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C13258A3298395ED0058EB12 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C13258A4298395ED0058EB12 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C13258A8298395EE0058EB12 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C13258A9298395EE0058EB12 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C13258C2298395EE0058EB12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C13258C3298395EE0058EB12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C13258C5298395EE0058EB12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MLY2NY4CXP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrderApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.singularis7.OrderApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C13258C6298395EE0058EB12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MLY2NY4CXP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrderApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.singularis7.OrderApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C13258CB298395EE0058EB12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MLY2NY4CXP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.singularis7.OrderAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OrderApp;
+			};
+			name = Debug;
+		};
+		C13258CC298395EE0058EB12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MLY2NY4CXP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.singularis7.OrderAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OrderApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1325895298395ED0058EB12 /* Build configuration list for PBXProject "OrderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13258C2298395EE0058EB12 /* Debug */,
+				C13258C3298395EE0058EB12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C13258C4298395EE0058EB12 /* Build configuration list for PBXNativeTarget "OrderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13258C5298395EE0058EB12 /* Debug */,
+				C13258C6298395EE0058EB12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C13258CA298395EE0058EB12 /* Build configuration list for PBXNativeTarget "OrderAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C13258CB298395EE0058EB12 /* Debug */,
+				C13258CC298395EE0058EB12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C101185A2A3CA1AD001ADFCE /* XCRemoteSwiftPackageReference "UserNotificationKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/smart8612/UserNotificationKit";
+			requirement = {
+				kind = exactVersion;
+				version = "0.1.0-alpha";
+			};
+		};
+		C14B75F62A3C381A00CC9633 /* XCRemoteSwiftPackageReference "OrderClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/smart8612/OrderClient";
+			requirement = {
+				kind = exactVersion;
+				version = "0.1.0-alpha";
+			};
+		};
+		C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/smart8612/SettingKit";
+			requirement = {
+				kind = exactVersion;
+				version = "0.1.0-alpha";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C101185B2A3CA1AD001ADFCE /* UserNotificationKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C101185A2A3CA1AD001ADFCE /* XCRemoteSwiftPackageReference "UserNotificationKit" */;
+			productName = UserNotificationKit;
+		};
+		C14B75F72A3C381A00CC9633 /* OrderClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C14B75F62A3C381A00CC9633 /* XCRemoteSwiftPackageReference "OrderClient" */;
+			productName = OrderClient;
+		};
+		C1EE5CD52A1210990067B475 /* SettingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1EE5CD42A1210990067B475 /* XCRemoteSwiftPackageReference "SettingKit" */;
+			productName = SettingKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C1325892298395ED0058EB12 /* Project object */;
+}
